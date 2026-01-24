@@ -57,7 +57,7 @@ const HeroSection = () => {
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-4 mt-10">
-              {["100% Natural", "Vet Approved", "Free Shipping"].map((badge) => (
+              {["100% Natural", "Vet Approved"].map((badge) => (
                 <div
                   key={badge}
                   className="px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full text-sm font-medium"

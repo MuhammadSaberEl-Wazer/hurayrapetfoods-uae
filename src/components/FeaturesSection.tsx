@@ -23,8 +23,8 @@ const features = [
   },
   {
     icon: Truck,
-    title: "Free Delivery",
-    description: "Free shipping on all orders over $50",
+    title: "Fast Delivery",
+    description: "Quick and reliable shipping across UAE",
   },
   {
     icon: CheckCircle,

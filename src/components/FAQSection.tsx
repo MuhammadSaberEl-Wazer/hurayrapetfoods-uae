@@ -16,11 +16,11 @@ const faqs = [
   },
   {
     question: "How does the subscription work?",
-    answer: "Simply choose your products and delivery frequency (every 2, 4, or 8 weeks). You'll save 25% on every order, get free shipping, and can modify or cancel anytime. We'll send a reminder before each shipment.",
+    answer: "Simply choose your products and delivery frequency (every 2, 4, or 8 weeks). You'll save 25% on every order and can modify or cancel anytime. We'll send a reminder before each shipment.",
   },
   {
-    question: "Do you offer free shipping?",
-    answer: "Yes! We offer free standard shipping on all orders over $50. Subscription orders always ship free, regardless of order size. Express shipping options are also available for an additional fee.",
+    question: "How does shipping work?",
+    answer: "We offer fast and reliable delivery across UAE. Shipping costs vary based on your location and order size. Express shipping options are also available for faster delivery.",
   },
   {
     question: "What if my cat doesn't like the food?",
