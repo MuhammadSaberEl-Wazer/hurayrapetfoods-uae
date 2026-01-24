@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 200 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 15%;
+
+    --primary: 174 62% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 45% 95%;
+    --secondary-foreground: 200 25% 15%;
+
+    --muted: 40 20% 94%;
+    --muted-foreground: 200 10% 45%;
+
+    --accent: 24 95% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 174 62% 47%;
+
+    --radius: 1rem;
+
+    /* Custom tokens */
+    --teal: 174 62% 47%;
+    --teal-dark: 174 65% 35%;
+    --teal-light: 174 50% 92%;
+    --coral: 24 95% 60%;
+    --coral-light: 24 100% 95%;
+    --cream: 40 33% 96%;
+    --cream-dark: 40 25% 90%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(174 62% 47%) 0%, hsl(174 65% 35%) 100%);
+    --gradient-coral: linear-gradient(135deg, hsl(24 95% 60%) 0%, hsl(15 90% 55%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 33% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(200 25% 15% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(200 25% 15% / 0.12);
+    --shadow-elevated: 0 20px 50px -15px hsl(200 25% 15% / 0.2);
+    --shadow-teal: 0 8px 30px -8px hsl(174 62% 47% / 0.4);
+    --shadow-coral: 0 8px 30px -8px hsl(24 95% 60% / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 200 25% 10%;
+    --foreground: 40 33% 98%;
+
+    --card: 200 20% 14%;
+    --card-foreground: 40 33% 98%;
+
+    --popover: 200 20% 14%;
+    --popover-foreground: 40 33% 98%;
+
+    --primary: 174 62% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 15% 20%;
+    --secondary-foreground: 40 33% 98%;
+
+    --muted: 200 15% 20%;
+    --muted-foreground: 40 20% 70%;
+
+    --accent: 24 95% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 200 15% 25%;
+    --input: 200 15% 25%;
+    --ring: 174 62% 47%;
+    
+    --teal-light: 174 40% 20%;
+    --cream: 200 20% 12%;
+    --cream-dark: 200 15% 18%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .coral-gradient {
+    background: var(--gradient-coral);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .shadow-teal {
+    box-shadow: var(--shadow-teal);
+  }
+  
+  .shadow-coral {
+    box-shadow: var(--shadow-coral);
+  }
+  
+  .text-gradient-teal {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+  
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes bounceGentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+}
