@@ -54,7 +54,7 @@ const FeaturesSection = () => {
             The Good Stuff We Offer
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Purrfect Meals is made with the highest quality ingredients to keep your cat healthy and happy
+            Hurayra Pet Foods is made with the highest quality halal ingredients to keep your cat healthy and happy
           </p>
         </div>
 

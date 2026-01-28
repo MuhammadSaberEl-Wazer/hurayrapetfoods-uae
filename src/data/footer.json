@@ -1,0 +1,212 @@
+{
+  "logo": {
+    "text": "Hurayra Pet Foods",
+    "textAr": "Hurayra Pet Foods",
+    "tagline": "Premium Halal Cat Food",
+    "taglineAr": "طعام قطط حلال فاخر"
+  },
+  "description": "Providing premium halal cat food with love and care. Following the Sunnah of kindness to animals.",
+  "descriptionAr": "نقدم طعام قطط حلال فاخر بحب وعناية. متبعين سنة الرفق بالحيوانات.",
+  "columns": [
+    {
+      "title": "Quick Links",
+      "titleAr": "روابط سريعة",
+      "links": [
+        {
+          "text": "Home",
+          "textAr": "الرئيسية",
+          "url": "/"
+        },
+        {
+          "text": "Products",
+          "textAr": "المنتجات",
+          "url": "/products"
+        },
+        {
+          "text": "About Us",
+          "textAr": "من نحن",
+          "url": "/about"
+        },
+        {
+          "text": "Contact",
+          "textAr": "اتصل بنا",
+          "url": "/contact"
+        },
+        {
+          "text": "FAQ",
+          "textAr": "الأسئلة الشائعة",
+          "url": "/#faq"
+        }
+      ]
+    },
+    {
+      "title": "Products",
+      "titleAr": "المنتجات",
+      "links": [
+        {
+          "text": "All Products",
+          "textAr": "جميع المنتجات",
+          "url": "/products"
+        },
+        {
+          "text": "Chicken Formula",
+          "textAr": "تركيبة الدجاج",
+          "url": "/products?type=chicken"
+        },
+        {
+          "text": "Tuna Formula",
+          "textAr": "تركيبة التونة",
+          "url": "/products?type=tuna"
+        },
+        {
+          "text": "For Kittens",
+          "textAr": "للقطط الصغيرة",
+          "url": "/products?category=kitten"
+        },
+        {
+          "text": "For Adults",
+          "textAr": "للقطط البالغة",
+          "url": "/products?category=adult"
+        }
+      ]
+    },
+    {
+      "title": "Customer Service",
+      "titleAr": "خدمة العملاء",
+      "links": [
+        {
+          "text": "Shipping & Delivery",
+          "textAr": "الشحن والتوصيل",
+          "url": "/shipping"
+        },
+        {
+          "text": "Return Policy",
+          "textAr": "سياسة الإرجاع",
+          "url": "/returns"
+        },
+        {
+          "text": "Track Order",
+          "textAr": "تتبع الطلب",
+          "url": "/track-order"
+        },
+        {
+          "text": "Help Center",
+          "textAr": "مركز المساعدة",
+          "url": "/help"
+        }
+      ]
+    },
+    {
+      "title": "Legal",
+      "titleAr": "قانوني",
+      "links": [
+        {
+          "text": "Privacy Policy",
+          "textAr": "سياسة الخصوصية",
+          "url": "/privacy"
+        },
+        {
+          "text": "Terms & Conditions",
+          "textAr": "الشروط والأحكام",
+          "url": "/terms"
+        },
+        {
+          "text": "Halal Certification",
+          "textAr": "شهادة الحلال",
+          "url": "/halal-certification"
+        }
+      ]
+    }
+  ],
+  "newsletter": {
+    "title": "Subscribe to Our Newsletter",
+    "titleAr": "اشترك في نشرتنا الإخبارية",
+    "description": "Get updates on new products, special offers, and cat care tips!",
+    "descriptionAr": "احصل على تحديثات حول المنتجات الجديدة والعروض الخاصة ونصائح رعاية القطط!",
+    "placeholder": "Enter your email",
+    "placeholderAr": "أدخل بريدك الإلكتروني",
+    "buttonText": "Subscribe",
+    "buttonTextAr": "اشترك",
+    "successMessage": "Thank you for subscribing!",
+    "successMessageAr": "شكرًا لك على الاشتراك!"
+  },
+  "paymentMethods": {
+    "title": "We Accept",
+    "titleAr": "نقبل",
+    "methods": [
+      {
+        "name": "Cash on Delivery",
+        "nameAr": "الدفع عند الاستلام",
+        "icon": "Banknote"
+      },
+      {
+        "name": "Visa",
+        "nameAr": "فيزا",
+        "icon": "CreditCard",
+        "comingSoon": true
+      },
+      {
+        "name": "Mastercard",
+        "nameAr": "ماستركارد",
+        "icon": "CreditCard",
+        "comingSoon": true
+      }
+    ]
+  },
+  "trustBadges": [
+    {
+      "icon": "Shield",
+      "text": "100% Halal",
+      "textAr": "100٪ حلال"
+    },
+    {
+      "icon": "Truck",
+      "text": "Free Delivery",
+      "textAr": "توصيل مجاني"
+    },
+    {
+      "icon": "Award",
+      "text": "Certified Quality",
+      "textAr": "جودة معتمدة"
+    },
+    {
+      "icon": "HeartHandshake",
+      "text": "30-Day Guarantee",
+      "textAr": "ضمان 30 يوم"
+    }
+  ],
+  "copyright": {
+    "text": "© {year} Hurayra Pet Foods UAE. All rights reserved.",
+    "textAr": "© {year} Hurayra Pet Foods UAE. جميع الحقوق محفوظة.",
+    "madeWith": "Made with",
+    "madeWithAr": "صُنع بـ",
+    "love": "love",
+    "loveAr": "حب",
+    "in": "in",
+    "inAr": "في",
+    "location": "UAE",
+    "locationAr": "الإمارات"
+  },
+  "socialMedia": [
+    {
+      "name": "Facebook",
+      "url": "https://facebook.com/hurayrapetfoods",
+      "icon": "Facebook"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com/hurayrapetfoods",
+      "icon": "Instagram"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/hurayrapetfoods",
+      "icon": "Twitter"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://tiktok.com/@hurayrapetfoods",
+      "icon": "Music"
+    }
+  ]
+}

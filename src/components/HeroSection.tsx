@@ -1,4 +1,5 @@
 import { Star, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import catEating from "@/assets/cat-eating.png";
 import productBag from "@/assets/product-bag.png";
@@ -39,20 +40,24 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-coral text-lg px-8 py-6 rounded-full font-bold"
-              >
-                Shop Now
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-6 rounded-full font-bold bg-transparent"
-              >
-                Learn More
-              </Button>
+              <Link to="/products">
+                <Button 
+                  size="lg" 
+                  className="bg-accent hover:bg-accent/90 text-white shadow-lg text-lg px-8 py-6 rounded-full font-bold"
+                >
+                  Shop Now
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-2 border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 rounded-full font-bold bg-transparent"
+                >
+                  Learn More
+                </Button>
+              </Link>
             </div>
 
             {/* Trust Badges */}
@@ -81,7 +86,7 @@ const HeroSection = () => {
               {/* Product Bag Overlay */}
               <img
                 src={productBag}
-                alt="Purrfect Meals product bag"
+                alt="Hurayra Pet Foods product bag"
                 className="absolute -right-8 md:right-0 bottom-0 w-40 md:w-56 animate-float-delayed drop-shadow-2xl"
               />
 

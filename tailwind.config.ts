@@ -19,23 +19,39 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Nunito', 'sans-serif'],
-        display: ['Playfair Display', 'serif'],
+        sans: ['Montserrat', 'Nunito', 'sans-serif'],
+        causten: ['Causten Round', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        display: ['Causten Round', 'Playfair Display', 'serif'],
+        cairo: ['Cairo', 'sans-serif'],
+        arabic: ['Cairo', 'sans-serif'],
       },
       colors: {
+        // Hurayra Brand Colors
+        primary: {
+          DEFAULT: "#008080",
+          foreground: "#FFFFFF",
+        },
+        secondary: {
+          DEFAULT: "#D46681",
+          foreground: "#FFFFFF",
+        },
+        accent: {
+          DEFAULT: "#C8A029",
+          foreground: "#FFFFFF",
+        },
+        pink: "#D46681",
+        teal: {
+          DEFAULT: "#008080",
+          light: "#60BABF",
+          dark: "#035F5D",
+        },
+        // Keep existing shadcn colors for compatibility
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -44,10 +60,6 @@ export default {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -55,11 +67,6 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        },
-        teal: {
-          DEFAULT: "hsl(var(--teal))",
-          dark: "hsl(var(--teal-dark))",
-          light: "hsl(var(--teal-light))",
         },
         coral: {
           DEFAULT: "hsl(var(--coral))",

@@ -6,21 +6,21 @@ const testimonials = [
     avatar: "SM",
     cat: "Luna (Persian)",
     rating: 5,
-    text: "My picky Luna finally loves her food! She's been eating Purrfect Meals for 3 months now and her coat has never looked better. The subscription is so convenient!",
+    text: "My picky Luna finally loves her food! She's been eating Hurayra for 3 months now and her coat has never looked better. The halal quality is amazing!",
   },
   {
     name: "Michael Chen",
     avatar: "MC",
     cat: "Whiskers (Tabby)",
     rating: 5,
-    text: "After trying countless brands, Purrfect Meals is the only one Whiskers actually finishes. The natural ingredients really make a difference. Highly recommend!",
+    text: "After trying countless brands, Hurayra is the only one Whiskers actually finishes. The natural ingredients really make a difference. Highly recommend!",
   },
   {
     name: "Emily Rodriguez",
     avatar: "ER",
     cat: "Oliver (Maine Coon)",
     rating: 5,
-    text: "Oliver is a big boy who needs quality nutrition. Since switching to Purrfect Meals, his energy levels are up and his digestive issues are gone. Thank you!",
+    text: "Oliver is a big boy who needs quality nutrition. Since switching to Hurayra, his energy levels are up and his digestive issues are gone. Thank you!",
   },
 ];
 
