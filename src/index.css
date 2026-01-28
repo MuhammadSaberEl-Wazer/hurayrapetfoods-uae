@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import './styles/fonts.css';
 
 @tailwind base;
 @tailwind components;
@@ -6,40 +7,54 @@
 
 @layer base {
   :root {
-    --background: 40 33% 98%;
-    --foreground: 200 25% 15%;
+    /* Hurayra Brand Colors */
+    --color-primary: #008080;
+    --color-secondary: #D46681;
+    --color-accent: #C8A029;
+    --color-pink: #D46681;
+    --color-teal-light: #60BABF;
+    --color-teal-dark: #035F5D;
+    --color-white: #FFFFFF;
+    --color-gray: #EFEFEF;
+    --color-gray-light: #F0F5FA;
+    --color-gray-dark: #334155;
+    --color-black: #000002;
+    
+    /* Shadcn UI Variables (updated to match Hurayra colors) */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 200 25% 15%;
+    --card-foreground: 215 25% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 200 25% 15%;
+    --popover-foreground: 215 25% 20%;
 
-    --primary: 174 62% 47%;
+    --primary: 180 100% 25%;  /* #008080 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 45% 95%;
-    --secondary-foreground: 200 25% 15%;
+    --secondary: 345 58% 63%;  /* #D46681 */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 40 20% 94%;
-    --muted-foreground: 200 10% 45%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 24 95% 60%;
+    --accent: 43 79% 47%;  /* #C8A029 */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 40 20% 88%;
-    --input: 40 20% 88%;
-    --ring: 174 62% 47%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 180 100% 25%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
     /* Custom tokens */
-    --teal: 174 62% 47%;
-    --teal-dark: 174 65% 35%;
-    --teal-light: 174 50% 92%;
+    --teal: 180 100% 25%;
+    --teal-dark: 180 97% 18%;
+    --teal-light: 180 50% 56%;
     --coral: 24 95% 60%;
     --coral-light: 24 100% 95%;
     --cream: 40 33% 96%;
@@ -163,6 +178,16 @@
   
   .animate-bounce-gentle {
     animation: bounceGentle 2s ease-in-out infinite;
+  }
+
+  /* Arabic Text Utilities */
+  .text-ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+  }
+
+  .text-arabic {
+    font-family: 'Cairo', sans-serif;
   }
   
   @keyframes float {

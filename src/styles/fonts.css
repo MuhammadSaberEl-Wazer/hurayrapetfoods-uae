@@ -1,0 +1,74 @@
+/**
+ * Custom Fonts - Hurayra Pet Foods
+ * Causten Round (Primary) + Montserrat (Secondary)
+ */
+
+/* Google Fonts - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/* 
+ * Causten Round Font
+ * TODO: Add Causten Round font files to public/fonts/
+ * For now, falling back to system sans-serif
+ */
+
+/* Font Face Declarations - Uncomment when Causten Round files are added */
+/*
+@font-face {
+  font-family: 'Causten Round';
+  src: url('/fonts/CaustenRound-Regular.woff2') format('woff2'),
+       url('/fonts/CaustenRound-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten Round';
+  src: url('/fonts/CaustenRound-Medium.woff2') format('woff2'),
+       url('/fonts/CaustenRound-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten Round';
+  src: url('/fonts/CaustenRound-Bold.woff2') format('woff2'),
+       url('/fonts/CaustenRound-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+/* Font Variables */
+:root {
+  --font-causten: 'Causten Round', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --font-montserrat: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-body: var(--font-montserrat);
+  --font-heading: var(--font-causten);
+}
+
+/* Base Font Styles */
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Utility Classes */
+.font-causten {
+  font-family: var(--font-causten);
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}

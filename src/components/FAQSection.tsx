@@ -7,11 +7,11 @@ import {
 
 const faqs = [
   {
-    question: "What ingredients are in Purrfect Meals cat food?",
+    question: "What ingredients are in Hurayra cat food?",
     answer: "Our recipes feature real meat as the first ingredient, including premium chicken, salmon, and tuna. We use wholesome vegetables, essential vitamins, and minerals. All our products are free from artificial preservatives, colors, and flavors.",
   },
   {
-    question: "Is Purrfect Meals suitable for cats with food sensitivities?",
+    question: "Is Hurayra suitable for cats with food sensitivities?",
     answer: "Yes! We offer grain-free options and recipes designed for cats with sensitive stomachs. Our formulas are developed with veterinary nutritionists to be easily digestible while providing complete nutrition.",
   },
   {
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "What if my cat doesn't like the food?",
-    answer: "We offer a 30-day satisfaction guarantee. If your cat doesn't love Purrfect Meals, we'll refund your purchase - no questions asked. We're confident in our recipes, but we understand every cat has unique preferences.",
+    answer: "We offer a 30-day satisfaction guarantee. If your cat doesn't love Hurayra, we'll refund your purchase - no questions asked. We're confident in our halal recipes, but we understand every cat has unique preferences.",
   },
 ];
 

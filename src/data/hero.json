@@ -1,0 +1,47 @@
+{
+  "mainHeadline": "For the Lives that Make Ours Whole",
+  "mainHeadlineAr": "من أجل الأرواح التي تجعل حياتنا كاملة",
+  "subHeadline": "Premium Halal Cat Food",
+  "subHeadlineAr": "طعام قطط حلال فاخر",
+  "description": "100% Halal cat food made with trusted ingredients to support your cat's health, nutrition, and Islamic values.",
+  "descriptionAr": "طعام قطط حلال 100٪ مصنوع من مكونات موثوقة لدعم صحة قطتك وتغذيتها والقيم الإسلامية.",
+  "trustBadge": "Trusted by 10,000+ cat parents",
+  "trustBadgeAr": "موثوق من قبل أكثر من 10,000 من أصحاب القطط",
+  "cta": {
+    "primary": {
+      "text": "Shop Now",
+      "textAr": "تسوق الآن",
+      "link": "/products"
+    },
+    "secondary": {
+      "text": "Learn More",
+      "textAr": "اعرف المزيد",
+      "link": "/about"
+    }
+  },
+  "badges": [
+    {
+      "icon": "Leaf",
+      "text": "100% Natural",
+      "textAr": "100٪ طبيعي"
+    },
+    {
+      "icon": "Shield",
+      "text": "Halal Certified",
+      "textAr": "معتمد حلال"
+    },
+    {
+      "icon": "Award",
+      "text": "Vet Approved",
+      "textAr": "معتمد من الطبيب البيطري"
+    }
+  ],
+  "rating": {
+    "stars": 5,
+    "count": 2847
+  },
+  "images": {
+    "catEating": "/images/hero/cat-eating.png",
+    "productBag": "/images/hero/product-bag.png"
+  }
+}
