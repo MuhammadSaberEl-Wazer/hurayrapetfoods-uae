@@ -1,4 +1,5 @@
 import type { Product } from '@/lib/types'
+import { productImagesChicken, productImagesTuna } from '@/data/productImages'
 
 /**
  * Products Data - Hurayra Pet Foods UAE
@@ -72,12 +73,7 @@ export const products: Product[] = [
       'Natural Fiber',
       'Rosemary Extract (natural preservative)'
     ],
-    images: [
-      'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=800&q=80',
-      'https://images.unsplash.com/photo-1548681528-6a5c45b66b42?w=800&q=80',
-      'https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=800&q=80',
-      'https://images.unsplash.com/photo-1573865526739-10c1dd7aa059?w=800&q=80'
-    ],
+    images: productImagesChicken,
     inStock: true,
     featured: true,
     createdAt: '2025-01-15T00:00:00.000Z',
@@ -150,12 +146,7 @@ export const products: Product[] = [
       'Natural Fiber',
       'Rosemary Extract (natural preservative)'
     ],
-    images: [
-      'https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=1200&q=90&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?w=1200&q=90&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1615789591457-74a63395c990?w=1200&q=90&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?w=1200&q=90&fit=crop&auto=format'
-    ],
+    images: productImagesTuna,
     inStock: true,
     featured: true,
     createdAt: '2025-01-15T00:00:00.000Z',

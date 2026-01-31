@@ -1,12 +1,20 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User, LogIn, UserPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CartIcon } from "@/components/CartIcon";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useAuthStore } from "@/store/authStore";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const user = useAuthStore((s) => s.user);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -54,13 +62,44 @@ const Header = () => {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <CartIcon />
             <Link to="/products">
               <Button className="hidden md:flex bg-primary hover:bg-primary/90 text-white">
                 Shop Now
               </Button>
             </Link>
+            {user ? (
+              <Link to="/account">
+                <Button variant="outline" size="sm" className="hidden md:inline-flex gap-2">
+                  <User className="w-4 h-4" />
+                  <span className="max-w-[120px] truncate">{user.name}</span>
+                </Button>
+              </Link>
+            ) : (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon" className="hidden sm:flex">
+                    <User className="w-5 h-5" />
+                    <span className="sr-only">Account</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  <DropdownMenuItem asChild>
+                    <Link to="/login" className="flex items-center gap-2 cursor-pointer">
+                      <LogIn className="w-4 h-4" />
+                      Sign in
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/signup" className="flex items-center gap-2 cursor-pointer">
+                      <UserPlus className="w-4 h-4" />
+                      Sign up
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )}
 
             {/* Mobile Menu Button */}
             <Button
@@ -91,7 +130,28 @@ const Header = () => {
                 {link.name}
               </Link>
             ))}
-            <Link to="/products">
+            {user ? (
+              <Link to="/account" onClick={() => setIsMenuOpen(false)}>
+                <div className="flex items-center gap-2 py-3 font-medium text-gray-600 hover:text-primary">
+                  <User className="w-5 h-5" />
+                  My account
+                </div>
+              </Link>
+            ) : (
+              <div className="py-3 border-t border-gray-100 mt-1">
+                <div className="flex items-center gap-2 text-sm font-semibold text-gray-500 mb-2">
+                  <User className="w-4 h-4" />
+                  Account
+                </div>
+                <Link to="/login" onClick={() => setIsMenuOpen(false)} className="block py-2 pl-6 text-gray-600 hover:text-primary">
+                  Sign in
+                </Link>
+                <Link to="/signup" onClick={() => setIsMenuOpen(false)} className="block py-2 pl-6 text-gray-600 hover:text-primary">
+                  Sign up
+                </Link>
+              </div>
+            )}
+            <Link to="/products" onClick={() => setIsMenuOpen(false)}>
               <Button className="w-full mt-4 bg-primary hover:bg-primary/90 text-white">
                 Shop Now
               </Button>

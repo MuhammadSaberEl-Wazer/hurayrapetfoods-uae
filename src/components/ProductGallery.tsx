@@ -2,24 +2,36 @@ import { useState } from 'react'
 import { ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
+const DEFAULT_PLACEHOLDER = 'https://placehold.co/800x800/008080/FFFFFF?text=Hurayra+Pet+Foods'
+
 interface ProductGalleryProps {
   images: string[]
   productName: string
 }
 
-export const ProductGallery = ({ images, productName }: ProductGalleryProps) => {
+export const ProductGallery = ({ images: rawImages, productName }: ProductGalleryProps) => {
   const [selectedImage, setSelectedImage] = useState(0)
+  const [failedUrls, setFailedUrls] = useState<Set<string>>(new Set())
+
+  const images = rawImages?.length
+    ? rawImages
+    : [DEFAULT_PLACEHOLDER]
+  const displayImages = images.map((url) =>
+    failedUrls.has(url) ? DEFAULT_PLACEHOLDER : url
+  )
 
   const nextImage = () => {
-    setSelectedImage((prev) => (prev + 1) % images.length)
+    setSelectedImage((prev) => (prev + 1) % displayImages.length)
   }
 
   const prevImage = () => {
-    setSelectedImage((prev) => (prev - 1 + images.length) % images.length)
+    setSelectedImage((prev) => (prev - 1 + displayImages.length) % displayImages.length)
   }
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    e.currentTarget.src = 'https://placehold.co/800x800/008080/FFFFFF?text=Hurayra+Cat+Food'
+    const src = e.currentTarget.src
+    setFailedUrls((prev) => new Set(prev).add(src))
+    e.currentTarget.src = DEFAULT_PLACEHOLDER
   }
 
   return (
@@ -27,14 +39,14 @@ export const ProductGallery = ({ images, productName }: ProductGalleryProps) => 
       {/* Main Image */}
       <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden group">
         <img
-          src={images[selectedImage]}
+          src={displayImages[selectedImage]}
           alt={`${productName} - Image ${selectedImage + 1}`}
           className="w-full h-full object-cover"
           onError={handleImageError}
         />
         
         {/* Navigation Arrows */}
-        {images.length > 1 && (
+        {displayImages.length > 1 && (
           <>
             <Button
               variant="outline"
@@ -61,17 +73,17 @@ export const ProductGallery = ({ images, productName }: ProductGalleryProps) => 
         </div>
 
         {/* Image Counter */}
-        {images.length > 1 && (
+        {displayImages.length > 1 && (
           <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-            {selectedImage + 1} / {images.length}
+            {selectedImage + 1} / {displayImages.length}
           </div>
         )}
       </div>
 
       {/* Thumbnails */}
-      {images.length > 1 && (
+      {displayImages.length > 1 && (
         <div className="grid grid-cols-4 gap-3">
-          {images.map((image, idx) => (
+          {displayImages.map((image, idx) => (
             <button
               key={idx}
               onClick={() => setSelectedImage(idx)}
