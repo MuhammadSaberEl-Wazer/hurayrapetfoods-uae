@@ -4,7 +4,10 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { useCartStore } from '@/store/cartStore'
+import { useOrdersStore } from '@/store/ordersStore'
+import { useAuthStore } from '@/store/authStore'
 import { EMIRATES } from '@/lib/constants'
+import type { Order, OrderItem } from '@/lib/types'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -32,6 +35,7 @@ type CheckoutFormData = z.infer<typeof checkoutSchema>
 export default function Checkout() {
   const navigate = useNavigate()
   const { items, getTotalPrice, clearCart } = useCartStore()
+  const user = useAuthStore((s) => s.user)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [orderPlaced, setOrderPlaced] = useState(false)
 
@@ -44,6 +48,8 @@ export default function Checkout() {
   } = useForm<CheckoutFormData>({
     resolver: zodResolver(checkoutSchema),
     defaultValues: {
+      fullName: user?.name ?? '',
+      email: user?.email ?? '',
       paymentMethod: 'cod'
     }
   })
@@ -51,6 +57,7 @@ export default function Checkout() {
   const totalPrice = getTotalPrice()
   const shippingCost = totalPrice >= 100 ? 0 : 20
   const finalTotal = totalPrice + shippingCost
+  const addOrder = useOrdersStore((s) => s.addOrder)
 
   // Redirect if cart is empty
   if (items.length === 0 && !orderPlaced) {
@@ -94,6 +101,9 @@ export default function Checkout() {
                 <Link to="/products">Continue Shopping</Link>
               </Button>
               <Button asChild variant="outline" className="w-full">
+                <Link to="/account">View in My Account</Link>
+              </Button>
+              <Button asChild variant="outline" className="w-full">
                 <Link to="/">Back to Home</Link>
               </Button>
             </div>
@@ -106,18 +116,47 @@ export default function Checkout() {
   const onSubmit = async (data: CheckoutFormData) => {
     setIsSubmitting(true)
 
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500))
 
-    console.log('Order Data:', {
-      customer: data,
-      items,
-      totalPrice,
-      shippingCost,
-      finalTotal
-    })
+    const [firstName, ...rest] = data.fullName.trim().split(/\s+/)
+    const lastName = rest.join(' ') || firstName
+    const orderItems: OrderItem[] = items.map((item) => ({
+      productId: item.product.id,
+      productName: item.product.name,
+      size: item.selectedSize.size,
+      sku: item.selectedSize.sku,
+      quantity: item.quantity,
+      price: item.selectedSize.price,
+      subtotal: item.total
+    }))
 
-    // Clear cart and show success
+    const order: Order = {
+      id: `ord-${Date.now()}`,
+      orderNumber: `ORD-${Date.now().toString().slice(-8)}`,
+      customerId: user?.id,
+      customerInfo: {
+        firstName,
+        lastName,
+        email: data.email,
+        phone: data.phone
+      },
+      deliveryAddress: {
+        address: data.address,
+        city: data.city,
+        emirate: data.emirate
+      },
+      items: orderItems,
+      subtotal: totalPrice,
+      shipping: shippingCost,
+      total: finalTotal,
+      status: 'pending',
+      paymentMethod: data.paymentMethod === 'cod' ? 'cash-on-delivery' : 'card',
+      notes: data.notes,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    }
+
+    addOrder(order)
     clearCart()
     setOrderPlaced(true)
     setIsSubmitting(false)

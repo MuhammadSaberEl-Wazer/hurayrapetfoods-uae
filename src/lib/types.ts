@@ -42,6 +42,15 @@ export interface NutritionalInfo {
   calories?: string
 }
 
+// Auth / User Types (for Supabase later)
+export interface User {
+  id: string
+  email: string
+  name: string
+  avatar?: string
+  provider?: 'email' | 'google'
+}
+
 // Cart Types
 export interface CartItem {
   id: string
