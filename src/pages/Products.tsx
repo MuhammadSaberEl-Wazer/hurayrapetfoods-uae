@@ -1,13 +1,38 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams, useLocation } from 'react-router-dom'
 import { ProductCard } from '@/components/ProductCard'
 import { products } from '@/data/products'
 import type { ProductType } from '@/lib/types'
 import { Button } from '@/components/ui/button'
 import { Filter } from 'lucide-react'
 
+const SCROLL_OFFSET = 220
+
 export default function Products() {
-  const [filter, setFilter] = useState<'all' | ProductType>('all')
+  const [searchParams, setSearchParams] = useSearchParams()
+  const location = useLocation()
+  const typeParam = searchParams.get('type')
+  const [filter, setFilter] = useState<'all' | ProductType>(() =>
+    typeParam === 'chicken' || typeParam === 'tuna' ? typeParam : 'all'
+  )
   const [sortBy, setSortBy] = useState<'featured' | 'price-low' | 'price-high' | 'name'>('featured')
+
+  useEffect(() => {
+    const t = searchParams.get('type')
+    setFilter(t === 'chicken' || t === 'tuna' ? t : 'all')
+    const shouldScroll = location.hash === '#top' || t === 'chicken' || t === 'tuna'
+    if (shouldScroll) {
+      window.scrollTo({ top: SCROLL_OFFSET, behavior: 'smooth' })
+    }
+  }, [searchParams, location.hash])
+
+  const setFilterAndUrl = (value: 'all' | ProductType) => {
+    setFilter(value)
+    const next = new URLSearchParams(searchParams)
+    if (value === 'all') next.delete('type')
+    else next.set('type', value)
+    setSearchParams(next, { replace: true })
+  }
 
   // Filter products
   const filteredProducts = products.filter(p => 
@@ -30,7 +55,7 @@ export default function Products() {
   })
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div id="top" className="min-h-screen bg-gray-50 scroll-mt-0">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
         <div className="container mx-auto px-4">
@@ -60,21 +85,21 @@ export default function Products() {
                 <span className="font-semibold text-gray-700 shrink-0">Filter:</span>
                 <div className="flex flex-wrap gap-2 min-w-0">
                   <Button
-                    onClick={() => setFilter('all')}
+                    onClick={() => setFilterAndUrl('all')}
                     variant={filter === 'all' ? 'default' : 'outline'}
                     className={filter === 'all' ? 'bg-primary hover:bg-primary/90' : ''}
                   >
                     All Products ({products.length})
                   </Button>
                   <Button
-                    onClick={() => setFilter('chicken')}
+                    onClick={() => setFilterAndUrl('chicken')}
                     variant={filter === 'chicken' ? 'default' : 'outline'}
                     className={filter === 'chicken' ? 'bg-primary hover:bg-primary/90' : ''}
                   >
                     🍗 Chicken
                   </Button>
                   <Button
-                    onClick={() => setFilter('tuna')}
+                    onClick={() => setFilterAndUrl('tuna')}
                     variant={filter === 'tuna' ? 'default' : 'outline'}
                     className={filter === 'tuna' ? 'bg-primary hover:bg-primary/90' : ''}
                   >
