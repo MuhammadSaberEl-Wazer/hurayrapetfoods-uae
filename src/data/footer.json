@@ -33,6 +33,11 @@
           "url": "/contact"
         },
         {
+          "text": "Blog",
+          "textAr": "المدونة",
+          "url": "/blog"
+        },
+        {
           "text": "FAQ",
           "textAr": "الأسئلة الشائعة",
           "url": "/#faq"
@@ -46,27 +51,17 @@
         {
           "text": "All Products",
           "textAr": "جميع المنتجات",
-          "url": "/products"
+          "url": "/products#top"
         },
         {
           "text": "Chicken Formula",
           "textAr": "تركيبة الدجاج",
-          "url": "/products?type=chicken"
+          "url": "/products?type=chicken#top"
         },
         {
           "text": "Tuna Formula",
           "textAr": "تركيبة التونة",
-          "url": "/products?type=tuna"
-        },
-        {
-          "text": "For Kittens",
-          "textAr": "للقطط الصغيرة",
-          "url": "/products?category=kitten"
-        },
-        {
-          "text": "For Adults",
-          "textAr": "للقطط البالغة",
-          "url": "/products?category=adult"
+          "url": "/products?type=tuna#top"
         }
       ]
     },
@@ -83,16 +78,6 @@
           "text": "Return Policy",
           "textAr": "سياسة الإرجاع",
           "url": "/returns"
-        },
-        {
-          "text": "Track Order",
-          "textAr": "تتبع الطلب",
-          "url": "/track-order"
-        },
-        {
-          "text": "Help Center",
-          "textAr": "مركز المساعدة",
-          "url": "/help"
         }
       ]
     },
@@ -109,11 +94,6 @@
           "text": "Terms & Conditions",
           "textAr": "الشروط والأحكام",
           "url": "/terms"
-        },
-        {
-          "text": "Halal Certification",
-          "textAr": "شهادة الحلال",
-          "url": "/halal-certification"
         }
       ]
     }
