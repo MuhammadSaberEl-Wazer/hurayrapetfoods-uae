@@ -31,15 +31,6 @@
       "value": "Dubai, United Arab Emirates",
       "valueAr": "دبي، الإمارات العربية المتحدة",
       "icon": "MapPin"
-    },
-    "workingHours": {
-      "label": "Working Hours",
-      "labelAr": "ساعات العمل",
-      "weekdays": "Sunday - Thursday: 9:00 AM - 6:00 PM",
-      "weekdaysAr": "الأحد - الخميس: 9:00 صباحًا - 6:00 مساءً",
-      "weekend": "Friday - Saturday: Closed",
-      "weekendAr": "الجمعة - السبت: مغلق",
-      "icon": "Clock"
     }
   },
   "socialMedia": {

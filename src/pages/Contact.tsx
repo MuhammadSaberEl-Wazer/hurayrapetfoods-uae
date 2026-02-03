@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import { Mail, Phone, MapPin, Clock, Send, MessageSquare } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -131,26 +131,6 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold mb-1">Address</h3>
                       <p className="text-gray-600">{contactData.contactInfo.address.value}</p>
-                    </div>
-                  </div>
-
-                  {/* Working Hours */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2">Working Hours</h3>
-                      <div className="text-sm space-y-1">
-                        <p className="text-gray-600">
-                          <span className="font-medium">Sunday - Thursday:</span>{' '}
-                          9:00 AM - 6:00 PM
-                        </p>
-                        <p className="text-gray-600">
-                          <span className="font-medium">Friday - Saturday:</span>{' '}
-                          Closed
-                        </p>
-                      </div>
                     </div>
                   </div>
                 </div>
