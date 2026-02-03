@@ -28,7 +28,7 @@ const NutritionSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground mb-4">
             The Right Nutrition for a <span className="text-primary">Better Life</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -59,7 +59,7 @@ const NutritionSection = () => {
                   <fact.icon className="w-7 h-7" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                  <h3 className="font-sans text-xl font-bold text-foreground mb-2">
                     {fact.title}
                   </h3>
                   <p className="text-muted-foreground">

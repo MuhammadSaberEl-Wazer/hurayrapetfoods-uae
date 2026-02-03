@@ -10,7 +10,7 @@ const ProductsSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header — like "The Good Stuff We Offer" */}
         <div className="text-center mb-12">
-          <h2 className="font-causten text-3xl md:text-4xl font-bold text-foreground mb-3">
+          <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground mb-3">
             The Good Stuff We Offer
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -37,7 +37,7 @@ const ProductsSection = () => {
 
         {/* Note — like reference footer text */}
         <p className="text-center text-sm text-muted-foreground mt-8 max-w-2xl mx-auto">
-          Hurayra Pet Foods produces Halal-certified dry cat food. We do not sell wet food or pouch products.
+          HurayraPetFood.ae produces Halal-certified dry cat food. We do not sell wet food or pouch products.
         </p>
       </div>
     </section>

@@ -33,7 +33,7 @@ export default function AdminLogin() {
       // Success
       toast({
         title: "Login Successful!",
-        description: "Welcome to Hurayra Admin Panel",
+        description: "Welcome to HurayraPetFood.ae Admin Panel",
         duration: 3000
       })
 
@@ -65,7 +65,7 @@ export default function AdminLogin() {
             <span className="text-white font-bold text-2xl">🐱</span>
           </div>
           <h1 className="text-3xl font-causten font-bold text-gray-900 mb-2">
-            Hurayra Admin
+            HurayraPetFood.ae Admin
           </h1>
           <p className="text-gray-600">Sign in to access the control panel</p>
         </div>
@@ -137,7 +137,7 @@ export default function AdminLogin() {
 
         {/* Footer */}
         <p className="text-center text-sm text-gray-500 mt-6">
-          © 2026 Hurayra Pet Foods. All rights reserved.
+          © 2026 HurayraPetFood.ae. All rights reserved.
         </p>
       </div>
     </div>

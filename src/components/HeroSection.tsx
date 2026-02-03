@@ -28,10 +28,12 @@ const HeroSection = () => {
               </span>
             </div>
 
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               For the Lives that
               <br />
-              <span className="text-accent">Make Ours Whole</span>
+              <span className="text-white">
+                Make Ours Whole
+              </span>
             </h1>
 
             <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-lg">
@@ -86,7 +88,7 @@ const HeroSection = () => {
               {/* Product Bag Overlay */}
               <img
                 src={productBag}
-                alt="Hurayra Pet Foods product bag"
+                alt="HurayraPetFood.ae product bag"
                 className="absolute -right-8 md:right-0 bottom-0 w-40 md:w-56 animate-float-delayed drop-shadow-2xl"
               />
 

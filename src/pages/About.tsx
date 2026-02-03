@@ -17,7 +17,7 @@ export default function About() {
       <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-causten font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-sans font-bold mb-4">
               {aboutData.hero.title}
             </h1>
             <p className="text-xl text-white/90 mb-2 font-cairo">
@@ -31,7 +31,7 @@ export default function About() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-causten font-bold mb-8 text-center">Our Story</h2>
+            <h2 className="text-3xl font-sans font-bold mb-8 text-center">Our Story</h2>
             <div className="prose prose-lg max-w-none space-y-6">
               {aboutData.story.content.map((para, idx) => (
                 <p key={idx} className="text-gray-700 leading-relaxed">
@@ -52,7 +52,7 @@ export default function About() {
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
                 <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-causten font-bold mb-4">Our Mission</h3>
+              <h3 className="text-2xl font-sans font-bold mb-4">Our Mission</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
                 {aboutData.mission.description}
               </p>
@@ -66,7 +66,7 @@ export default function About() {
               <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-6">
                 <Lightbulb className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-causten font-bold mb-4">Our Vision</h3>
+              <h3 className="text-2xl font-sans font-bold mb-4">Our Vision</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
                 {aboutData.vision.description}
               </p>
@@ -81,7 +81,7 @@ export default function About() {
       {/* Core Values */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-causten font-bold mb-12 text-center">Our Core Values</h2>
+          <h2 className="text-3xl font-sans font-bold mb-12 text-center">Our Core Values</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {aboutData.values.map((value, idx) => {
               const Icon = iconMap[value.icon] || CheckCircle
@@ -105,7 +105,7 @@ export default function About() {
       {/* Why Choose Us */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-causten font-bold mb-12 text-center">Why Choose Hurayra?</h2>
+          <h2 className="text-3xl font-sans font-bold mb-12 text-center">Why Choose HurayraPetFood.ae?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {aboutData.whyChooseUs.map((reason, idx) => (
               <div key={idx} className="text-center">
@@ -147,7 +147,7 @@ export default function About() {
       <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-causten font-bold mb-4">
-            Join the Hurayra Family Today
+            Join the HurayraPetFood.ae Family Today
           </h2>
           <p className="text-xl mb-8 text-white/90">
             Give your cat the nutrition they deserve with our premium halal products

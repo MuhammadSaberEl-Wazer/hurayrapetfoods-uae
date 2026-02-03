@@ -14,7 +14,7 @@ const NewsletterSection = () => {
     if (email) {
       toast({
         title: "Welcome to the family! 🐱",
-        description: "You've successfully joined the Hurayra Pet Foods newsletter.",
+        description: "You've successfully joined the HurayraPetFood.ae newsletter.",
       });
       setEmail("");
     }
@@ -44,10 +44,10 @@ const NewsletterSection = () => {
               <span className="text-accent font-semibold text-sm">Join Our Family</span>
             </div>
 
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground mb-4">
               Join the
               <br />
-              <span className="text-primary">Hurayra Family</span>
+              <span className="text-primary">HurayraPetFood.ae Family</span>
             </h2>
 
             <p className="text-muted-foreground text-lg mb-8 max-w-lg mx-auto lg:mx-0">

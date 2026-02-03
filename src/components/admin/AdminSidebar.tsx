@@ -81,7 +81,7 @@ export default function AdminSidebar() {
               <span className="text-white font-bold text-sm">🐱</span>
             </div>
             <div>
-              <h2 className="font-causten font-bold text-sm">Hurayra Admin</h2>
+              <h2 className="font-causten font-bold text-sm">HurayraPetFood.ae Admin</h2>
               <p className="text-xs text-gray-400">Control Panel</p>
             </div>
           </div>

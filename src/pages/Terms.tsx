@@ -27,7 +27,7 @@ export default function Terms() {
           <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-8 md:p-12">
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-700 leading-relaxed mb-8">
-                Welcome to Hurayra Pet Foods. These Terms and Conditions govern your use of our website and the purchase of products from us. By accessing our website and placing an order, you agree to be bound by these terms.
+                Welcome to HurayraPetFood.ae. These Terms and Conditions govern your use of our website and the purchase of products from us. By accessing our website and placing an order, you agree to be bound by these terms.
               </p>
 
               {/* General Terms */}
@@ -171,7 +171,7 @@ export default function Terms() {
               <div className="mb-10">
                 <h2 className="text-2xl font-causten font-bold mb-4">Limitation of Liability</h2>
                 <p className="text-gray-700">
-                  To the maximum extent permitted by law, Hurayra Pet Foods shall not be liable for:
+                  To the maximum extent permitted by law, HurayraPetFood.ae shall not be liable for:
                 </p>
                 <ul className="text-gray-700 space-y-2">
                   <li>Any indirect, incidental, or consequential damages</li>
@@ -186,7 +186,7 @@ export default function Terms() {
               <div className="mb-10">
                 <h2 className="text-2xl font-causten font-bold mb-4">Intellectual Property</h2>
                 <ul className="text-gray-700 space-y-2">
-                  <li>All content on this website is owned by Hurayra Pet Foods</li>
+                  <li>All content on this website is owned by HurayraPetFood.ae</li>
                   <li>You may not reproduce, distribute, or use our content without permission</li>
                   <li>Trademarks and logos are protected</li>
                   <li>Product images and descriptions are copyrighted</li>

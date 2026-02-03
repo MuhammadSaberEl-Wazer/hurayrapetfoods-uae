@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
           <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-8 md:p-12">
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-700 leading-relaxed mb-8">
-                At Hurayra Pet Foods, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or make a purchase.
+                At HurayraPetFood.ae, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or make a purchase.
               </p>
 
               {/* Information We Collect */}

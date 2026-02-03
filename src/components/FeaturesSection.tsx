@@ -50,11 +50,11 @@ const FeaturesSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground mb-4">
             The Good Stuff We Offer
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Hurayra Pet Foods is made with the highest quality halal ingredients to keep your cat healthy and happy
+            HurayraPetFood.ae is made with the highest quality halal ingredients to keep your cat healthy and happy
           </p>
         </div>
 
@@ -68,7 +68,7 @@ const FeaturesSection = () => {
               <div className="w-14 h-14 rounded-xl bg-teal-light flex items-center justify-center mb-4">
                 <feature.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="font-display text-xl font-bold text-foreground mb-2">
+              <h3 className="font-sans text-xl font-bold text-foreground mb-2">
                 {feature.title}
               </h3>
               <p className="text-muted-foreground">

@@ -23,7 +23,7 @@ const SubscriptionSection = () => {
             <span className="inline-block px-4 py-1 bg-accent rounded-full text-accent-foreground text-sm font-bold mb-6">
               SAVE BIG
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="font-sans text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Subscription Made
               <br />
               <span className="text-accent">Easy</span>

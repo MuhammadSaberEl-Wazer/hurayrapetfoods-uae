@@ -1,10 +1,10 @@
 /**
  * Application Constants
- * Hurayra Pet Foods UAE
+ * HurayraPetFood.ae — UAE
  */
 
 // Site Information
-export const SITE_NAME = 'Hurayra Pet Foods UAE'
+export const SITE_NAME = 'HurayraPetFood.ae'
 export const SITE_TAGLINE = '100% Halal Cat Food'
 export const SITE_DESCRIPTION = 'Premium halal cat food made with trusted ingredients to support your cat\'s health, nutrition, and Islamic values.'
 

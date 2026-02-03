@@ -31,17 +31,16 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-md">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-primary backdrop-blur-md shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-white font-bold text-lg">🐱</span>
-            </div>
-            <span className="font-causten text-xl font-bold text-gray-900">
-              Hurayra <span className="text-primary">Pet Foods</span>
-            </span>
+          {/* Logo — white SVG on primary background */}
+          <Link to="/" className="flex items-center shrink-0">
+            <img
+              src="/logos/main-logo.svg"
+              alt="HurayraPetFood.ae"
+              className="h-9 w-auto md:h-10"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -52,8 +51,8 @@ const Header = () => {
                 to={link.href}
                 className={`font-medium transition-colors duration-200 ${
                   isActive(link.href)
-                    ? "text-primary font-semibold"
-                    : "text-gray-600 hover:text-primary"
+                    ? "text-white font-semibold"
+                    : "text-white/90 hover:text-white"
                 }`}
               >
                 {link.name}
@@ -63,15 +62,15 @@ const Header = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <CartIcon />
+            <CartIcon variant="light" />
             <Link to="/products">
-              <Button className="hidden md:flex bg-primary hover:bg-primary/90 text-white">
+              <Button className="hidden md:flex bg-white hover:bg-white/90 text-primary font-semibold">
                 Shop Now
               </Button>
             </Link>
             {user ? (
               <Link to="/account">
-                <Button variant="outline" size="sm" className="hidden md:inline-flex gap-2">
+                <Button variant="outline" size="sm" className="hidden md:inline-flex gap-2 border-white text-white hover:bg-white/10 hover:text-white">
                   <User className="w-4 h-4" />
                   <span className="max-w-[120px] truncate">{user.name}</span>
                 </Button>
@@ -79,7 +78,7 @@ const Header = () => {
             ) : (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon" className="hidden sm:flex">
+                  <Button variant="ghost" size="icon" className="hidden sm:flex text-white hover:bg-white/10 hover:text-white">
                     <User className="w-5 h-5" />
                     <span className="sr-only">Account</span>
                   </Button>
@@ -105,7 +104,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden"
+              className="lg:hidden text-white hover:bg-white/10 hover:text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -115,15 +114,15 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="lg:hidden py-4 border-t border-gray-200">
+          <nav className="lg:hidden py-4 border-t border-white/20">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
                 className={`block py-3 font-medium transition-colors duration-200 ${
                   isActive(link.href)
-                    ? "text-primary font-semibold"
-                    : "text-gray-600 hover:text-primary"
+                    ? "text-white font-semibold"
+                    : "text-white/90 hover:text-white"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -132,27 +131,27 @@ const Header = () => {
             ))}
             {user ? (
               <Link to="/account" onClick={() => setIsMenuOpen(false)}>
-                <div className="flex items-center gap-2 py-3 font-medium text-gray-600 hover:text-primary">
+                <div className="flex items-center gap-2 py-3 font-medium text-white/90 hover:text-white">
                   <User className="w-5 h-5" />
                   My account
                 </div>
               </Link>
             ) : (
-              <div className="py-3 border-t border-gray-100 mt-1">
-                <div className="flex items-center gap-2 text-sm font-semibold text-gray-500 mb-2">
+              <div className="py-3 border-t border-white/20 mt-1">
+                <div className="flex items-center gap-2 text-sm font-semibold text-white/80 mb-2">
                   <User className="w-4 h-4" />
                   Account
                 </div>
-                <Link to="/login" onClick={() => setIsMenuOpen(false)} className="block py-2 pl-6 text-gray-600 hover:text-primary">
+                <Link to="/login" onClick={() => setIsMenuOpen(false)} className="block py-2 pl-6 text-white/90 hover:text-white">
                   Sign in
                 </Link>
-                <Link to="/signup" onClick={() => setIsMenuOpen(false)} className="block py-2 pl-6 text-gray-600 hover:text-primary">
+                <Link to="/signup" onClick={() => setIsMenuOpen(false)} className="block py-2 pl-6 text-white/90 hover:text-white">
                   Sign up
                 </Link>
               </div>
             )}
             <Link to="/products" onClick={() => setIsMenuOpen(false)}>
-              <Button className="w-full mt-4 bg-primary hover:bg-primary/90 text-white">
+              <Button className="w-full mt-4 bg-white hover:bg-white/90 text-primary font-semibold">
                 Shop Now
               </Button>
             </Link>

@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import { 
-  Table, 
-  TableBody, 
-  TableCell, 
-  TableHead, 
-  TableHeader, 
-  TableRow 
+import { useState, useMemo } from 'react'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
 } from '@/components/ui/table'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -17,121 +17,52 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { 
-  Eye, 
-  Search,
-  Filter,
-  Download
-} from 'lucide-react'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import { Eye, Search, Filter, Download, FileSpreadsheet } from 'lucide-react'
+import { useOrdersStore } from '@/store/ordersStore'
+import { exportOrdersToCsv, exportOrdersToExcel } from '@/lib/exportOrders'
 
-// Mock Orders Data
-const mockOrders = [
-  {
-    id: 'ORD-001',
-    orderNumber: 'ORD-1706442320',
-    customer: 'Ahmed Al Mansouri',
-    email: 'ahmed@example.com',
-    phone: '+971501234567',
-    items: 2,
-    total: 220,
-    status: 'delivered',
-    paymentMethod: 'cod',
-    date: '2026-01-28',
-    emirate: 'Dubai'
-  },
-  {
-    id: 'ORD-002',
-    orderNumber: 'ORD-1706442321',
-    customer: 'Fatima Hassan',
-    email: 'fatima@example.com',
-    phone: '+971507654321',
-    items: 1,
-    total: 105,
-    status: 'processing',
-    paymentMethod: 'cod',
-    date: '2026-01-28',
-    emirate: 'Abu Dhabi'
-  },
-  {
-    id: 'ORD-003',
-    orderNumber: 'ORD-1706442322',
-    customer: 'Mohammed Abdullah',
-    email: 'mohammed@example.com',
-    phone: '+971509876543',
-    items: 3,
-    total: 165,
-    status: 'shipped',
-    paymentMethod: 'cod',
-    date: '2026-01-27',
-    emirate: 'Sharjah'
-  },
-  {
-    id: 'ORD-004',
-    orderNumber: 'ORD-1706442323',
-    customer: 'Aisha Salem',
-    email: 'aisha@example.com',
-    phone: '+971501112233',
-    items: 1,
-    total: 95,
-    status: 'pending',
-    paymentMethod: 'cod',
-    date: '2026-01-27',
-    emirate: 'Ajman'
-  },
-  {
-    id: 'ORD-005',
-    orderNumber: 'ORD-1706442324',
-    customer: 'Khalid Al Zaabi',
-    email: 'khalid@example.com',
-    phone: '+971504445566',
-    items: 4,
-    total: 245,
-    status: 'delivered',
-    paymentMethod: 'cod',
-    date: '2026-01-26',
-    emirate: 'Ras Al Khaimah'
-  },
-  {
-    id: 'ORD-006',
-    orderNumber: 'ORD-1706442325',
-    customer: 'Mariam Ibrahim',
-    email: 'mariam@example.com',
-    phone: '+971507778899',
-    items: 2,
-    total: 115,
-    status: 'cancelled',
-    paymentMethod: 'cod',
-    date: '2026-01-25',
-    emirate: 'Dubai'
-  }
-]
-
-const statusColors = {
+const statusColors: Record<string, string> = {
   pending: 'bg-yellow-100 text-yellow-800',
   processing: 'bg-blue-100 text-blue-800',
   shipped: 'bg-purple-100 text-purple-800',
   delivered: 'bg-green-100 text-green-800',
-  cancelled: 'bg-red-100 text-red-800'
+  cancelled: 'bg-red-100 text-red-800',
 }
 
 export default function AdminOrders() {
+  const orders = useOrdersStore((s) => s.orders)
   const [searchTerm, setSearchTerm] = useState('')
   const [statusFilter, setStatusFilter] = useState('all')
 
-  const filteredOrders = mockOrders.filter(order => {
-    const matchesSearch = 
-      order.orderNumber.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      order.customer.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      order.email.toLowerCase().includes(searchTerm.toLowerCase())
-    
-    const matchesStatus = statusFilter === 'all' || order.status === statusFilter
-
-    return matchesSearch && matchesStatus
-  })
+  const filteredOrders = useMemo(() => {
+    return orders.filter((order) => {
+      const customerName = `${order.customerInfo.firstName} ${order.customerInfo.lastName}`.trim()
+      const matchesSearch =
+        order.orderNumber.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        customerName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        order.customerInfo.email.toLowerCase().includes(searchTerm.toLowerCase())
+      const matchesStatus = statusFilter === 'all' || order.status === statusFilter
+      return matchesSearch && matchesStatus
+    })
+  }, [orders, searchTerm, statusFilter])
 
   const updateOrderStatus = (orderId: string, newStatus: string) => {
-    // Mock function - will be connected to Supabase later
+    // TODO: connect to Supabase / API
     console.log(`Updating order ${orderId} to ${newStatus}`)
+  }
+
+  const handleExportCsv = () => {
+    exportOrdersToCsv(filteredOrders)
+  }
+
+  const handleExportExcel = () => {
+    exportOrdersToExcel(filteredOrders)
   }
 
   return (
@@ -142,10 +73,24 @@ export default function AdminOrders() {
           <h1 className="text-3xl font-causten font-bold text-gray-900 mb-2">Orders</h1>
           <p className="text-gray-600">Manage customer orders</p>
         </div>
-        <Button variant="outline">
-          <Download className="w-4 h-4 mr-2" />
-          Export Orders
-        </Button>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline">
+              <Download className="w-4 h-4 mr-2" />
+              Export Orders
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem onClick={handleExportCsv} className="gap-2">
+              <Download className="w-4 h-4" />
+              Export as CSV
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={handleExportExcel} className="gap-2">
+              <FileSpreadsheet className="w-4 h-4" />
+              Export as Excel
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
 
       {/* Search & Filters */}
@@ -193,56 +138,61 @@ export default function AdminOrders() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {filteredOrders.map((order) => (
-              <TableRow key={order.id}>
-                <TableCell className="font-medium">{order.orderNumber}</TableCell>
-                <TableCell>
-                  <div>
-                    <p className="font-medium text-gray-900">{order.customer}</p>
-                    <p className="text-sm text-gray-500">{order.emirate}</p>
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <div className="text-sm">
-                    <p className="text-gray-600">{order.email}</p>
-                    <p className="text-gray-500">{order.phone}</p>
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <span className="text-sm text-gray-600">{order.items} items</span>
-                </TableCell>
-                <TableCell className="font-medium">
-                  AED {order.total}
-                </TableCell>
-                <TableCell>
-                  <Select 
-                    value={order.status} 
-                    onValueChange={(value) => updateOrderStatus(order.id, value)}
-                  >
-                    <SelectTrigger className="w-32">
-                      <SelectValue>
-                        <Badge className={statusColors[order.status as keyof typeof statusColors]}>
-                          {order.status}
-                        </Badge>
-                      </SelectValue>
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="pending">Pending</SelectItem>
-                      <SelectItem value="processing">Processing</SelectItem>
-                      <SelectItem value="shipped">Shipped</SelectItem>
-                      <SelectItem value="delivered">Delivered</SelectItem>
-                      <SelectItem value="cancelled">Cancelled</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </TableCell>
-                <TableCell className="text-gray-600">{order.date}</TableCell>
-                <TableCell className="text-right">
-                  <Button variant="ghost" size="icon" className="text-blue-600 hover:text-blue-700">
-                    <Eye className="w-4 h-4" />
-                  </Button>
-                </TableCell>
-              </TableRow>
-            ))}
+            {filteredOrders.map((order) => {
+              const customerName = `${order.customerInfo.firstName} ${order.customerInfo.lastName}`.trim()
+              return (
+                <TableRow key={order.id}>
+                  <TableCell className="font-medium">{order.orderNumber}</TableCell>
+                  <TableCell>
+                    <div>
+                      <p className="font-medium text-gray-900">{customerName || order.customerInfo.email}</p>
+                      <p className="text-sm text-gray-500">{order.deliveryAddress.emirate}</p>
+                    </div>
+                  </TableCell>
+                  <TableCell>
+                    <div className="text-sm">
+                      <p className="text-gray-600">{order.customerInfo.email}</p>
+                      <p className="text-gray-500">{order.customerInfo.phone}</p>
+                    </div>
+                  </TableCell>
+                  <TableCell>
+                    <span className="text-sm text-gray-600">{order.items.length} items</span>
+                  </TableCell>
+                  <TableCell className="font-medium">
+                    AED {order.total.toLocaleString()}
+                  </TableCell>
+                  <TableCell>
+                    <Select
+                      value={order.status}
+                      onValueChange={(value) => updateOrderStatus(order.id, value)}
+                    >
+                      <SelectTrigger className="w-32">
+                        <SelectValue>
+                          <Badge className={statusColors[order.status] ?? 'bg-gray-100 text-gray-800'}>
+                            {order.status}
+                          </Badge>
+                        </SelectValue>
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="pending">Pending</SelectItem>
+                        <SelectItem value="processing">Processing</SelectItem>
+                        <SelectItem value="shipped">Shipped</SelectItem>
+                        <SelectItem value="delivered">Delivered</SelectItem>
+                        <SelectItem value="cancelled">Cancelled</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </TableCell>
+                  <TableCell className="text-gray-600">
+                    {new Date(order.createdAt).toLocaleDateString()}
+                  </TableCell>
+                  <TableCell className="text-right">
+                    <Button variant="ghost" size="icon" className="text-blue-600 hover:text-blue-700">
+                      <Eye className="w-4 h-4" />
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              )
+            })}
           </TableBody>
         </Table>
 

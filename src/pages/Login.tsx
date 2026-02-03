@@ -50,7 +50,7 @@ export default function Login() {
             <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center">
               <span className="text-white font-bold text-2xl">🐱</span>
             </div>
-            <span className="font-causten text-2xl font-bold text-gray-900">Hurayra Pet Foods</span>
+            <span className="font-causten text-2xl font-bold text-gray-900">HurayraPetFood.ae</span>
           </Link>
           <h1 className="text-2xl font-causten font-bold text-gray-900 mt-6 mb-2">Sign in</h1>
           <p className="text-gray-600 text-sm">Enter your details or use Google</p>

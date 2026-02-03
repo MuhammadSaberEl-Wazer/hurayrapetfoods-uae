@@ -194,7 +194,7 @@ All our formulas are 100% grain-free, focusing on high-quality proteins from chi
     author: {
       name: 'Sarah Al-Hashemi',
       nameAr: 'سارة الهاشمي',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop',
+      avatar: 'https://ui-avatars.com/api/?name=Sarah+Al-Hashemi&background=008080&color=fff&size=150',
       role: 'Feline Nutritionist',
       roleAr: 'أخصائية تغذية القطط',
     },
@@ -283,7 +283,7 @@ Stay vigilant and keep your cat healthy!
     author: {
       name: 'Dr. Fatima Al-Zaabi',
       nameAr: 'د. فاطمة الزعابي',
-      avatar: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=150&h=150&fit=crop',
+      avatar: 'https://ui-avatars.com/api/?name=Fatima+Al-Zaabi&background=008080&color=fff&size=150',
       role: 'Veterinarian',
       roleAr: 'طبيبة بيطرية',
     },
@@ -443,11 +443,11 @@ Stay prepared and keep your cat healthy all year round!
     author: {
       name: 'Layla Al-Qassimi',
       nameAr: 'ليلى القاسمي',
-      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop',
+      avatar: 'https://ui-avatars.com/api/?name=Layla+Al-Qassimi&background=008080&color=fff&size=150',
       role: 'Pet Care Specialist',
       roleAr: 'أخصائية رعاية الحيوانات الأليفة',
     },
-    image: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=1200&q=90&fit=crop',
+    image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=1200&q=90&fit=crop',
     publishDate: '2026-01-27',
     readTime: 5,
     tags: ['Seasonal Care', 'Winter', 'Health', 'UAE'],

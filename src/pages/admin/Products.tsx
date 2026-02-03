@@ -35,16 +35,15 @@ export default function AdminProducts() {
       <AddProductModal open={isAddModalOpen} onOpenChange={setIsAddModalOpen} />
 
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-3xl font-causten font-bold text-gray-900 mb-2">Products</h1>
-          <p className="text-gray-600">Manage your product catalog</p>
-        </div>
-        <Button 
-          className="bg-primary hover:bg-primary/90"
+      <div className="mb-8">
+        <h1 className="text-3xl font-causten font-bold text-gray-900 mb-2">Products</h1>
+        <p className="text-gray-600 mb-4">Manage your product catalog</p>
+        <Button
+          size="lg"
+          className="w-full sm:w-auto min-w-[200px] bg-primary hover:bg-primary/90 text-base px-6 py-6 sm:py-5"
           onClick={() => setIsAddModalOpen(true)}
         >
-          <Plus className="w-4 h-4 mr-2" />
+          <Plus className="w-5 h-5 mr-2" />
           Add Product
         </Button>
       </div>

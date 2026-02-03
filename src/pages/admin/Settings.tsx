@@ -24,8 +24,8 @@ export default function AdminSettings() {
   const { toast } = useToast()
   const [settings, setSettings] = useState({
     // Store Information
-    storeName: 'Hurayra Pet Foods',
-    storeNameAr: 'Hurayra Pet Foods',
+    storeName: 'HurayraPetFood.ae',
+    storeNameAr: 'HurayraPetFood.ae',
     email: 'info@hurayrapet.ae',
     phone: '+971 50 123 4567',
     whatsapp: '+971 50 123 4567',

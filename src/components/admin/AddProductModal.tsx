@@ -4,13 +4,6 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
-import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -41,7 +34,7 @@ export default function AddProductModal({ open, onOpenChange }: AddProductModalP
   const [formData, setFormData] = useState({
     name: '',
     nameAr: '',
-    type: 'chicken' as 'chicken' | 'tuna' | 'combo',
+    type: 'chicken',
     description: '',
     descriptionAr: '',
     price: 25,
@@ -102,7 +95,7 @@ export default function AddProductModal({ open, onOpenChange }: AddProductModalP
     setFormData({
       name: '',
       nameAr: '',
-      type: 'chicken',
+      type: '',
       description: '',
       descriptionAr: '',
       price: 25,
@@ -152,17 +145,17 @@ export default function AddProductModal({ open, onOpenChange }: AddProductModalP
             </div>
 
             <div>
-              <Label htmlFor="type">Product Type *</Label>
-              <Select value={formData.type} onValueChange={(value: 'chicken' | 'tuna' | 'combo') => setFormData({ ...formData, type: value })}>
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="chicken">Chicken</SelectItem>
-                  <SelectItem value="tuna">Tuna</SelectItem>
-                  <SelectItem value="combo">Combo</SelectItem>
-                </SelectContent>
-              </Select>
+              <Label htmlFor="type">Product Type (Food Type) *</Label>
+              <Input
+                id="type"
+                value={formData.type}
+                onChange={(e) => setFormData({ ...formData, type: e.target.value.trim() })}
+                placeholder="e.g. chicken, tuna, combo, lamb, goat, plant-based, supplements"
+                required
+              />
+              <p className="text-xs text-muted-foreground mt-1">
+                Enter any food type: chicken, tuna, combo, lamb, goat meat, plant-based, supplements, etc.
+              </p>
             </div>
 
             <div>
