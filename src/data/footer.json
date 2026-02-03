@@ -62,6 +62,11 @@
           "text": "Tuna Formula",
           "textAr": "تركيبة التونة",
           "url": "/products?type=tuna#top"
+        },
+        {
+          "text": "Combo Formula",
+          "textAr": "تركيبة الكومبو",
+          "url": "/products?type=combo#top"
         }
       ]
     },

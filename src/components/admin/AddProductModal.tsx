@@ -41,7 +41,7 @@ export default function AddProductModal({ open, onOpenChange }: AddProductModalP
   const [formData, setFormData] = useState({
     name: '',
     nameAr: '',
-    type: 'chicken' as 'chicken' | 'tuna',
+    type: 'chicken' as 'chicken' | 'tuna' | 'combo',
     description: '',
     descriptionAr: '',
     price: 25,
@@ -153,13 +153,14 @@ export default function AddProductModal({ open, onOpenChange }: AddProductModalP
 
             <div>
               <Label htmlFor="type">Product Type *</Label>
-              <Select value={formData.type} onValueChange={(value: 'chicken' | 'tuna') => setFormData({ ...formData, type: value })}>
+              <Select value={formData.type} onValueChange={(value: 'chicken' | 'tuna' | 'combo') => setFormData({ ...formData, type: value })}>
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="chicken">Chicken</SelectItem>
                   <SelectItem value="tuna">Tuna</SelectItem>
+                  <SelectItem value="combo">Combo</SelectItem>
                 </SelectContent>
               </Select>
             </div>

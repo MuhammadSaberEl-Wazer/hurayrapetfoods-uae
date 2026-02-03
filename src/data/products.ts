@@ -1,9 +1,9 @@
 import type { Product } from '@/lib/types'
-import { productImagesChicken, productImagesTuna } from '@/data/productImages'
+import { productImagesChicken, productImagesTuna, productImagesCombo } from '@/data/productImages'
 
 /**
  * Products Data - Hurayra Pet Foods UAE
- * Only 2 product types: Chicken & Tuna
+ * Product types: Chicken, Tuna & Combo
  */
 
 export const products: Product[] = [
@@ -151,6 +151,59 @@ export const products: Product[] = [
     featured: true,
     createdAt: '2025-01-15T00:00:00.000Z',
     updatedAt: '2026-01-28T00:00:00.000Z'
+  },
+
+  // Combo — Chicken & Tuna
+  {
+    id: 'combo-chicken-tuna',
+    name: 'Premium Halal Chicken & Tuna Combo',
+    nameAr: 'كومبو دجاج وتونا حلال فاخر',
+    slug: 'premium-halal-chicken-tuna-combo',
+    type: 'combo',
+    description: 'The best of both worlds — our combo brings together premium halal chicken and tuna in one complete formula. Perfect for cats who love variety, this balanced blend offers high-quality protein from two premium sources, essential omega fatty acids, and full nutrition in every serving. 100% halal certified, no artificial additives.',
+    descriptionAr: 'الأفضل من العالمين — كومبونا يجمع بين الدجاج الحلال الفاخر والتونة في تركيبة واحدة كاملة. مثالي للقطط التي تحب التنوع، هذا المزيج المتوازن يوفر بروتين عالي الجودة من مصدرين فاخرين وأحماض أوميغا الدهنية الأساسية وتغذية كاملة في كل وجبة. معتمد حلال 100٪، بدون إضافات صناعية.',
+    price: 26,
+    compareAtPrice: 32,
+    sizes: [
+      { size: '400g', price: 26, sku: 'HRP-CMB-400', inStock: true },
+      { size: '1kg', price: 58, sku: 'HRP-CMB-1K', inStock: true },
+      { size: '2kg', price: 100, sku: 'HRP-CMB-2K', inStock: true },
+      { size: '5kg', price: 232, sku: 'HRP-CMB-5K', inStock: true }
+    ],
+    features: [
+      'Chicken & Tuna — Two Premium Proteins',
+      '100% Halal Certified',
+      'High Protein (35%)',
+      'Grain-Free Formula',
+      'No Artificial Preservatives',
+      'Omega-3 & Omega-6',
+      'Complete & Balanced Nutrition',
+      'Ideal for Variety-Loving Cats'
+    ],
+    nutritionalInfo: {
+      protein: '35%',
+      fat: '14%',
+      fiber: '3%',
+      moisture: '10%',
+      calories: '378 kcal/cup'
+    },
+    ingredients: [
+      'Chicken Meat (Halal Certified)',
+      'Tuna (Halal Certified)',
+      'Fish Oil (Omega-3 source)',
+      'Sweet Potato',
+      'Peas',
+      'Vitamins (A, D3, E, B-complex)',
+      'Minerals (Calcium, Phosphorus, Zinc, Iron)',
+      'Taurine',
+      'Natural Fiber',
+      'Rosemary Extract (natural preservative)'
+    ],
+    images: productImagesCombo,
+    inStock: true,
+    featured: true,
+    createdAt: '2025-01-15T00:00:00.000Z',
+    updatedAt: '2026-01-28T00:00:00.000Z'
   }
 ]
 
@@ -159,7 +212,7 @@ export const getProductBySlug = (slug: string): Product | undefined => {
   return products.find(p => p.slug === slug)
 }
 
-export const getProductsByType = (type: 'chicken' | 'tuna'): Product[] => {
+export const getProductsByType = (type: 'chicken' | 'tuna' | 'combo'): Product[] => {
   return products.filter(p => p.type === type)
 }
 

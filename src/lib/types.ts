@@ -4,7 +4,7 @@
  */
 
 // Product Types
-export type ProductType = 'chicken' | 'tuna'
+export type ProductType = 'chicken' | 'tuna' | 'combo'
 
 export interface Product {
   id: string

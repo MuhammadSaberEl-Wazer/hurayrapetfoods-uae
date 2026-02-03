@@ -8,28 +8,18 @@ const ProductsSection = () => {
   return (
     <section className="py-20 bg-gray-50/80">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
+        {/* Section Header — like "The Good Stuff We Offer" */}
         <div className="text-center mb-12">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Our Products
+          <h2 className="font-causten text-3xl md:text-4xl font-bold text-foreground mb-3">
+            The Good Stuff We Offer
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-            Premium halal cat food — Chicken and Tuna. Natural, trusted ingredients for your cat's health and happiness.
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Meals that they'll love to finish.
           </p>
-          {/* <Button
-            asChild
-            variant="outline"
-            className="border-primary text-primary hover:bg-primary hover:text-white"
-          >
-            <Link to="/products" className="inline-flex items-center gap-2">
-              View All Products
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </Button> */}
         </div>
 
-        {/* Products Grid - 2 products */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {/* Products Grid — 3 per row on desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
@@ -44,6 +34,11 @@ const ProductsSection = () => {
             </Link>
           </Button>
         </div>
+
+        {/* Note — like reference footer text */}
+        <p className="text-center text-sm text-muted-foreground mt-8 max-w-2xl mx-auto">
+          Hurayra Pet Foods produces Halal-certified dry cat food. We do not sell wet food or pouch products.
+        </p>
       </div>
     </section>
   )

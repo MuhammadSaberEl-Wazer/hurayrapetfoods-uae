@@ -13,14 +13,14 @@ export default function Products() {
   const location = useLocation()
   const typeParam = searchParams.get('type')
   const [filter, setFilter] = useState<'all' | ProductType>(() =>
-    typeParam === 'chicken' || typeParam === 'tuna' ? typeParam : 'all'
+    typeParam === 'chicken' || typeParam === 'tuna' || typeParam === 'combo' ? typeParam : 'all'
   )
   const [sortBy, setSortBy] = useState<'featured' | 'price-low' | 'price-high' | 'name'>('featured')
 
   useEffect(() => {
     const t = searchParams.get('type')
-    setFilter(t === 'chicken' || t === 'tuna' ? t : 'all')
-    const shouldScroll = location.hash === '#top' || t === 'chicken' || t === 'tuna'
+    setFilter(t === 'chicken' || t === 'tuna' || t === 'combo' ? t : 'all')
+    const shouldScroll = location.hash === '#top' || t === 'chicken' || t === 'tuna' || t === 'combo'
     if (shouldScroll) {
       window.scrollTo({ top: SCROLL_OFFSET, behavior: 'smooth' })
     }
@@ -67,7 +67,7 @@ export default function Products() {
               100% Halal Cat Food Made with Love
             </p>
             <p className="text-white/80">
-              Choose from our carefully crafted chicken or tuna formulas, both designed to provide complete and balanced nutrition for your beloved cat.
+              Choose from our chicken, tuna, or combo formulas — all designed for complete and balanced nutrition for your beloved cat.
             </p>
           </div>
         </div>
@@ -105,6 +105,13 @@ export default function Products() {
                   >
                     🐟 Tuna
                   </Button>
+                  <Button
+                    onClick={() => setFilterAndUrl('combo')}
+                    variant={filter === 'combo' ? 'default' : 'outline'}
+                    className={filter === 'combo' ? 'bg-primary hover:bg-primary/90' : ''}
+                  >
+                    📦 Combo
+                  </Button>
                 </div>
               </div>
 
@@ -134,7 +141,7 @@ export default function Products() {
 
           {/* Products Grid */}
           {sortedProducts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {sortedProducts.map(product => (
                 <ProductCard 
                   key={product.id} 

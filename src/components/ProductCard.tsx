@@ -78,9 +78,13 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         <div className="mb-2">
           <Badge 
             variant="outline" 
-            className={product.type === 'chicken' ? 'border-primary text-primary' : 'border-secondary text-secondary'}
+            className={
+              product.type === 'chicken' ? 'border-primary text-primary' :
+              product.type === 'tuna' ? 'border-secondary text-secondary' :
+              'border-amber-600 text-amber-600'
+            }
           >
-            {product.type === 'chicken' ? '🍗 Chicken' : '🐟 Tuna'}
+            {product.type === 'chicken' ? '🍗 Chicken' : product.type === 'tuna' ? '🐟 Tuna' : '📦 Combo'}
           </Badge>
         </div>
 
