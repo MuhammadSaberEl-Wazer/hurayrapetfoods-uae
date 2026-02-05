@@ -1,0 +1,21 @@
+{
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "orders": "Orders",
+    "customers": "Customers",
+    "blog": "Blog",
+    "settings": "Settings",
+    "dev": "Database & API",
+    "logout": "Logout"
+  },
+  "header": {
+    "admin": "Admin"
+  },
+  "brand": "HurayraPetFood.ae Admin",
+  "controlPanel": "Control Panel",
+  "toast": {
+    "loggedOutTitle": "Logged Out",
+    "loggedOutDesc": "You have been successfully logged out."
+  }
+}

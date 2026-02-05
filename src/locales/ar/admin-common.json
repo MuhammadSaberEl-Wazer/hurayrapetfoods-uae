@@ -1,0 +1,21 @@
+{
+  "sidebar": {
+    "dashboard": "لوحة التحكم",
+    "products": "المنتجات",
+    "orders": "الطلبات",
+    "customers": "العملاء",
+    "blog": "المدونة",
+    "settings": "الإعدادات",
+    "dev": "قاعدة البيانات والـ API",
+    "logout": "تسجيل الخروج"
+  },
+  "header": {
+    "admin": "الإدارة"
+  },
+  "brand": "إدارة HurayraPetFood.ae",
+  "controlPanel": "لوحة التحكم",
+  "toast": {
+    "loggedOutTitle": "تم تسجيل الخروج",
+    "loggedOutDesc": "تم تسجيل خروجك بنجاح."
+  }
+}

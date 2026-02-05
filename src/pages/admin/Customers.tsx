@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { 
   Table, 
   TableBody, 
@@ -24,7 +25,6 @@ const mockCustomers = [
   {
     id: 'CUST-001',
     name: 'Ahmed Al Mansouri',
-    nameAr: 'أحمد المنصوري',
     email: 'ahmed@example.com',
     phone: '+971501234567',
     emirate: 'Dubai',
@@ -36,7 +36,6 @@ const mockCustomers = [
   {
     id: 'CUST-002',
     name: 'Fatima Hassan',
-    nameAr: 'فاطمة حسن',
     email: 'fatima@example.com',
     phone: '+971507654321',
     emirate: 'Abu Dhabi',
@@ -48,7 +47,6 @@ const mockCustomers = [
   {
     id: 'CUST-003',
     name: 'Mohammed Abdullah',
-    nameAr: 'محمد عبدالله',
     email: 'mohammed@example.com',
     phone: '+971509876543',
     emirate: 'Sharjah',
@@ -60,7 +58,6 @@ const mockCustomers = [
   {
     id: 'CUST-004',
     name: 'Aisha Salem',
-    nameAr: 'عائشة سالم',
     email: 'aisha@example.com',
     phone: '+971501112233',
     emirate: 'Ajman',
@@ -72,7 +69,6 @@ const mockCustomers = [
   {
     id: 'CUST-005',
     name: 'Khalid Al Zaabi',
-    nameAr: 'خالد الزعابي',
     email: 'khalid@example.com',
     phone: '+971504445566',
     emirate: 'Ras Al Khaimah',
@@ -84,7 +80,6 @@ const mockCustomers = [
   {
     id: 'CUST-006',
     name: 'Mariam Ibrahim',
-    nameAr: 'مريم إبراهيم',
     email: 'mariam@example.com',
     phone: '+971507778899',
     emirate: 'Dubai',
@@ -96,7 +91,6 @@ const mockCustomers = [
   {
     id: 'CUST-007',
     name: 'Omar Hassan',
-    nameAr: 'عمر حسن',
     email: 'omar@example.com',
     phone: '+971503334455',
     emirate: 'Fujairah',
@@ -108,7 +102,6 @@ const mockCustomers = [
   {
     id: 'CUST-008',
     name: 'Sara Mohammed',
-    nameAr: 'سارة محمد',
     email: 'sara@example.com',
     phone: '+971506667788',
     emirate: 'Umm Al Quwain',
@@ -120,6 +113,7 @@ const mockCustomers = [
 ]
 
 export default function AdminCustomers() {
+  const { t } = useTranslation('admin-customers')
   const [searchTerm, setSearchTerm] = useState('')
 
   const filteredCustomers = mockCustomers.filter(customer =>
@@ -133,8 +127,8 @@ export default function AdminCustomers() {
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-causten font-bold text-gray-900 mb-2">Customers</h1>
-          <p className="text-gray-600">Manage your customer database</p>
+          <h1 className="text-3xl font-causten font-bold text-gray-900 mb-2">{t('title')}</h1>
+          <p className="text-gray-600">{t('subtitle')}</p>
         </div>
       </div>
 
@@ -155,7 +149,7 @@ export default function AdminCustomers() {
         <div className="bg-white rounded-xl shadow-sm p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-gray-600 mb-1">Total Orders</p>
+              <p className="text-sm text-gray-600 mb-1">{t('totalOrders')}</p>
               <p className="text-2xl font-bold text-gray-900">
                 {mockCustomers.reduce((sum, c) => sum + c.totalOrders, 0)}
               </p>
@@ -169,7 +163,7 @@ export default function AdminCustomers() {
         <div className="bg-white rounded-xl shadow-sm p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-gray-600 mb-1">Total Revenue</p>
+              <p className="text-sm text-gray-600 mb-1">{t('totalRevenue')}</p>
               <p className="text-2xl font-bold text-gray-900">
                 AED {mockCustomers.reduce((sum, c) => sum + c.totalSpent, 0).toLocaleString()}
               </p>
@@ -183,7 +177,7 @@ export default function AdminCustomers() {
         <div className="bg-white rounded-xl shadow-sm p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-gray-600 mb-1">Avg Order Value</p>
+              <p className="text-sm text-gray-600 mb-1">{t('avgOrderValue')}</p>
               <p className="text-2xl font-bold text-gray-900">
                 AED {Math.round(mockCustomers.reduce((sum, c) => sum + c.totalSpent, 0) / 
                   mockCustomers.reduce((sum, c) => sum + c.totalOrders, 0))}
@@ -201,7 +195,7 @@ export default function AdminCustomers() {
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
           <Input
-            placeholder="Search by name, email, or phone..."
+            placeholder={t('searchPlaceholder')}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-10"
@@ -214,14 +208,14 @@ export default function AdminCustomers() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Customer</TableHead>
-              <TableHead>Contact</TableHead>
-              <TableHead>Location</TableHead>
-              <TableHead>Orders</TableHead>
-              <TableHead>Total Spent</TableHead>
-              <TableHead>Join Date</TableHead>
-              <TableHead>Last Order</TableHead>
-              <TableHead className="text-right">Actions</TableHead>
+              <TableHead>{t('tableCustomer')}</TableHead>
+              <TableHead>{t('tableContact')}</TableHead>
+              <TableHead>{t('tableLocation')}</TableHead>
+              <TableHead>{t('tableOrders')}</TableHead>
+              <TableHead>{t('tableTotalSpent')}</TableHead>
+              <TableHead>{t('tableJoinDate')}</TableHead>
+              <TableHead>{t('tableLastOrder')}</TableHead>
+              <TableHead className="text-right">{t('tableActions')}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -230,7 +224,6 @@ export default function AdminCustomers() {
                 <TableCell>
                   <div>
                     <p className="font-medium text-gray-900">{customer.name}</p>
-                    <p className="text-sm text-gray-500 font-cairo">{customer.nameAr}</p>
                   </div>
                 </TableCell>
                 <TableCell>
@@ -252,7 +245,7 @@ export default function AdminCustomers() {
                   </div>
                 </TableCell>
                 <TableCell>
-                  <Badge variant="outline">{customer.totalOrders} orders</Badge>
+                  <Badge variant="outline">{t('ordersCount', { count: customer.totalOrders })}</Badge>
                 </TableCell>
                 <TableCell className="font-medium">
                   AED {customer.totalSpent.toLocaleString()}
@@ -275,7 +268,7 @@ export default function AdminCustomers() {
 
         {filteredCustomers.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-600">No customers found</p>
+            <p className="text-gray-600">{t('noCustomers')}</p>
           </div>
         )}
       </div>

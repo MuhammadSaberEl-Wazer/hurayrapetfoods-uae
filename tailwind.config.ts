@@ -33,14 +33,14 @@ export default {
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#D46681",
+          DEFAULT: "#0F766E",
           foreground: "#FFFFFF",
         },
         accent: {
           DEFAULT: "#C8A029",
           foreground: "#FFFFFF",
         },
-        pink: "#D46681",
+        pink: "#0F766E",
         teal: {
           DEFAULT: "#008080",
           light: "#60BABF",

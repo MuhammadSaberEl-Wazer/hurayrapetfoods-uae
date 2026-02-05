@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { ProductCard } from '@/components/ProductCard'
 import { products } from '@/data/products'
 import type { ProductType } from '@/lib/types'
@@ -9,6 +10,7 @@ import { Filter } from 'lucide-react'
 const SCROLL_OFFSET = 220
 
 export default function Products() {
+  const { t } = useTranslation('products')
   const [searchParams, setSearchParams] = useSearchParams()
   const location = useLocation()
   const typeParam = searchParams.get('type')
@@ -61,13 +63,13 @@ export default function Products() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-causten font-bold mb-4">
-              Our Premium Products
+              {t('hero.title')}
             </h1>
             <p className="text-xl text-white/90 mb-2">
-              100% Halal Cat Food Made with Love
+              {t('hero.subtitle')}
             </p>
             <p className="text-white/80">
-              Choose from our chicken, tuna, or combo formulas — all designed for complete and balanced nutrition for your beloved cat.
+              {t('hero.intro')}
             </p>
           </div>
         </div>
@@ -82,51 +84,51 @@ export default function Products() {
               {/* Type Filters */}
               <div className="flex flex-wrap items-center gap-2 min-w-0">
                 <Filter className="w-5 h-5 shrink-0 text-gray-500" />
-                <span className="font-semibold text-gray-700 shrink-0">Filter:</span>
+                <span className="font-semibold text-gray-700 shrink-0">{t('filter')}</span>
                 <div className="flex flex-wrap gap-2 min-w-0">
                   <Button
                     onClick={() => setFilterAndUrl('all')}
                     variant={filter === 'all' ? 'default' : 'outline'}
                     className={filter === 'all' ? 'bg-primary hover:bg-primary/90' : ''}
                   >
-                    All Products ({products.length})
+                    {t('filters.allProductsCount', { count: products.length })}
                   </Button>
                   <Button
                     onClick={() => setFilterAndUrl('chicken')}
                     variant={filter === 'chicken' ? 'default' : 'outline'}
                     className={filter === 'chicken' ? 'bg-primary hover:bg-primary/90' : ''}
                   >
-                    🍗 Chicken
+                    🍗 {t('filters.chicken')}
                   </Button>
                   <Button
                     onClick={() => setFilterAndUrl('tuna')}
                     variant={filter === 'tuna' ? 'default' : 'outline'}
                     className={filter === 'tuna' ? 'bg-primary hover:bg-primary/90' : ''}
                   >
-                    🐟 Tuna
+                    🐟 {t('filters.tuna')}
                   </Button>
                   <Button
                     onClick={() => setFilterAndUrl('combo')}
                     variant={filter === 'combo' ? 'default' : 'outline'}
                     className={filter === 'combo' ? 'bg-primary hover:bg-primary/90' : ''}
                   >
-                    📦 Combo
+                    📦 {t('filters.combo')}
                   </Button>
                 </div>
               </div>
 
               {/* Sort */}
               <div className="flex flex-wrap items-center gap-2 min-w-0">
-                <span className="font-semibold text-gray-700 shrink-0">Sort by:</span>
+                <span className="font-semibold text-gray-700 shrink-0">{t('sort')}</span>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as 'featured' | 'price-low' | 'price-high' | 'name')}
                   className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
                 >
-                  <option value="featured">Featured</option>
-                  <option value="name">Name (A-Z)</option>
-                  <option value="price-low">Price (Low to High)</option>
-                  <option value="price-high">Price (High to Low)</option>
+                  <option value="featured">{t('sortBy.featured')}</option>
+                  <option value="name">{t('sortBy.name')}</option>
+                  <option value="price-low">{t('sortBy.priceLow')}</option>
+                  <option value="price-high">{t('sortBy.priceHigh')}</option>
                 </select>
               </div>
             </div>
@@ -135,7 +137,7 @@ export default function Products() {
           {/* Products Count */}
           <div className="mb-6">
             <p className="text-gray-600">
-              Showing <span className="font-bold text-primary">{sortedProducts.length}</span> product{sortedProducts.length !== 1 ? 's' : ''}
+              {t('showing', { count: sortedProducts.length })}
             </p>
           </div>
 
@@ -151,7 +153,7 @@ export default function Products() {
             </div>
           ) : (
             <div className="text-center py-16">
-              <p className="text-xl text-gray-500">No products found matching your filters.</p>
+              <p className="text-xl text-gray-500">{t('noProducts')}</p>
             </div>
           )}
 
@@ -162,27 +164,27 @@ export default function Products() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">✓</span>
                 </div>
-                <h3 className="font-causten font-bold text-lg mb-2">100% Halal Certified</h3>
+                <h3 className="font-causten font-bold text-lg mb-2">{t('info.halalTitle')}</h3>
                 <p className="text-gray-600 text-sm">
-                  All our products are certified halal by recognized Islamic authorities
+                  {t('info.halalDesc')}
                 </p>
               </div>
               <div>
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">🚚</span>
                 </div>
-                <h3 className="font-causten font-bold text-lg mb-2">Free Delivery</h3>
+                <h3 className="font-causten font-bold text-lg mb-2">{t('info.deliveryTitle')}</h3>
                 <p className="text-gray-600 text-sm">
-                  Free shipping across all UAE emirates in 1-3 business days
+                  {t('info.deliveryDesc')}
                 </p>
               </div>
               <div>
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">💯</span>
                 </div>
-                <h3 className="font-causten font-bold text-lg mb-2">Quality Guarantee</h3>
+                <h3 className="font-causten font-bold text-lg mb-2">{t('info.qualityTitle')}</h3>
                 <p className="text-gray-600 text-sm">
-                  30-day money-back guarantee if your cat doesn't love it
+                  {t('info.qualityDesc')}
                 </p>
               </div>
             </div>

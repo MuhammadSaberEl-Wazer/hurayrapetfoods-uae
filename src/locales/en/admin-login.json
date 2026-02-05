@@ -1,0 +1,21 @@
+{
+  "title": "HurayraPetFood.ae Admin",
+  "subtitle": "Sign in to access the control panel",
+  "email": "Email Address",
+  "emailPlaceholder": "admin@hurayra.com",
+  "password": "Password",
+  "passwordPlaceholder": "••••••••",
+  "submit": "Sign In",
+  "submitting": "Signing in...",
+  "demoTitle": "Demo Credentials:",
+  "demoEmail": "Email:",
+  "demoPassword": "Password:",
+  "footer": "© 2026 HurayraPetFood.ae. All rights reserved.",
+  "toast": {
+    "successTitle": "Login Successful!",
+    "successDesc": "Welcome to HurayraPetFood.ae Admin Panel",
+    "failTitle": "Login Failed",
+    "failDesc": "Please check your credentials and try again."
+  },
+  "error": "Invalid email or password"
+}

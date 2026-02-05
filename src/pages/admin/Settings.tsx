@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -21,11 +22,11 @@ import {
 import { useToast } from '@/hooks/use-toast'
 
 export default function AdminSettings() {
+  const { t } = useTranslation('admin-settings')
   const { toast } = useToast()
   const [settings, setSettings] = useState({
     // Store Information
     storeName: 'HurayraPetFood.ae',
-    storeNameAr: 'HurayraPetFood.ae',
     email: 'info@hurayrapet.ae',
     phone: '+971 50 123 4567',
     whatsapp: '+971 50 123 4567',
@@ -58,8 +59,8 @@ export default function AdminSettings() {
   const handleSave = () => {
     // Mock save - will connect to Supabase later
     toast({
-      title: "Settings Saved!",
-      description: "Your changes have been saved successfully.",
+      title: t('toastSavedTitle'),
+      description: t('toastSavedDesc'),
       duration: 3000
     })
   }
@@ -67,15 +68,9 @@ export default function AdminSettings() {
   return (
     <div className="p-8">
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-3xl font-causten font-bold text-gray-900 mb-2">Settings</h1>
-          <p className="text-gray-600">Manage your store settings and preferences</p>
-        </div>
-        <Button onClick={handleSave} className="bg-primary hover:bg-primary/90">
-          <Save className="w-4 h-4 mr-2" />
-          Save Changes
-        </Button>
+      <div className="mb-8">
+        <h1 className="text-3xl font-causten font-bold text-gray-900 mb-2">{t('title')}</h1>
+        <p className="text-gray-600">{t('subtitle')}</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -88,35 +83,23 @@ export default function AdminSettings() {
                 <Store className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-gray-900">Store Information</h2>
-                <p className="text-sm text-gray-600">Basic details about your store</p>
+                <h2 className="text-xl font-bold text-gray-900">{t('storeInfo')}</h2>
+                <p className="text-sm text-gray-600">{t('storeInfoDesc')}</p>
               </div>
             </div>
 
             <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="storeName">Store Name (English)</Label>
-                  <Input
-                    id="storeName"
-                    value={settings.storeName}
-                    onChange={(e) => setSettings({ ...settings, storeName: e.target.value })}
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="storeNameAr" className="font-cairo">Store Name (Arabic)</Label>
-                  <Input
-                    id="storeNameAr"
-                    value={settings.storeNameAr}
-                    onChange={(e) => setSettings({ ...settings, storeNameAr: e.target.value })}
-                    className="font-cairo"
-                    dir="rtl"
-                  />
-                </div>
+              <div>
+                <Label htmlFor="storeName">{t('storeName')}</Label>
+                <Input
+                  id="storeName"
+                  value={settings.storeName}
+                  onChange={(e) => setSettings({ ...settings, storeName: e.target.value })}
+                />
               </div>
 
               <div>
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t('email')}</Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <Input
@@ -131,7 +114,7 @@ export default function AdminSettings() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="phone">Phone</Label>
+                  <Label htmlFor="phone">{t('phone')}</Label>
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                     <Input
@@ -143,7 +126,7 @@ export default function AdminSettings() {
                   </div>
                 </div>
                 <div>
-                  <Label htmlFor="whatsapp">WhatsApp</Label>
+                  <Label htmlFor="whatsapp">{t('whatsapp')}</Label>
                   <Input
                     id="whatsapp"
                     value={settings.whatsapp}
@@ -153,7 +136,7 @@ export default function AdminSettings() {
               </div>
 
               <div>
-                <Label htmlFor="address">Address</Label>
+                <Label htmlFor="address">{t('address')}</Label>
                 <div className="relative">
                   <MapPin className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
                   <Textarea
@@ -175,14 +158,14 @@ export default function AdminSettings() {
                 <Globe className="w-5 h-5 text-secondary" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-gray-900">Social Media</h2>
-                <p className="text-sm text-gray-600">Your social media profiles</p>
+                <h2 className="text-xl font-bold text-gray-900">{t('socialMedia')}</h2>
+                <p className="text-sm text-gray-600">{t('socialMediaDesc')}</p>
               </div>
             </div>
 
             <div className="space-y-4">
               <div>
-                <Label htmlFor="facebook">Facebook</Label>
+                <Label htmlFor="facebook">{t('facebook')}</Label>
                 <div className="relative">
                   <Facebook className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <Input
@@ -195,7 +178,7 @@ export default function AdminSettings() {
               </div>
 
               <div>
-                <Label htmlFor="instagram">Instagram</Label>
+                <Label htmlFor="instagram">{t('instagram')}</Label>
                 <div className="relative">
                   <Instagram className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <Input
@@ -208,7 +191,7 @@ export default function AdminSettings() {
               </div>
 
               <div>
-                <Label htmlFor="twitter">Twitter</Label>
+                <Label htmlFor="twitter">{t('twitter')}</Label>
                 <div className="relative">
                   <Twitter className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <Input
@@ -229,15 +212,15 @@ export default function AdminSettings() {
                 <SettingsIcon className="w-5 h-5 text-accent" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-gray-900">Business Settings</h2>
-                <p className="text-sm text-gray-600">Pricing and shipping configuration</p>
+                <h2 className="text-xl font-bold text-gray-900">{t('businessSettings')}</h2>
+                <p className="text-sm text-gray-600">{t('businessSettingsDesc')}</p>
               </div>
             </div>
 
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="freeShipping">Free Shipping Threshold</Label>
+                  <Label htmlFor="freeShipping">{t('freeShippingThreshold')}</Label>
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">AED</span>
                     <Input
@@ -251,7 +234,7 @@ export default function AdminSettings() {
                 </div>
 
                 <div>
-                  <Label htmlFor="shippingFee">Standard Shipping Fee</Label>
+                  <Label htmlFor="shippingFee">{t('standardShippingFee')}</Label>
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">AED</span>
                     <Input
@@ -267,7 +250,7 @@ export default function AdminSettings() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="currency">Currency</Label>
+                  <Label htmlFor="currency">{t('currency')}</Label>
                   <Input
                     id="currency"
                     value={settings.currency}
@@ -276,7 +259,7 @@ export default function AdminSettings() {
                 </div>
 
                 <div>
-                  <Label htmlFor="taxRate">Tax Rate (%)</Label>
+                  <Label htmlFor="taxRate">{t('taxRate')}</Label>
                   <Input
                     id="taxRate"
                     type="number"
@@ -298,16 +281,16 @@ export default function AdminSettings() {
                 <Bell className="w-5 h-5 text-blue-600" />
               </div>
               <div>
-                <h2 className="text-lg font-bold text-gray-900">Notifications</h2>
-                <p className="text-sm text-gray-600">Manage alerts</p>
+                <h2 className="text-lg font-bold text-gray-900">{t('notifications')}</h2>
+                <p className="text-sm text-gray-600">{t('notificationsDesc')}</p>
               </div>
             </div>
 
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-gray-900">Email Notifications</p>
-                  <p className="text-sm text-gray-500">Receive email alerts</p>
+                  <p className="font-medium text-gray-900">{t('emailNotifications')}</p>
+                  <p className="text-sm text-gray-500">{t('emailNotificationsDesc')}</p>
                 </div>
                 <Switch
                   checked={settings.emailNotifications}
@@ -317,8 +300,8 @@ export default function AdminSettings() {
 
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-gray-900">Order Notifications</p>
-                  <p className="text-sm text-gray-500">New order alerts</p>
+                  <p className="font-medium text-gray-900">{t('orderNotifications')}</p>
+                  <p className="text-sm text-gray-500">{t('orderNotificationsDesc')}</p>
                 </div>
                 <Switch
                   checked={settings.orderNotifications}
@@ -328,8 +311,8 @@ export default function AdminSettings() {
 
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-gray-900">Low Stock Alerts</p>
-                  <p className="text-sm text-gray-500">Product stock warnings</p>
+                  <p className="font-medium text-gray-900">{t('lowStockAlerts')}</p>
+                  <p className="text-sm text-gray-500">{t('lowStockAlertsDesc')}</p>
                 </div>
                 <Switch
                   checked={settings.lowStockAlerts}
@@ -339,8 +322,8 @@ export default function AdminSettings() {
 
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-gray-900">Customer Messages</p>
-                  <p className="text-sm text-gray-500">Contact form alerts</p>
+                  <p className="font-medium text-gray-900">{t('customerMessages')}</p>
+                  <p className="text-sm text-gray-500">{t('customerMessagesDesc')}</p>
                 </div>
                 <Switch
                   checked={settings.customerMessages}
@@ -357,16 +340,16 @@ export default function AdminSettings() {
                 <Globe className="w-5 h-5 text-purple-600" />
               </div>
               <div>
-                <h2 className="text-lg font-bold text-gray-900">Website</h2>
-                <p className="text-sm text-gray-600">Site preferences</p>
+                <h2 className="text-lg font-bold text-gray-900">{t('website')}</h2>
+                <p className="text-sm text-gray-600">{t('websiteDesc')}</p>
               </div>
             </div>
 
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-gray-900">Maintenance Mode</p>
-                  <p className="text-sm text-gray-500">Disable public access</p>
+                  <p className="font-medium text-gray-900">{t('maintenanceMode')}</p>
+                  <p className="text-sm text-gray-500">{t('maintenanceModeDesc')}</p>
                 </div>
                 <Switch
                   checked={settings.maintenanceMode}
@@ -376,8 +359,8 @@ export default function AdminSettings() {
 
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-gray-900">Allow Registration</p>
-                  <p className="text-sm text-gray-500">User sign ups</p>
+                  <p className="font-medium text-gray-900">{t('allowRegistration')}</p>
+                  <p className="text-sm text-gray-500">{t('allowRegistrationDesc')}</p>
                 </div>
                 <Switch
                   checked={settings.allowRegistration}
@@ -387,8 +370,8 @@ export default function AdminSettings() {
 
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-gray-900">Show Prices</p>
-                  <p className="text-sm text-gray-500">Display product prices</p>
+                  <p className="font-medium text-gray-900">{t('showPrices')}</p>
+                  <p className="text-sm text-gray-500">{t('showPricesDesc')}</p>
                 </div>
                 <Switch
                   checked={settings.showPrices}
@@ -398,6 +381,18 @@ export default function AdminSettings() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Save Changes — full width, larger and accessible on mobile */}
+      <div className="mt-8 pt-6 border-t flex flex-col sm:flex-row justify-end">
+        <Button
+          onClick={handleSave}
+          className="w-full sm:w-auto min-h-12 px-8 gap-2 bg-primary hover:bg-primary/90"
+          size="lg"
+        >
+          <Save className="w-5 h-5 shrink-0" />
+          {t('saveChanges')}
+        </Button>
       </div>
     </div>
   )

@@ -1,197 +1,78 @@
 {
   "logo": {
     "text": "HurayraPetFood.ae",
-    "textAr": "HurayraPetFood.ae",
-    "tagline": "Premium Halal Cat Food",
-    "taglineAr": "طعام قطط حلال فاخر"
+    "tagline": "Premium Halal Cat Food"
   },
   "description": "Providing premium halal cat food with love and care. Following the Sunnah of kindness to animals.",
-  "descriptionAr": "نقدم طعام قطط حلال فاخر بحب وعناية. متبعين سنة الرفق بالحيوانات.",
   "columns": [
     {
       "title": "Quick Links",
-      "titleAr": "روابط سريعة",
       "links": [
-        {
-          "text": "Home",
-          "textAr": "الرئيسية",
-          "url": "/"
-        },
-        {
-          "text": "Products",
-          "textAr": "المنتجات",
-          "url": "/products"
-        },
-        {
-          "text": "About Us",
-          "textAr": "من نحن",
-          "url": "/about"
-        },
-        {
-          "text": "Contact",
-          "textAr": "اتصل بنا",
-          "url": "/contact"
-        },
-        {
-          "text": "Blog",
-          "textAr": "المدونة",
-          "url": "/blog"
-        },
-        {
-          "text": "FAQ",
-          "textAr": "الأسئلة الشائعة",
-          "url": "/#faq"
-        }
+        { "text": "Home", "url": "/" },
+        { "text": "Products", "url": "/products" },
+        { "text": "About Us", "url": "/about" },
+        { "text": "Why Halal", "url": "/why-halal" },
+        { "text": "Contact", "url": "/contact" },
+        { "text": "Blog", "url": "/blog" },
+        { "text": "FAQ", "url": "/#faq" }
       ]
     },
     {
       "title": "Products",
-      "titleAr": "المنتجات",
       "links": [
-        {
-          "text": "All Products",
-          "textAr": "جميع المنتجات",
-          "url": "/products#top"
-        },
-        {
-          "text": "Chicken Formula",
-          "textAr": "تركيبة الدجاج",
-          "url": "/products?type=chicken#top"
-        },
-        {
-          "text": "Tuna Formula",
-          "textAr": "تركيبة التونة",
-          "url": "/products?type=tuna#top"
-        },
-        {
-          "text": "Combo Formula",
-          "textAr": "تركيبة الكومبو",
-          "url": "/products?type=combo#top"
-        }
+        { "text": "All Products", "url": "/products#top" },
+        { "text": "Chicken Formula", "url": "/products?type=chicken#top" },
+        { "text": "Tuna Formula", "url": "/products?type=tuna#top" },
+        { "text": "Combo Formula", "url": "/products?type=combo#top" }
       ]
     },
     {
       "title": "Customer Service",
-      "titleAr": "خدمة العملاء",
       "links": [
-        {
-          "text": "Shipping & Delivery",
-          "textAr": "الشحن والتوصيل",
-          "url": "/shipping"
-        },
-        {
-          "text": "Return Policy",
-          "textAr": "سياسة الإرجاع",
-          "url": "/returns"
-        }
+        { "text": "Shipping & Delivery", "url": "/shipping" },
+        { "text": "Return Policy", "url": "/returns" }
       ]
     },
     {
       "title": "Legal",
-      "titleAr": "قانوني",
       "links": [
-        {
-          "text": "Privacy Policy",
-          "textAr": "سياسة الخصوصية",
-          "url": "/privacy"
-        },
-        {
-          "text": "Terms & Conditions",
-          "textAr": "الشروط والأحكام",
-          "url": "/terms"
-        }
+        { "text": "Privacy Policy", "url": "/privacy" },
+        { "text": "Terms & Conditions", "url": "/terms" }
       ]
     }
   ],
   "newsletter": {
     "title": "Subscribe to Our Newsletter",
-    "titleAr": "اشترك في نشرتنا الإخبارية",
     "description": "Get updates on new products, special offers, and cat care tips!",
-    "descriptionAr": "احصل على تحديثات حول المنتجات الجديدة والعروض الخاصة ونصائح رعاية القطط!",
     "placeholder": "Enter your email",
-    "placeholderAr": "أدخل بريدك الإلكتروني",
     "buttonText": "Subscribe",
-    "buttonTextAr": "اشترك",
-    "successMessage": "Thank you for subscribing!",
-    "successMessageAr": "شكرًا لك على الاشتراك!"
+    "successMessage": "Thank you for subscribing!"
   },
   "paymentMethods": {
     "title": "We Accept",
-    "titleAr": "نقبل",
     "methods": [
-      {
-        "name": "Cash on Delivery",
-        "nameAr": "الدفع عند الاستلام",
-        "icon": "Banknote"
-      },
-      {
-        "name": "Visa",
-        "nameAr": "فيزا",
-        "icon": "CreditCard",
-        "comingSoon": true
-      },
-      {
-        "name": "Mastercard",
-        "nameAr": "ماستركارد",
-        "icon": "CreditCard",
-        "comingSoon": true
-      }
+      { "name": "Cash on Delivery", "icon": "Banknote" },
+      { "name": "Visa", "icon": "CreditCard", "comingSoon": true },
+      { "name": "Mastercard", "icon": "CreditCard", "comingSoon": true }
     ]
   },
   "trustBadges": [
-    {
-      "icon": "Shield",
-      "text": "100% Halal",
-      "textAr": "100٪ حلال"
-    },
-    {
-      "icon": "Truck",
-      "text": "Free Delivery",
-      "textAr": "توصيل مجاني"
-    },
-    {
-      "icon": "Award",
-      "text": "Certified Quality",
-      "textAr": "جودة معتمدة"
-    },
-    {
-      "icon": "HeartHandshake",
-      "text": "30-Day Guarantee",
-      "textAr": "ضمان 30 يوم"
-    }
+    { "icon": "Shield", "text": "100% Halal" },
+    { "icon": "Truck", "text": "Free Delivery" },
+    { "icon": "Award", "text": "Certified Quality" },
+    { "icon": "HeartHandshake", "text": "30-Day Guarantee" }
   ],
   "copyright": {
     "text": "© {year} HurayraPetFood.ae. All rights reserved.",
-    "textAr": "© {year} HurayraPetFood.ae. جميع الحقوق محفوظة.",
     "madeWith": "Made with",
-    "madeWithAr": "صُنع بـ",
     "love": "love",
-    "loveAr": "حب",
     "in": "in",
-    "inAr": "في",
-    "location": "UAE",
-    "locationAr": "الإمارات"
+    "location": "UAE"
   },
   "socialMedia": [
-    {
-      "name": "Facebook",
-      "url": "https://facebook.com/hurayrapetfoods",
-      "icon": "Facebook"
-    },
-    {
-      "name": "Instagram",
-      "url": "https://instagram.com/hurayrapetfoods",
-      "icon": "Instagram"
-    },
-    {
-      "name": "Twitter",
-      "url": "https://twitter.com/hurayrapetfoods",
-      "icon": "Twitter"
-    },
-    {
-      "name": "TikTok",
-      "url": "https://tiktok.com/@hurayrapetfoods",
-      "icon": "Music"
-    }
+    { "name": "Facebook", "url": "https://facebook.com/hurayrapetfoods", "icon": "Facebook" },
+    { "name": "Instagram", "url": "https://instagram.com/hurayrapetfoods", "icon": "Instagram" },
+    { "name": "Twitter", "url": "https://twitter.com/hurayrapetfoods", "icon": "Twitter" },
+    { "name": "TikTok", "url": "https://tiktok.com/@hurayrapetfoods", "icon": "Music" }
   ]
 }

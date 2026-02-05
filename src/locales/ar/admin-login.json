@@ -1,0 +1,21 @@
+{
+  "title": "إدارة HurayraPetFood.ae",
+  "subtitle": "سجّل الدخول للوصول إلى لوحة التحكم",
+  "email": "البريد الإلكتروني",
+  "emailPlaceholder": "admin@hurayra.com",
+  "password": "كلمة المرور",
+  "passwordPlaceholder": "••••••••",
+  "submit": "تسجيل الدخول",
+  "submitting": "جاري تسجيل الدخول...",
+  "demoTitle": "بيانات تجريبية:",
+  "demoEmail": "البريد:",
+  "demoPassword": "كلمة المرور:",
+  "footer": "© 2026 HurayraPetFood.ae. جميع الحقوق محفوظة.",
+  "toast": {
+    "successTitle": "تم تسجيل الدخول!",
+    "successDesc": "مرحباً بك في لوحة إدارة HurayraPetFood.ae",
+    "failTitle": "فشل تسجيل الدخول",
+    "failDesc": "يرجى التحقق من بياناتك والمحاولة مرة أخرى."
+  },
+  "error": "البريد الإلكتروني أو كلمة المرور غير صحيحة"
+}

@@ -1,0 +1,142 @@
+{
+  "hero": {
+    "badge": "Developer Guide",
+    "title": "Backend & Database Plan",
+    "subtitle": "A comprehensive overview of the database and API specifications"
+  },
+  "tabs": {
+    "database": "Database",
+    "backend": "Backend API"
+  },
+  "database": {
+    "introTitle": "Database — What Does It Store?",
+    "introDesc": "Think of the database as an organized library: each type of information has its own place. This lets you update content from the admin panel without needing a developer.",
+    "structureTitle": "Data Structure in the Site",
+    "structureDesc": "Each box represents a type of data you can manage",
+    "products": {
+      "label": "Products",
+      "title": "Products & Descriptions",
+      "desc": "Product names, prices, sizes (e.g. 900g), features, ingredients, nutritional info, and images. All in Arabic and English.",
+      "items": ["Chicken, Tuna, Combo", "Price per size", "Halal, High Protein, etc."]
+    },
+    "orders": {
+      "label": "Orders",
+      "title": "Customer Orders",
+      "desc": "Each order: customer name, phone, address, items ordered, total, payment method. You can update status (processing, shipped, delivered, etc.).",
+      "items": ["Auto-generated order number", "Cash on delivery", "Track delivery"]
+    },
+    "blog": {
+      "label": "Blog",
+      "title": "Articles & Tips",
+      "desc": "Articles on nutrition, cat care, halal tips. Each post has title, excerpt, content, image, and category. In Arabic and English.",
+      "items": ["Nutrition, Health, Care", "Publish date", "Featured or regular"]
+    },
+    "content": {
+      "label": "Content",
+      "title": "Page Content",
+      "desc": "Headlines, paragraphs, FAQs, testimonials, Why Halal section, nutrition info. Updated from the admin panel without touching code.",
+      "items": ["Homepage", "About, Contact", "FAQ"]
+    },
+    "messages": {
+      "label": "Messages",
+      "title": "Contact Messages",
+      "desc": "Every message from the contact form: name, email, subject, and text. You can mark as read or replied."
+    },
+    "newsletter": {
+      "label": "Newsletter",
+      "title": "Newsletter Subscribers",
+      "desc": "List of emails from newsletter signups. Useful for campaigns and future offers."
+    },
+    "bilingualTitle": "All Content in Arabic & English",
+    "bilingualDesc": "Stored text supports both languages. When a customer switches language, content appears in that language automatically. No need to enter both versions manually — the admin panel lets you edit in English and Arabic together.",
+    "settingsTitle": "General Settings",
+    "settingsDesc": "Store info, payment & shipping",
+    "settingsStore": "Store Information",
+    "settingsStoreDetail": "Name, email, phone, WhatsApp, address",
+    "settingsShipping": "Shipping & Payment",
+    "settingsShippingDetail": "Free shipping threshold, delivery fee, currency",
+    "summaryTitle": "In the End — What Will You Get?",
+    "summaryItems": [
+      "Update products and prices without a developer",
+      "Receive and track orders from the dashboard",
+      "Publish articles and tips in Arabic & English",
+      "Edit page text (home, about, why halal, etc.)",
+      "View customer messages and newsletter subscribers"
+    ],
+    "tableDetailsTitle": "Table Details (Reference)",
+    "tableDetailsDesc": "Brief explanation of what each table stores",
+    "tableProducts": "Products Table",
+    "tableProductsDetail": "Stores product name, description, type (chicken/tuna/combo), price, compare-at price, features, nutritional info, ingredients, multiple images, in-stock status, and featured flag.",
+    "tableProductSizes": "Product Sizes",
+    "tableProductSizesDetail": "Each product can have multiple sizes: e.g. 400g, 900g, 2kg. Each size has its own price and SKU.",
+    "tableOrders": "Orders Table",
+    "tableOrdersDetail": "Order number, customer name, email, phone, delivery address (city, emirate), subtotal, shipping, total, status (pending, shipped, delivered, cancelled), payment method.",
+    "tableOrderItems": "Order Items",
+    "tableOrderItemsDetail": "Each order contains several products. Each item: product name (AR + EN), size, quantity, price, and line subtotal."
+  },
+  "backend": {
+    "introTitle": "Node.js Backend — Developer Guide",
+    "introDesc": "API structure, endpoints, language support, and technical recommendations",
+    "structureTitle": "Project Structure",
+    "structureDesc": "Backend folder layout",
+    "endpointsTitle": "API Endpoints",
+    "endpointsDesc": "Public and Admin",
+    "publicLabel": "Public (no Auth)",
+    "adminLabel": "Admin (requires JWT)",
+    "bilingualTitle": "Language Support (Bilingual)",
+    "bilingualExample": "GET /api/products?lang=ar",
+    "bilingualDesc": "Priority: lang query first, then Accept-Language, then fallback to en. On save (Admin) accepts both language fields.",
+    "librariesTitle": "Suggested Libraries",
+    "responseTitle": "Response Format",
+    "responseSuccess": "Success",
+    "responseError": "Error",
+    "roadmapTitle": "Implementation Plan (4 weeks)",
+    "week1": "Basics",
+    "week1Items": ["Express + DB", "Auth (JWT)", "Middleware"],
+    "week2": "Products & Orders",
+    "week2Items": ["CRUD Products", "File Upload", "Orders API"],
+    "week3": "Content & Blog",
+    "week3Items": ["Content API", "Blog CRUD", "Contact + Newsletter"],
+    "week4": "Settings & Notifications",
+    "week4Items": ["Settings", "Email/WhatsApp", "Export CSV/Excel"],
+    "recommendationsTitle": "Developer Recommendations",
+    "recommendations": [
+      "Bilingual support from day one",
+      "Use Prisma with PostgreSQL",
+      "API docs (Swagger/OpenAPI) early",
+      "Docker for easy deployment",
+      "See DATABASE.md for full schema"
+    ],
+    "pagination": "Pagination: ?page=1&limit=20",
+    "filtering": "Filtering: ?type=chicken&status=pending",
+    "sorting": "Sorting: ?sort=createdAt&order=desc"
+  },
+  "apiPublic": [
+    { "method": "GET", "path": "/api/products", "desc": "List products" },
+    { "method": "GET", "path": "/api/products/:slug", "desc": "Product details" },
+    { "method": "GET", "path": "/api/blogs", "desc": "List posts" },
+    { "method": "GET", "path": "/api/blogs/:slug", "desc": "Single post" },
+    { "method": "GET", "path": "/api/content/:key", "desc": "Page content" },
+    { "method": "POST", "path": "/api/contact", "desc": "Send message" },
+    { "method": "POST", "path": "/api/newsletter", "desc": "Subscribe" },
+    { "method": "POST", "path": "/api/orders", "desc": "Create order" }
+  ],
+  "apiAdmin": [
+    { "method": "CRUD", "path": "/admin/products", "desc": "Products" },
+    { "method": "GET/PATCH", "path": "/admin/orders", "desc": "Orders & status" },
+    { "method": "CRUD", "path": "/admin/blogs", "desc": "Blog" },
+    { "method": "GET/PUT", "path": "/admin/content", "desc": "Page content" },
+    { "method": "GET/PUT", "path": "/admin/settings", "desc": "Settings" },
+    { "method": "POST", "path": "/admin/auth/login", "desc": "Login" }
+  ],
+  "libraries": [
+    { "lib": "Express.js", "use": "Framework" },
+    { "lib": "Prisma / Sequelize", "use": "ORM / DB" },
+    { "lib": "JWT + bcrypt", "use": "Auth" },
+    { "lib": "Zod / Joi", "use": "Validation" },
+    { "lib": "Multer", "use": "File Upload" },
+    { "lib": "helmet + cors", "use": "Security" }
+  ],
+  "footer": "For more details see files in PROJECT_PLAN/",
+  "apiColumnDesc": "Description"
+}

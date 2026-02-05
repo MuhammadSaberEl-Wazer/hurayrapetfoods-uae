@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ShoppingCart, Star } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import type { Product } from '@/lib/types'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -11,6 +12,13 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ product }: ProductCardProps) => {
+  const { t, i18n } = useTranslation('products')
+  const { t: tDetail } = useTranslation('productDetail')
+  const isAr = i18n.language === 'ar'
+  const priceStr = (amount: number) => isAr ? `${amount} ${t('currency')}` : `${t('currency')} ${amount}`
+  const displayName = tDetail(`items.${product.id}.name`, { defaultValue: product.name }) as string
+  const rawFeatures = tDetail(`items.${product.id}.features`, { returnObjects: true })
+  const displayFeatures: string[] = Array.isArray(rawFeatures) ? rawFeatures : product.features
   const addToCart = useCartStore((state) => state.addToCart)
   const { toast } = useToast()
   
@@ -25,8 +33,8 @@ export const ProductCard = ({ product }: ProductCardProps) => {
     addToCart(product, product.sizes[0], 1)
     
     toast({
-      title: "Added to cart!",
-      description: `${product.name} (${product.sizes[0].size}) has been added to your cart.`,
+      title: t('toast.added'),
+      description: t('toast.addedDesc', { name: displayName, size: product.sizes[0].size }),
       duration: 3000
     })
   }
@@ -34,10 +42,10 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <div className="group relative bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100">
       {/* Badges */}
-      <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
+      <div className="absolute top-4 left-4 z-10 flex flex-col gap-2 rtl:left-auto rtl:right-4">
         {product.featured && (
           <Badge className="bg-accent text-white shadow-lg">
-            Featured
+            {t('featured')}
           </Badge>
         )}
         {hasDiscount && (
@@ -47,7 +55,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         )}
         {!product.inStock && (
           <Badge variant="destructive" className="shadow-lg">
-            Out of Stock
+            {t('outOfStock')}
           </Badge>
         )}
       </div>
@@ -56,7 +64,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       <Link to={`/products/${product.slug}`} className="block relative aspect-square overflow-hidden bg-gray-50">
         <img 
           src={product.images[0]} 
-          alt={product.name}
+          alt={displayName}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           onError={(e) => {
             // Fallback to placeholder if image fails to load
@@ -64,10 +72,10 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           }}
         />
         
-        {/* Quick view overlay */}
+        {/* Quick view overlay — Cairo font when lang=ar via global CSS */}
         <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <span className="text-white font-causten font-bold text-lg">
-            View Details
+          <span className="product-card-overlay-label text-white font-causten font-bold text-lg">
+            {t('viewDetails')}
           </span>
         </div>
       </Link>
@@ -84,14 +92,14 @@ export const ProductCard = ({ product }: ProductCardProps) => {
               'border-amber-600 text-amber-600'
             }
           >
-            {product.type === 'chicken' ? '🍗 Chicken' : product.type === 'tuna' ? '🐟 Tuna' : '📦 Combo'}
+            {product.type === 'chicken' ? `🍗 ${t('filters.chicken')}` : product.type === 'tuna' ? `🐟 ${t('filters.tuna')}` : `📦 ${t('filters.combo')}`}
           </Badge>
         </div>
 
         {/* Title */}
         <Link to={`/products/${product.slug}`}>
           <h3 className="font-causten font-bold text-lg mb-2 line-clamp-2 hover:text-primary transition-colors">
-            {product.name}
+            {displayName}
           </h3>
         </Link>
         
@@ -103,11 +111,11 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           <span className="text-sm text-gray-600 ml-1">(4.9)</span>
         </div>
 
-        {/* Features - show 2 main ones */}
+        {/* Features - show 2 main ones (translated when available) */}
         <div className="mb-4 space-y-1">
-          {product.features.slice(0, 2).map((feature, idx) => (
+          {displayFeatures.slice(0, 2).map((feature, idx) => (
             <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
               <span className="line-clamp-1">{feature}</span>
             </div>
           ))}
@@ -116,18 +124,18 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         {/* Price */}
         <div className="flex items-center gap-2 mb-4">
           <span className="text-2xl font-bold text-primary font-causten">
-            AED {product.price}
+            {priceStr(product.price)}
           </span>
           {hasDiscount && (
             <span className="text-lg text-gray-400 line-through">
-              AED {product.compareAtPrice}
+              {priceStr(product.compareAtPrice)}
             </span>
           )}
         </div>
         
         {/* Size info */}
         <p className="text-sm text-gray-500 mb-4">
-          From {product.sizes[0].size} • {product.sizes.length} sizes available
+          {t('from')} {product.sizes[0].size} • {t('sizesAvailable', { count: product.sizes.length })}
         </p>
 
         {/* Actions */}
@@ -137,8 +145,8 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             disabled={!product.inStock}
             className="flex-1 bg-primary hover:bg-primary/90 text-white"
           >
-            <ShoppingCart className="w-4 h-4 mr-2" />
-            Add to Cart
+            <ShoppingCart className="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0" />
+            {t('addToCart')}
           </Button>
           <Button
             asChild
@@ -146,7 +154,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             className="border-primary text-primary hover:bg-primary hover:text-white"
           >
             <Link to={`/products/${product.slug}`}>
-              View
+              {t('view')}
             </Link>
           </Button>
         </div>

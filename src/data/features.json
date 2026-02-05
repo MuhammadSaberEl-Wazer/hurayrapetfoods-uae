@@ -4,98 +4,78 @@
       "id": "made-with-love",
       "icon": "Heart",
       "title": "Made with Love",
-      "titleAr": "صُنع بحب",
-      "description": "Every recipe crafted with care for your feline's happiness and well-being",
-      "descriptionAr": "كل وصفة مصنوعة بعناية من أجل سعادة ورفاهية قطتك"
+      "description": "Every recipe crafted with care for your feline's happiness and well-being"
     },
     {
       "id": "natural",
       "icon": "Leaf",
       "title": "100% Natural",
-      "titleAr": "100٪ طبيعي",
-      "description": "No artificial preservatives, colors, or flavors - just pure, wholesome ingredients",
-      "descriptionAr": "بدون مواد حافظة أو ألوان أو نكهات صناعية - مكونات طبيعية نقية فقط"
+      "description": "No artificial preservatives, colors, or flavors - just pure, wholesome ingredients"
     },
     {
       "id": "halal-certified",
       "icon": "Shield",
       "title": "Halal Certified",
-      "titleAr": "معتمد حلال",
-      "description": "Certified halal ingredients according to Islamic dietary standards",
-      "descriptionAr": "مكونات حلال معتمدة وفقًا للمعايير الغذائية الإسلامية"
+      "description": "Certified halal ingredients according to Islamic dietary standards"
     },
     {
       "id": "premium-quality",
       "icon": "Award",
       "title": "Premium Quality",
-      "titleAr": "جودة فاخرة",
-      "description": "Only the finest ingredients sourced from trusted suppliers globally",
-      "descriptionAr": "فقط أفضل المكونات من موردين موثوقين حول العالم"
+      "description": "Only the finest ingredients sourced from trusted suppliers globally"
     },
     {
       "id": "fast-delivery",
       "icon": "Truck",
       "title": "Fast Delivery",
-      "titleAr": "توصيل سريع",
-      "description": "Quick and reliable shipping across all UAE emirates",
-      "descriptionAr": "شحن سريع وموثوق في جميع إمارات الدولة"
+      "description": "Quick and reliable shipping across all UAE emirates"
     },
     {
       "id": "satisfaction",
       "icon": "CheckCircle",
       "title": "Satisfaction Guaranteed",
-      "titleAr": "رضا مضمون",
-      "description": "30-day money-back guarantee if your cat doesn't love it",
-      "descriptionAr": "ضمان استرداد المال لمدة 30 يومًا إذا لم تحب قطتك المنتج"
+      "description": "30-day money-back guarantee if your cat doesn't love it"
     }
   ],
   "productBadges": [
     {
       "id": "chicken",
       "text": "Chicken Formula",
-      "textAr": "تركيبة الدجاج",
       "color": "primary"
     },
     {
       "id": "tuna",
       "text": "Tuna Formula",
-      "textAr": "تركيبة التونة",
       "color": "secondary"
     },
     {
       "id": "high-protein",
       "text": "High Protein",
-      "textAr": "بروتين عالي",
       "color": "accent"
     },
     {
       "id": "grain-free",
       "text": "Grain Free",
-      "textAr": "خالي من الحبوب",
       "color": "pink"
     },
     {
       "id": "omega-3",
       "text": "Rich in Omega-3",
-      "textAr": "غني بأوميغا 3",
       "color": "teal"
     },
     {
       "id": "vitamins",
       "text": "Essential Vitamins",
-      "textAr": "فيتامينات أساسية",
       "color": "accent"
     },
     {
       "id": "adult",
       "text": "For Adult Cats",
-      "textAr": "للقطط البالغة",
       "color": "primary"
     },
     {
       "id": "kitten",
       "text": "Kitten Growth",
-      "textAr": "نمو القطط الصغيرة",
       "color": "pink"
     }
   ]

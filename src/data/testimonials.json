@@ -3,12 +3,9 @@
     {
       "id": "testimonial-1",
       "name": "Ahmed Al Mansouri",
-      "nameAr": "أحمد المنصوري",
       "location": "Dubai, UAE",
-      "locationAr": "دبي، الإمارات",
       "rating": 5,
       "comment": "Finally found halal cat food that my cats actually love! The chicken formula is their favorite. As a Muslim, it's important to me that even my pets' food aligns with our values. Highly recommend!",
-      "commentAr": "أخيرًا وجدت طعام قطط حلال تحبه قططي فعلاً! تركيبة الدجاج هي المفضلة لديهم. كمسلم، من المهم بالنسبة لي أن طعام حيواناتي الأليفة يتماشى مع قيمنا. أنصح به بشدة!",
       "image": "/images/testimonials/ahmed.jpg",
       "verified": true,
       "date": "2025-12-15"
@@ -16,12 +13,9 @@
     {
       "id": "testimonial-2",
       "name": "Fatima Hassan",
-      "nameAr": "فاطمة حسن",
       "location": "Abu Dhabi, UAE",
-      "locationAr": "أبوظبي، الإمارات",
       "rating": 5,
       "comment": "My Persian cat is very picky, but she absolutely loves the tuna formula! Her coat is shinier and she has more energy. The fact that it's halal-certified gives me peace of mind.",
-      "commentAr": "قطتي الفارسية انتقائية جدًا، لكنها تحب تركيبة التونة تمامًا! فروها أكثر لمعانًا ولديها طاقة أكبر. حقيقة أنه معتمد حلال تمنحني راحة البال.",
       "image": "/images/testimonials/fatima.jpg",
       "verified": true,
       "date": "2025-11-28"
@@ -29,12 +23,9 @@
     {
       "id": "testimonial-3",
       "name": "Mohammed Abdullah",
-      "nameAr": "محمد عبدالله",
       "location": "Sharjah, UAE",
-      "locationAr": "الشارقة، الإمارات",
       "rating": 5,
       "comment": "Excellent quality and fast delivery! I have three cats and they all love it. The ingredients are natural and the packaging is convenient. Will definitely order again.",
-      "commentAr": "جودة ممتازة وتوصيل سريع! لدي ثلاث قطط وجميعهم يحبونه. المكونات طبيعية والتعبئة مريحة. سأطلب مرة أخرى بالتأكيد.",
       "image": "/images/testimonials/mohammed.jpg",
       "verified": true,
       "date": "2026-01-10"
@@ -42,12 +33,9 @@
     {
       "id": "testimonial-4",
       "name": "Aisha Salem",
-      "nameAr": "عائشة سالم",
       "location": "Ajman, UAE",
-      "locationAr": "عجمان، الإمارات",
       "rating": 5,
       "comment": "As a veterinarian and a Muslim, I always recommend Hurayra to my clients. The nutritional profile is excellent and the halal certification is authentic. Great product!",
-      "commentAr": "كطبيبة بيطرية ومسلمة، أوصي دائمًا بـ Hurayra لعملائي. الملف الغذائي ممتاز وشهادة الحلال أصلية. منتج رائع!",
       "image": "/images/testimonials/aisha.jpg",
       "verified": true,
       "date": "2025-12-05"
@@ -55,12 +43,9 @@
     {
       "id": "testimonial-5",
       "name": "Khalid Al Zaabi",
-      "nameAr": "خالد الزعابي",
       "location": "Ras Al Khaimah, UAE",
-      "locationAr": "رأس الخيمة، الإمارات",
       "rating": 5,
       "comment": "My kitten has been eating this since 2 months old and is growing healthy and strong. The customer service is also very helpful. Thank you Hurayra!",
-      "commentAr": "قطتي الصغيرة تأكل هذا منذ شهرين وتنمو بصحة وقوة. خدمة العملاء أيضًا مفيدة جدًا. شكرًا Hurayra!",
       "image": "/images/testimonials/khalid.jpg",
       "verified": true,
       "date": "2025-11-20"
@@ -68,12 +53,9 @@
     {
       "id": "testimonial-6",
       "name": "Mariam Ibrahim",
-      "nameAr": "مريم إبراهيم",
       "location": "Dubai, UAE",
-      "locationAr": "دبي، الإمارات",
       "rating": 5,
       "comment": "I switched from another brand and noticed the difference immediately. My cat's digestion improved and she's more active. Love that it's locally available in UAE!",
-      "commentAr": "انتقلت من علامة تجارية أخرى ولاحظت الفرق على الفور. تحسن هضم قطتي وأصبحت أكثر نشاطًا. أحب أنه متوفر محليًا في الإمارات!",
       "image": "/images/testimonials/mariam.jpg",
       "verified": true,
       "date": "2026-01-05"

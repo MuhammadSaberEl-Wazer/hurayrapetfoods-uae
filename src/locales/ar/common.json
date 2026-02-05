@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "blog": "المدونة",
+    "about": "من نحن",
+    "whyHalal": "لماذا حلال",
+    "contact": "اتصل بنا",
+    "shopNow": "تسوق الآن",
+    "login": "تسجيل الدخول",
+    "signup": "إنشاء حساب",
+    "account": "حسابي",
+    "logout": "تسجيل الخروج",
+    "admin": "الإدارة"
+  },
+  "footer": {
+    "logoText": "HurayraPetFood.ae",
+    "tagline": "طعام قطط حلال فاخر",
+    "description": "نقدم طعام قطط حلال فاخر بحب وعناية. نتبع سنة الإحسان للحيوانات.",
+    "quickLinks": "روابط سريعة",
+    "products": "المنتجات",
+    "customerService": "خدمة العملاء",
+    "legal": "قانوني",
+    "allProducts": "جميع المنتجات",
+    "chickenFormula": "تركيبة الدجاج",
+    "tunaFormula": "تركيبة التونة",
+    "comboFormula": "تركيبة الكومبو",
+    "shippingDelivery": "الشحن والتوصيل",
+    "returnPolicy": "سياسة الإرجاع",
+    "shippingPolicy": "سياسة الشحن",
+    "returnsRefunds": "الإرجاع واسترداد المبلغ",
+    "privacyPolicy": "سياسة الخصوصية",
+    "termsConditions": "الشروط والأحكام",
+    "faq": "الأسئلة الشائعة",
+    "aboutUs": "من نحن",
+    "contactInfo": "معلومات الاتصال",
+    "legalNotice": "يُشغّل هذا الموقع بموجب تراخيص شركة يوروجلف للحيوانات وأعلاف الطيور ذ.م.م.",
+    "address": "دبي للاستثمار بارك 2 - مستودعات خراسان رقم 2، دبي، الإمارات العربية المتحدة",
+    "mail": "البريد",
+    "phone": "الهاتف",
+    "newsletterTitle": "اشترك في نشرتنا",
+    "newsletterDescription": "احصل على آخر المنتجات والعروض ونصائح رعاية القطط!",
+    "newsletterPlaceholder": "أدخل بريدك الإلكتروني",
+    "newsletterButton": "اشترك",
+    "newsletterSuccess": "شكراً على اشتراكك!",
+    "weAccept": "نقبل",
+    "cashOnDelivery": "الدفع عند الاستلام",
+    "comingSoon": "قريباً",
+    "copyright": "جميع الحقوق محفوظة."
+  },
+  "buttons": {
+    "back": "رجوع",
+    "submit": "إرسال",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "close": "إغلاق",
+    "continue": "متابعة",
+    "loading": "جاري التحميل..."
+  },
+  "validation": {
+    "required": "هذا الحقل مطلوب",
+    "emailInvalid": "يرجى إدخال بريد إلكتروني صحيح",
+    "minLength": "يجب أن يكون {{min}} أحرف على الأقل",
+    "maxLength": "يجب أن يكون {{max}} أحرف كحد أقصى"
+  },
+  "aria": {
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة",
+    "cartCount": "{{count}} عناصر في السلة"
+  }
+}

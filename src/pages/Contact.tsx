@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
+import { useTranslation } from 'react-i18next'
 import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -11,19 +12,26 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useToast } from '@/hooks/use-toast'
 import contactData from '@/data/contact.json'
 
-const contactSchema = z.object({
-  name: z.string().min(3, 'Name must be at least 3 characters'),
-  email: z.string().email('Invalid email address'),
-  phone: z.string().min(9, 'Phone number must be at least 9 digits'),
-  subject: z.string().min(1, 'Please select a subject'),
-  message: z.string().min(10, 'Message must be at least 10 characters')
-})
-
-type ContactFormData = z.infer<typeof contactSchema>
+type ContactFormData = {
+  name: string
+  email: string
+  phone: string
+  subject: string
+  message: string
+}
 
 export default function Contact() {
+  const { t } = useTranslation('contact')
   const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const contactSchema = useMemo(() => z.object({
+    name: z.string().min(3, t('form.nameMin')),
+    email: z.string().email(t('form.emailInvalid')),
+    phone: z.string().min(9, t('form.phoneMin')),
+    subject: z.string().min(1, t('form.subjectRequired')),
+    message: z.string().min(10, t('form.messageMin'))
+  }), [t])
 
   const {
     register,
@@ -37,18 +45,12 @@ export default function Contact() {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true)
-    
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    console.log('Contact form data:', data)
-    
     toast({
-      title: "Message sent successfully!",
-      description: "We'll get back to you within 24 hours.",
+      title: t('toast.success'),
+      description: t('toast.successDesc'),
       duration: 5000
     })
-    
     reset()
     setIsSubmitting(false)
   }
@@ -60,11 +62,8 @@ export default function Contact() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-causten font-bold mb-4">
-              {contactData.hero.title}
+              {t('hero.title')}
             </h1>
-            <p className="text-xl text-white/90 font-cairo">
-              {contactData.hero.titleAr}
-            </p>
           </div>
         </div>
       </section>
@@ -75,17 +74,16 @@ export default function Contact() {
           <div className="grid lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
             {/* Contact Information */}
             <div className="lg:col-span-1 space-y-6">
-              <div className="bg-white rounded-xl shadow-md p-6">
-                <h2 className="text-2xl font-causten font-bold mb-6">Contact Information</h2>
+              <div className="bg-white rounded-xl shadow-md p-6 text-start rtl:text-right">
+                <h2 className="text-2xl font-causten font-bold mb-6">{t('contactInfoTitle')}</h2>
                 
                 <div className="space-y-6">
-                  {/* Email */}
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-4 rtl:flex-row-reverse">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Mail className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">Email</h3>
+                      <h3 className="font-semibold mb-1">{t('email')}</h3>
                       <a href={`mailto:${contactData.contactInfo.email.value}`} className="text-primary hover:underline">
                         {contactData.contactInfo.email.value}
                       </a>
@@ -93,12 +91,12 @@ export default function Contact() {
                   </div>
 
                   {/* Phone */}
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-4 rtl:flex-row-reverse">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Phone className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">Phone</h3>
+                      <h3 className="font-semibold mb-1">{t('phone')}</h3>
                       <a href={`tel:${contactData.contactInfo.phone.value}`} className="text-primary hover:underline">
                         {contactData.contactInfo.phone.value}
                       </a>
@@ -106,12 +104,12 @@ export default function Contact() {
                   </div>
 
                   {/* WhatsApp */}
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-4 rtl:flex-row-reverse">
                     <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
                       <MessageSquare className="w-6 h-6 text-green-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">WhatsApp</h3>
+                      <h3 className="font-semibold mb-1">{t('whatsapp')}</h3>
                       <a 
                         href={`https://wa.me/${contactData.contactInfo.whatsapp.value.replace(/[^0-9]/g, '')}`}
                         target="_blank"
@@ -124,12 +122,12 @@ export default function Contact() {
                   </div>
 
                   {/* Address */}
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-4 rtl:flex-row-reverse">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">Address</h3>
+                      <h3 className="font-semibold mb-1">{t('address')}</h3>
                       <p className="text-gray-600">{contactData.contactInfo.address.value}</p>
                     </div>
                   </div>
@@ -137,8 +135,8 @@ export default function Contact() {
               </div>
 
               {/* Social Media */}
-              <div className="bg-white rounded-xl shadow-md p-6">
-                <h3 className="font-bold mb-4">Follow Us</h3>
+              <div className="bg-white rounded-xl shadow-md p-6 text-start rtl:text-right">
+                <h3 className="font-bold mb-4">{t('followUs')}</h3>
                 <div className="flex gap-3">
                   {contactData.socialMedia.platforms.map((social, idx) => (
                     <a
@@ -160,17 +158,17 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-xl shadow-md p-8">
-                <h2 className="text-2xl font-causten font-bold mb-6">Send us a Message</h2>
+              <div className="bg-white rounded-xl shadow-md p-8 text-start rtl:text-right">
+                <h2 className="text-2xl font-causten font-bold mb-6">{t('formTitle')}</h2>
                 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="name">Full Name *</Label>
+                      <Label htmlFor="name">{t('form.nameLabel')}</Label>
                       <Input
                         id="name"
                         {...register('name')}
-                        placeholder="Ahmed Mohammed"
+                        placeholder={t('form.namePlaceholder')}
                         className={errors.name ? 'border-red-500' : ''}
                       />
                       {errors.name && (
@@ -179,12 +177,12 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <Label htmlFor="email">Email *</Label>
+                      <Label htmlFor="email">{t('form.emailLabel')}</Label>
                       <Input
                         id="email"
                         type="email"
                         {...register('email')}
-                        placeholder="ahmed@example.com"
+                        placeholder={t('form.emailPlaceholder')}
                         className={errors.email ? 'border-red-500' : ''}
                       />
                       {errors.email && (
@@ -195,12 +193,12 @@ export default function Contact() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="phone">Phone *</Label>
+                      <Label htmlFor="phone">{t('form.phoneLabel')}</Label>
                       <Input
                         id="phone"
                         type="tel"
                         {...register('phone')}
-                        placeholder="+971 50 123 4567"
+                        placeholder={t('form.phonePlaceholder')}
                         className={errors.phone ? 'border-red-500' : ''}
                       />
                       {errors.phone && (
@@ -209,17 +207,17 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <Label htmlFor="subject">Subject *</Label>
+                      <Label htmlFor="subject">{t('form.subjectLabel')}</Label>
                       <Select onValueChange={(value) => setValue('subject', value)}>
                         <SelectTrigger className={errors.subject ? 'border-red-500' : ''}>
-                          <SelectValue placeholder="Select a subject" />
+                          <SelectValue placeholder={t('form.subjectPlaceholder')} />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="general">General Inquiry</SelectItem>
-                          <SelectItem value="order">Order Support</SelectItem>
-                          <SelectItem value="product">Product Question</SelectItem>
-                          <SelectItem value="feedback">Feedback</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          <SelectItem value="general">{t('subjectOptions.general')}</SelectItem>
+                          <SelectItem value="order">{t('subjectOptions.order')}</SelectItem>
+                          <SelectItem value="product">{t('subjectOptions.product')}</SelectItem>
+                          <SelectItem value="feedback">{t('subjectOptions.feedback')}</SelectItem>
+                          <SelectItem value="other">{t('subjectOptions.other')}</SelectItem>
                         </SelectContent>
                       </Select>
                       {errors.subject && (
@@ -229,11 +227,11 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <Label htmlFor="message">Message *</Label>
+                    <Label htmlFor="message">{t('form.messageLabel')}</Label>
                     <Textarea
                       id="message"
                       {...register('message')}
-                      placeholder="Tell us how we can help you..."
+                      placeholder={t('form.messagePlaceholder')}
                       rows={6}
                       className={errors.message ? 'border-red-500' : ''}
                     />
@@ -247,8 +245,8 @@ export default function Contact() {
                     disabled={isSubmitting}
                     className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-6"
                   >
-                    <Send className="w-5 h-5 mr-2" />
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    <Send className="w-5 h-5 mr-2 rtl:ml-2 rtl:mr-0" />
+                    {isSubmitting ? t('form.sending') : t('form.submit')}
                   </Button>
                 </form>
               </div>

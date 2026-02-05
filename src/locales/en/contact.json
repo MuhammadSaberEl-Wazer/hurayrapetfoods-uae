@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you!"
+  },
+  "contactInfoTitle": "Contact Information",
+  "email": "Email",
+  "phone": "Phone",
+  "whatsapp": "WhatsApp",
+  "address": "Address",
+  "followUs": "Follow Us",
+  "formTitle": "Send us a Message",
+  "form": {
+    "nameLabel": "Full Name *",
+    "namePlaceholder": "Ahmed Mohammed",
+    "nameMin": "Name must be at least 3 characters",
+    "emailLabel": "Email *",
+    "emailPlaceholder": "ahmed@example.com",
+    "emailInvalid": "Invalid email address",
+    "phoneLabel": "Phone *",
+    "phonePlaceholder": "+971 50 123 4567",
+    "phoneMin": "Phone number must be at least 9 digits",
+    "subjectLabel": "Subject *",
+    "subjectPlaceholder": "Select a subject",
+    "subjectRequired": "Please select a subject",
+    "messageLabel": "Message *",
+    "messagePlaceholder": "Tell us how we can help you...",
+    "messageMin": "Message must be at least 10 characters",
+    "submit": "Send Message",
+    "sending": "Sending..."
+  },
+  "subjectOptions": {
+    "general": "General Inquiry",
+    "order": "Order Support",
+    "product": "Product Question",
+    "feedback": "Feedback",
+    "other": "Other"
+  },
+  "toast": {
+    "success": "Message sent successfully!",
+    "successDesc": "We'll get back to you within 24 hours."
+  }
+}

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { products } from '@/data/products'
 import AddProductModal from '@/components/admin/AddProductModal'
 import { 
@@ -21,6 +22,7 @@ import {
 } from 'lucide-react'
 
 export default function AdminProducts() {
+  const { t } = useTranslation('admin-products')
   const [searchTerm, setSearchTerm] = useState('')
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
 
@@ -36,15 +38,15 @@ export default function AdminProducts() {
 
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-causten font-bold text-gray-900 mb-2">Products</h1>
-        <p className="text-gray-600 mb-4">Manage your product catalog</p>
+        <h1 className="text-3xl font-causten font-bold text-gray-900 mb-2">{t('title')}</h1>
+        <p className="text-gray-600 mb-4">{t('subtitle')}</p>
         <Button
           size="lg"
           className="w-full sm:w-auto min-w-[200px] bg-primary hover:bg-primary/90 text-base px-6 py-6 sm:py-5"
           onClick={() => setIsAddModalOpen(true)}
         >
           <Plus className="w-5 h-5 mr-2" />
-          Add Product
+          {t('addProduct')}
         </Button>
       </div>
 
@@ -54,7 +56,7 @@ export default function AdminProducts() {
           <div className="flex-1 relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <Input
-              placeholder="Search products by name or type..."
+              placeholder={t('searchPlaceholder')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-10"
@@ -68,13 +70,13 @@ export default function AdminProducts() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Product</TableHead>
-              <TableHead>Type</TableHead>
-              <TableHead>Price</TableHead>
-              <TableHead>Sizes</TableHead>
-              <TableHead>Stock</TableHead>
-              <TableHead>Featured</TableHead>
-              <TableHead className="text-right">Actions</TableHead>
+              <TableHead>{t('tableProduct')}</TableHead>
+              <TableHead>{t('tableType')}</TableHead>
+              <TableHead>{t('tablePrice')}</TableHead>
+              <TableHead>{t('tableSizes')}</TableHead>
+              <TableHead>{t('tableStock')}</TableHead>
+              <TableHead>{t('tableFeatured')}</TableHead>
+              <TableHead className="text-right">{t('tableActions')}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -91,7 +93,6 @@ export default function AdminProducts() {
                     </div>
                     <div>
                       <p className="font-medium text-gray-900">{product.name}</p>
-                      <p className="text-sm text-gray-500 font-cairo">{product.nameAr}</p>
                     </div>
                   </div>
                 </TableCell>
@@ -104,18 +105,18 @@ export default function AdminProducts() {
                   AED {product.price}
                 </TableCell>
                 <TableCell>
-                  <span className="text-sm text-gray-600">{product.sizes.length} sizes</span>
+                  <span className="text-sm text-gray-600">{t('sizesCount', { count: product.sizes.length })}</span>
                 </TableCell>
                 <TableCell>
                   {product.inStock ? (
-                    <Badge className="bg-green-100 text-green-800">In Stock</Badge>
+                    <Badge className="bg-green-100 text-green-800">{t('inStock')}</Badge>
                   ) : (
-                    <Badge className="bg-red-100 text-red-800">Out of Stock</Badge>
+                    <Badge className="bg-red-100 text-red-800">{t('outOfStock')}</Badge>
                   )}
                 </TableCell>
                 <TableCell>
                   {product.featured ? (
-                    <Badge className="bg-accent/20 text-accent">Featured</Badge>
+                    <Badge className="bg-accent/20 text-accent">{t('featured')}</Badge>
                   ) : (
                     <span className="text-gray-400 text-sm">-</span>
                   )}
@@ -138,7 +139,7 @@ export default function AdminProducts() {
         {filteredProducts.length === 0 && (
           <div className="text-center py-12">
             <Package className="w-12 h-12 text-gray-400 mx-auto mb-3" />
-            <p className="text-gray-600">No products found</p>
+            <p className="text-gray-600">{t('noProducts')}</p>
           </div>
         )}
       </div>

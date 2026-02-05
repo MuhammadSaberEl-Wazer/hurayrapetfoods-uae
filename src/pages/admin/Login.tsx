@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
+import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Lock, Mail, AlertCircle } from 'lucide-react'
@@ -13,6 +15,7 @@ const TEMP_CREDENTIALS = {
 }
 
 export default function AdminLogin() {
+  const { t } = useTranslation('admin-login')
   const navigate = useNavigate()
   const { toast } = useToast()
   const [email, setEmail] = useState('')
@@ -25,29 +28,21 @@ export default function AdminLogin() {
     setError('')
     setIsLoading(true)
 
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000))
 
-    // Check credentials
     if (email === TEMP_CREDENTIALS.email && password === TEMP_CREDENTIALS.password) {
-      // Success
       toast({
-        title: "Login Successful!",
-        description: "Welcome to HurayraPetFood.ae Admin Panel",
+        title: t('toast.successTitle'),
+        description: t('toast.successDesc'),
         duration: 3000
       })
-
-      // Store auth status (temporary - will use Supabase later)
       localStorage.setItem('admin_authenticated', 'true')
-
-      // Navigate to dashboard
       navigate('/admin')
     } else {
-      // Failed
-      setError('Invalid email or password')
+      setError(t('error'))
       toast({
-        title: "Login Failed",
-        description: "Please check your credentials and try again.",
+        title: t('toast.failTitle'),
+        description: t('toast.failDesc'),
         variant: "destructive",
         duration: 3000
       })
@@ -57,17 +52,25 @@ export default function AdminLogin() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 flex items-center justify-center p-4 relative">
+      {/* Language switcher — top right */}
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
+        <LanguageSwitcher />
+      </div>
       <div className="w-full max-w-md">
         {/* Logo & Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary mb-4">
-            <span className="text-white font-bold text-2xl">🐱</span>
+          <div className="inline-flex items-center justify-center rounded-xl bg-primary px-4 py-3 mb-4">
+            <img
+              src="/logos/Hurayra-uae-svg-logo.svg"
+              alt="HurayraPetFood.ae Admin"
+              className="h-14 w-auto"
+            />
           </div>
           <h1 className="text-3xl font-causten font-bold text-gray-900 mb-2">
-            HurayraPetFood.ae Admin
+            {t('title')}
           </h1>
-          <p className="text-gray-600">Sign in to access the control panel</p>
+          <p className="text-gray-600">{t('subtitle')}</p>
         </div>
 
         {/* Login Card */}
@@ -75,13 +78,13 @@ export default function AdminLogin() {
           <form onSubmit={handleLogin} className="space-y-6">
             {/* Email */}
             <div>
-              <Label htmlFor="email">Email Address</Label>
+              <Label htmlFor="email">{t('email')}</Label>
               <div className="relative mt-2">
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <Input
                   id="email"
                   type="email"
-                  placeholder="admin@hurayra.com"
+                  placeholder={t('emailPlaceholder')}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="pl-10 h-12"
@@ -92,13 +95,13 @@ export default function AdminLogin() {
 
             {/* Password */}
             <div>
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">{t('password')}</Label>
               <div className="relative mt-2">
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <Input
                   id="password"
                   type="password"
-                  placeholder="••••••••"
+                  placeholder={t('passwordPlaceholder')}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="pl-10 h-12"
@@ -121,23 +124,23 @@ export default function AdminLogin() {
               className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-semibold"
               disabled={isLoading}
             >
-              {isLoading ? 'Signing in...' : 'Sign In'}
+              {isLoading ? t('submitting') : t('submit')}
             </Button>
           </form>
 
           {/* Demo Credentials */}
           <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
-            <p className="text-xs font-semibold text-gray-700 mb-2">Demo Credentials:</p>
+            <p className="text-xs font-semibold text-gray-700 mb-2">{t('demoTitle')}</p>
             <div className="space-y-1 text-xs text-gray-600">
-              <p>Email: <code className="bg-white px-2 py-0.5 rounded">admin@hurayra.com</code></p>
-              <p>Password: <code className="bg-white px-2 py-0.5 rounded">admin123</code></p>
+              <p>{t('demoEmail')} <code className="bg-white px-2 py-0.5 rounded">admin@hurayra.com</code></p>
+              <p>{t('demoPassword')} <code className="bg-white px-2 py-0.5 rounded">admin123</code></p>
             </div>
           </div>
         </div>
 
         {/* Footer */}
         <p className="text-center text-sm text-gray-500 mt-6">
-          © 2026 HurayraPetFood.ae. All rights reserved.
+          {t('footer')}
         </p>
       </div>
     </div>

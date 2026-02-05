@@ -26,7 +26,7 @@ export const CartIcon = ({ variant = 'default' }: CartIconProps) => {
       <div className="relative">
         <ShoppingCart className={iconClass} />
         {totalItems > 0 && (
-          <Badge className="absolute -top-2 -right-2 h-5 min-w-5 flex items-center justify-center p-0 px-1.5 bg-secondary text-white text-xs font-bold">
+          <Badge className="absolute -top-2 -right-2 h-4 w-4 flex items-center justify-center p-0 px-1.5 bg-accent text-accent-foreground text-xs font-bold shadow-md ring-2 ring-white/50">
             {totalItems > 99 ? '99+' : totalItems}
           </Badge>
         )}

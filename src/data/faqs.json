@@ -3,90 +3,70 @@
     {
       "id": "halal-certified",
       "question": "Is your cat food really 100% halal?",
-      "questionAr": "هل طعام القطط الخاص بكم حلال 100٪ حقًا؟",
       "answer": "Yes, absolutely! All our products are certified halal by recognized Islamic authorities. We ensure that every ingredient, from the chicken and tuna to the vitamins and minerals, meets strict halal standards. Our manufacturing process is also halal-compliant, with no cross-contamination with non-halal products.",
-      "answerAr": "نعم، بالتأكيد! جميع منتجاتنا معتمدة حلال من قبل سلطات إسلامية معترف بها. نضمن أن كل مكون، من الدجاج والتونة إلى الفيتامينات والمعادن، يلبي معايير الحلال الصارمة. عملية التصنيع لدينا متوافقة مع الحلال أيضًا، بدون تلوث متبادل مع المنتجات غير الحلال.",
       "category": "halal",
       "order": 1
     },
     {
       "id": "what-makes-different",
       "question": "What makes your cat food different from others?",
-      "questionAr": "ما الذي يجعل طعام القطط الخاص بكم مختلفًا عن غيره؟",
       "answer": "Our cat food stands out because it's 100% halal, made with premium natural ingredients, and formulated by veterinary nutritionists. We use high-quality protein sources (chicken or tuna), no artificial preservatives, and include essential vitamins and minerals. Plus, we cater specifically to the Muslim community's values and dietary requirements.",
-      "answerAr": "يتميز طعام القطط لدينا بأنه حلال 100٪، مصنوع من مكونات طبيعية فاخرة، ومصمم من قبل خبراء تغذية بيطريين. نستخدم مصادر بروتين عالية الجودة (دجاج أو تونة)، بدون مواد حافظة صناعية، ونضيف الفيتامينات والمعادن الأساسية. بالإضافة إلى ذلك، نلبي على وجه التحديد قيم المجتمع الإسلامي ومتطلباته الغذائية.",
       "category": "product",
       "order": 2
     },
     {
       "id": "ingredients",
       "question": "What are the main ingredients?",
-      "questionAr": "ما هي المكونات الرئيسية؟",
       "answer": "Our formulas contain high-quality protein (chicken or tuna), chicken liver for nutrients, fish oil for Omega-3, essential vitamins (A, D, E, B-complex), minerals (calcium, phosphorus, zinc), and natural fiber. We never use artificial colors, flavors, or preservatives.",
-      "answerAr": "تحتوي تركيباتنا على بروتين عالي الجودة (دجاج أو تونة)، كبد دجاج للعناصر الغذائية، زيت السمك لأوميغا 3، فيتامينات أساسية (A، D، E، مجموعة B)، معادن (كالسيوم، فوسفور، زنك)، وألياف طبيعية. نحن لا نستخدم أبدًا ألوانًا أو نكهات أو مواد حافظة صناعية.",
       "category": "product",
       "order": 3
     },
     {
       "id": "suitable-age",
       "question": "Is this suitable for kittens and adult cats?",
-      "questionAr": "هل هذا مناسب للقطط الصغيرة والقطط البالغة؟",
       "answer": "Yes! We offer formulations suitable for both kittens and adult cats. Our kitten formula supports healthy growth and development, while our adult formula maintains optimal health and vitality. Check the product labels for specific age recommendations.",
-      "answerAr": "نعم! نقدم تركيبات مناسبة لكل من القطط الصغيرة والقطط البالغة. تركيبة القطط الصغيرة لدينا تدعم النمو والتطور الصحي، بينما تحافظ تركيبة البالغين على الصحة والحيوية المثلى. تحقق من ملصقات المنتج للحصول على توصيات عمرية محددة.",
       "category": "usage",
       "order": 4
     },
     {
       "id": "delivery",
       "question": "Do you deliver to all UAE emirates?",
-      "questionAr": "هل توصلون إلى جميع إمارات الدولة؟",
       "answer": "Yes, we deliver to all seven emirates: Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain, and Fujairah. Shipping is free for all orders, and delivery typically takes 1-3 business days depending on your location.",
-      "answerAr": "نعم، نوصل إلى جميع الإمارات السبع: دبي، أبوظبي، الشارقة، عجمان، رأس الخيمة، أم القيوين، والفجيرة. الشحن مجاني لجميع الطلبات، وعادة ما يستغرق التوصيل من 1 إلى 3 أيام عمل حسب موقعك.",
       "category": "shipping",
       "order": 5
     },
     {
       "id": "payment",
       "question": "What payment methods do you accept?",
-      "questionAr": "ما هي طرق الدفع التي تقبلونها؟",
       "answer": "Currently, we accept Cash on Delivery (COD) for all orders across the UAE. We're working on adding online payment options including credit/debit cards and digital wallets soon.",
-      "answerAr": "حاليًا، نقبل الدفع عند الاستلام (COD) لجميع الطلبات في جميع أنحاء الإمارات. نعمل على إضافة خيارات الدفع عبر الإنترنت بما في ذلك بطاقات الائتمان/الخصم والمحافظ الرقمية قريبًا.",
       "category": "payment",
       "order": 6
     },
     {
       "id": "storage",
       "question": "How should I store the cat food?",
-      "questionAr": "كيف يجب أن أخزن طعام القطط؟",
       "answer": "Store the food in a cool, dry place away from direct sunlight. After opening, seal the bag tightly or transfer to an airtight container. Use within 4-6 weeks of opening for optimal freshness. Refrigeration is not necessary but can extend shelf life.",
-      "answerAr": "احفظ الطعام في مكان بارد وجاف بعيدًا عن أشعة الشمس المباشرة. بعد الفتح، أغلق الكيس بإحكام أو انقله إلى وعاء محكم الإغلاق. استخدمه في غضون 4-6 أسابيع من الفتح للحصول على أفضل نضارة. التبريد ليس ضروريًا ولكن يمكن أن يطيل مدة الصلاحية.",
       "category": "usage",
       "order": 7
     },
     {
       "id": "portion-size",
       "question": "How much should I feed my cat?",
-      "questionAr": "كم يجب أن أطعم قطتي؟",
       "answer": "Feeding amounts depend on your cat's weight, age, and activity level. Generally, adult cats need about 200-300 calories per day. Our packaging includes a detailed feeding guide. Start with the recommended amount and adjust based on your cat's body condition. Always provide fresh water.",
-      "answerAr": "تعتمد كميات التغذية على وزن قطتك وعمرها ومستوى نشاطها. بشكل عام، تحتاج القطط البالغة حوالي 200-300 سعرة حرارية في اليوم. تتضمن عبواتنا دليل تغذية مفصل. ابدأ بالكمية الموصى بها واضبطها بناءً على حالة جسم قطتك. قدم دائمًا ماء عذب.",
       "category": "usage",
       "order": 8
     },
     {
       "id": "return-policy",
       "question": "What is your return policy?",
-      "questionAr": "ما هي سياسة الإرجاع الخاصة بكم؟",
       "answer": "We offer a 30-day satisfaction guarantee. If your cat doesn't love our food or if you're not satisfied for any reason, you can return unopened bags for a full refund. For opened bags, please contact our customer service to discuss your concerns - we're committed to your satisfaction.",
-      "answerAr": "نقدم ضمان رضا لمدة 30 يومًا. إذا لم تحب قطتك طعامنا أو إذا لم تكن راضيًا لأي سبب، يمكنك إرجاع الأكياس غير المفتوحة لاسترداد كامل المبلغ. بالنسبة للأكياس المفتوحة، يرجى الاتصال بخدمة العملاء لدينا لمناقشة مخاوفك - نحن ملتزمون برضاك.",
       "category": "policy",
       "order": 9
     },
     {
       "id": "allergens",
       "question": "Does the food contain common allergens?",
-      "questionAr": "هل يحتوي الطعام على مسببات حساسية شائعة؟",
       "answer": "Our formulas are grain-free and don't contain wheat, corn, or soy - common allergens for cats. We use single-source proteins (chicken or tuna) to minimize allergic reactions. However, if your cat has specific allergies, please check the full ingredient list or consult your veterinarian.",
-      "answerAr": "تركيباتنا خالية من الحبوب ولا تحتوي على القمح أو الذرة أو الصويا - مسببات الحساسية الشائعة للقطط. نستخدم بروتينات من مصدر واحد (دجاج أو تونة) لتقليل التفاعلات التحسسية. ومع ذلك، إذا كانت قطتك لديها حساسية محددة، يرجى التحقق من قائمة المكونات الكاملة أو استشارة طبيبك البيطري.",
       "category": "health",
       "order": 10
     }
@@ -94,38 +74,31 @@
   "categories": [
     {
       "id": "halal",
-      "name": "Halal Certification",
-      "nameAr": "الشهادة الحلال"
+      "name": "Halal Certification"
     },
     {
       "id": "product",
-      "name": "Product Information",
-      "nameAr": "معلومات المنتج"
+      "name": "Product Information"
     },
     {
       "id": "usage",
-      "name": "Usage & Storage",
-      "nameAr": "الاستخدام والتخزين"
+      "name": "Usage & Storage"
     },
     {
       "id": "shipping",
-      "name": "Shipping & Delivery",
-      "nameAr": "الشحن والتوصيل"
+      "name": "Shipping & Delivery"
     },
     {
       "id": "payment",
-      "name": "Payment",
-      "nameAr": "الدفع"
+      "name": "Payment"
     },
     {
       "id": "policy",
-      "name": "Policies",
-      "nameAr": "السياسات"
+      "name": "Policies"
     },
     {
       "id": "health",
-      "name": "Health & Nutrition",
-      "nameAr": "الصحة والتغذية"
+      "name": "Health & Nutrition"
     }
   ]
 }

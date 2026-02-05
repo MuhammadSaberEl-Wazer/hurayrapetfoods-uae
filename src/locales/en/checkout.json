@@ -1,0 +1,7 @@
+{
+  "title": "Checkout",
+  "shippingAddress": "Shipping address",
+  "paymentMethod": "Payment method",
+  "orderSummary": "Order summary",
+  "placeOrder": "Place order"
+}

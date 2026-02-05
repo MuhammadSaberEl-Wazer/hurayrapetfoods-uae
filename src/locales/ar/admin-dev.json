@@ -1,0 +1,142 @@
+{
+  "hero": {
+    "badge": "دليل التطوير",
+    "title": "خطة الباك إند والبيانات",
+    "subtitle": "نظرة شاملة على قاعدة البيانات وواجهات البرمجة"
+  },
+  "tabs": {
+    "database": "قاعدة البيانات",
+    "backend": "واجهات البرمجة (Backend)"
+  },
+  "database": {
+    "introTitle": "قاعدة البيانات — ماذا تُخزّن؟",
+    "introDesc": "تخيل قاعدة البيانات مثل مكتبة منظمة: كل نوع من المعلومات له مكانه الخاص. هذا يسمح لك بتحديث المحتوى من لوحة التحكم دون الحاجة للمبرمج.",
+    "structureTitle": "هيكل المعلومات في الموقع",
+    "structureDesc": "كل صندوق يمثّل نوعاً من البيانات التي يمكنك إدارتها",
+    "products": {
+      "label": "المنتجات",
+      "title": "المنتجات والوصف",
+      "desc": "أسماء المنتجات، الأسعار، المقاسات (مثلاً 900g)، المميزات، المكوّنات، المعلومات الغذائية، والصور. كل شيء بالعربي والإنجليزي.",
+      "items": ["دجاج، تونا، كومبو", "أسعار كل مقاس", "حلال، بروتين عالي، إلخ"]
+    },
+    "orders": {
+      "label": "الطلبات",
+      "title": "طلبات العملاء",
+      "desc": "كل طلب: اسم العميل، رقم الجوال، العنوان، المنتجات المطلوبة، المجموع، وطريقة الدفع. يمكنك تحديث حالة الطلب (قيد المعالجة، تم الشحن، إلخ).",
+      "items": ["رقم الطلب التلقائي", "الدفع عند الاستلام", "متابعة التوصيل"]
+    },
+    "blog": {
+      "label": "المدونة",
+      "title": "المقالات والنصائح",
+      "desc": "مقالات عن التغذية، العناية بالقطط، نصائح حلال. كل مقال له عنوان، ملخص، محتوى، صورة، وتصنيف. بالعربي والإنجليزي.",
+      "items": ["تغذية، صحة، عناية", "تاريخ النشر", "مميز أو عادي"]
+    },
+    "content": {
+      "label": "المحتوى",
+      "title": "نصوص صفحات الموقع",
+      "desc": "العناوين، الفقرات، الأسئلة الشائعة، آراء العملاء، قسم «لماذا الحلال»، ومعلومات التغذية. تُحدَّث من لوحة التحكم دون لمس الكود.",
+      "items": ["الصفحة الرئيسية", "من نحن، اتصل بنا", "الأسئلة الشائعة"]
+    },
+    "messages": {
+      "label": "الرسائل",
+      "title": "رسائل التواصل",
+      "desc": "كل رسالة من نموذج «اتصل بنا»: الاسم، البريد، الموضوع، والنص. يمكنك وضع علامة «تمت القراءة» أو «تم الرد»."
+    },
+    "newsletter": {
+      "label": "النشرة",
+      "title": "مشتركو النشرة البريدية",
+      "desc": "قائمة البريد الإلكتروني لكل من اشترك في النشرة. مفيد للحملات والعروض المستقبلية."
+    },
+    "bilingualTitle": "كل المحتوى بالعربية والإنجليزية",
+    "bilingualDesc": "النصوص المخزّنة تدعم اللغتين. عند تغيير العميل اللغة من الموقع، يظهر له المحتوى بنفس اللغة تلقائياً. لا حاجة لإدخال النسختين يدوياً في كل مرة — لوحة التحكم تتيح لك تحرير النص بالإنجليزي والعربي معاً.",
+    "settingsTitle": "الإعدادات العامة",
+    "settingsDesc": "معلومات المتجر وطرق الدفع والشحن",
+    "settingsStore": "معلومات المتجر",
+    "settingsStoreDetail": "الاسم، البريد، الهاتف، الواتساب، العنوان",
+    "settingsShipping": "الشحن والدفع",
+    "settingsShippingDetail": "حد الشحن المجاني، رسوم التوصيل، العملة",
+    "summaryTitle": "في النهاية — ما الذي ستحصل عليه؟",
+    "summaryItems": [
+      "تحديث المنتجات والأسعار دون مبرمج",
+      "استلام الطلبات ومتابعتها من لوحة التحكم",
+      "نشر مقالات ونصائح بالعربي والإنجليزي",
+      "تعديل نصوص الصفحات (الرئيسية، من نحن، لماذا الحلال، إلخ)",
+      "عرض رسائل العملاء وقائمة المشتركين في النشرة"
+    ],
+    "tableDetailsTitle": "تفاصيل الجداول (للمرجع)",
+    "tableDetailsDesc": "شرح مختصر لما يحتويه كل جدول في قاعدة البيانات",
+    "tableProducts": "جدول المنتجات",
+    "tableProductsDetail": "يخزن اسم المنتج، الوصف، النوع (دجاج/تونا/كومبو)، السعر، السعر قبل الخصم، المميزات، المعلومات الغذائية، المكوّنات، صور متعددة، حالة التوفر، و«منتج مميز» أم لا.",
+    "tableProductSizes": "مقاسات المنتجات",
+    "tableProductSizesDetail": "كل منتج قد يكون له أكثر من مقاس: مثلاً 400g، 900g، 2kg. كل مقاس له سعر ورمز SKU خاص.",
+    "tableOrders": "جدول الطلبات",
+    "tableOrdersDetail": "رقم الطلب، اسم العميل، البريد، الهاتف، عنوان التوصيل (المدينة، الإمارة)، المجموع، الشحن، الإجمالي، الحالة (قيد الانتظار، تم الشحن، تم التوصيل، ملغي)، وطريقة الدفع.",
+    "tableOrderItems": "عناصر الطلب",
+    "tableOrderItemsDetail": "كل طلب يحتوي على عدة منتجات. كل عنصر: اسم المنتج (عربي وإنجليزي)، المقاس، الكمية، السعر، والمجموع الفرعي."
+  },
+  "backend": {
+    "introTitle": "Node.js Backend — دليل المطور",
+    "introDesc": "بنية الـ API، الـ endpoints، دعم اللغات، والتوصيات التقنية",
+    "structureTitle": "بنية المشروع",
+    "structureDesc": "هيكل مجلدات الـ Backend",
+    "endpointsTitle": "الـ API Endpoints",
+    "endpointsDesc": "Public و Admin",
+    "publicLabel": "Public (بدون Auth)",
+    "adminLabel": "Admin (يتطلب JWT)",
+    "bilingualTitle": "دعم اللغات (Bilingual)",
+    "bilingualExample": "GET /api/products?lang=ar",
+    "bilingualDesc": "الأولوية: lang query أولاً، ثم Accept-Language، ثم fallback إلى en. عند الحفظ (Admin) يقبل الحقول باللغتين.",
+    "librariesTitle": "المكتبات المقترحة",
+    "responseTitle": "Response Format",
+    "responseSuccess": "Success",
+    "responseError": "Error",
+    "roadmapTitle": "خطة التنفيذ (4 أسابيع)",
+    "week1": "الأساسيات",
+    "week1Items": ["Express + DB", "Auth (JWT)", "Middleware"],
+    "week2": "المنتجات والطلبات",
+    "week2Items": ["CRUD Products", "File Upload", "Orders API"],
+    "week3": "المحتوى والمدونة",
+    "week3Items": ["Content API", "Blog CRUD", "Contact + Newsletter"],
+    "week4": "الإعدادات والإشعارات",
+    "week4Items": ["Settings", "Email/WhatsApp", "Export CSV/Excel"],
+    "recommendationsTitle": "توصيات للمطور",
+    "recommendations": [
+      "دعم ثنائي اللغة من اليوم الأول",
+      "استخدام Prisma مع PostgreSQL",
+      "توثيق API (Swagger/OpenAPI) مبكراً",
+      "Docker لسهولة النشر",
+      "راجع DATABASE.md للـ schema الكامل"
+    ],
+    "pagination": "Pagination: ?page=1&limit=20",
+    "filtering": "Filtering: ?type=chicken&status=pending",
+    "sorting": "Sorting: ?sort=createdAt&order=desc"
+  },
+  "apiPublic": [
+    { "method": "GET", "path": "/api/products", "desc": "قائمة المنتجات" },
+    { "method": "GET", "path": "/api/products/:slug", "desc": "تفاصيل منتج" },
+    { "method": "GET", "path": "/api/blogs", "desc": "قائمة المقالات" },
+    { "method": "GET", "path": "/api/blogs/:slug", "desc": "مقال واحد" },
+    { "method": "GET", "path": "/api/content/:key", "desc": "محتوى صفحة" },
+    { "method": "POST", "path": "/api/contact", "desc": "إرسال رسالة" },
+    { "method": "POST", "path": "/api/newsletter", "desc": "تسجيل النشرة" },
+    { "method": "POST", "path": "/api/orders", "desc": "إنشاء طلب" }
+  ],
+  "apiAdmin": [
+    { "method": "CRUD", "path": "/admin/products", "desc": "المنتجات" },
+    { "method": "GET/PATCH", "path": "/admin/orders", "desc": "الطلبات وتحديث الحالة" },
+    { "method": "CRUD", "path": "/admin/blogs", "desc": "المدونة" },
+    { "method": "GET/PUT", "path": "/admin/content", "desc": "محتوى الصفحات" },
+    { "method": "GET/PUT", "path": "/admin/settings", "desc": "الإعدادات" },
+    { "method": "POST", "path": "/admin/auth/login", "desc": "تسجيل دخول" }
+  ],
+  "libraries": [
+    { "lib": "Express.js", "use": "Framework" },
+    { "lib": "Prisma / Sequelize", "use": "ORM / DB" },
+    { "lib": "JWT + bcrypt", "use": "Auth" },
+    { "lib": "Zod / Joi", "use": "Validation" },
+    { "lib": "Multer", "use": "File Upload" },
+    { "lib": "helmet + cors", "use": "Security" }
+  ],
+  "footer": "للمزيد من التفاصيل راجع الملفات في PROJECT_PLAN/",
+  "apiColumnDesc": "الوصف"
+}

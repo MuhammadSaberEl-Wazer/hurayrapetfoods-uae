@@ -1,0 +1,20 @@
+{
+  "backToBlog": "Back to Blog",
+  "featured": "Featured",
+  "share": "Share",
+  "shareLabel": "Share:",
+  "facebook": "Facebook",
+  "twitter": "Twitter",
+  "email": "Email",
+  "copyLink": "Copy Link",
+  "linkCopied": "Link copied!",
+  "linkCopiedDesc": "Article link copied to clipboard",
+  "minRead": "{{count}} min read",
+  "minReadShort": "{{count}} min",
+  "relatedArticles": "Related Articles",
+  "cta": {
+    "title": "Ready to give your cat the best nutrition?",
+    "subtitle": "Explore our premium halal cat food products",
+    "button": "Shop Now"
+  }
+}

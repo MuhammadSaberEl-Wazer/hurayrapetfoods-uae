@@ -103,14 +103,15 @@ export default function NewsletterSignupModal() {
         </button>
 
         <div className="flex flex-col w-full min-h-0 justify-center pt-2">
-          {/* Logo */}
+          {/* Logo — primary background so logo + UAE flag show in full color */}
           <div className="flex justify-center py-2">
-            <img
-              src="/logos/main-logo.svg"
-              alt={footerData.logo.text}
-              className="h-10 w-auto"
-              style={{ filter: "brightness(0)" }}
-            />
+            <div className="rounded-xl bg-primary px-4 py-3 inline-flex items-center justify-center">
+              <img
+                src="/logos/Hurayra-uae-svg-logo.svg"
+                alt={footerData.logo.text}
+                className="h-10 w-auto"
+              />
+            </div>
           </div>
 
           {/* Title */}

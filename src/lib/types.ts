@@ -9,11 +9,9 @@ export type ProductType = 'chicken' | 'tuna' | 'combo'
 export interface Product {
   id: string
   name: string
-  nameAr?: string
   slug: string
   type: ProductType
   description: string
-  descriptionAr?: string
   price: number
   compareAtPrice?: number
   sizes: ProductSize[]
@@ -133,12 +131,9 @@ export interface Review {
 export interface Testimonial {
   id: string
   name: string
-  nameAr?: string
   location: string
-  locationAr?: string
   rating: number
   comment: string
-  commentAr?: string
   image?: string
   verified: boolean
 }
@@ -147,9 +142,7 @@ export interface Testimonial {
 export interface FAQ {
   id: string
   question: string
-  questionAr?: string
   answer: string
-  answerAr?: string
   category?: string
   order?: number
 }
@@ -158,9 +151,7 @@ export interface FAQ {
 export interface Feature {
   icon: string
   title: string
-  titleAr?: string
   description: string
-  descriptionAr?: string
 }
 
 // Newsletter Types

@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   Table,
   TableBody,
@@ -17,12 +18,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
 import { Eye, Search, Filter, Download, FileSpreadsheet } from 'lucide-react'
 import { useOrdersStore } from '@/store/ordersStore'
 import { exportOrdersToCsv, exportOrdersToExcel } from '@/lib/exportOrders'
@@ -36,6 +31,7 @@ const statusColors: Record<string, string> = {
 }
 
 export default function AdminOrders() {
+  const { t } = useTranslation('admin-orders')
   const orders = useOrdersStore((s) => s.orders)
   const [searchTerm, setSearchTerm] = useState('')
   const [statusFilter, setStatusFilter] = useState('all')
@@ -68,57 +64,48 @@ export default function AdminOrders() {
   return (
     <div className="p-8">
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-3xl font-causten font-bold text-gray-900 mb-2">Orders</h1>
-          <p className="text-gray-600">Manage customer orders</p>
-        </div>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline">
-              <Download className="w-4 h-4 mr-2" />
-              Export Orders
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={handleExportCsv} className="gap-2">
-              <Download className="w-4 h-4" />
-              Export as CSV
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={handleExportExcel} className="gap-2">
-              <FileSpreadsheet className="w-4 h-4" />
-              Export as Excel
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+      <div className="mb-8">
+        <h1 className="text-3xl font-causten font-bold text-gray-900 mb-2">{t('title')}</h1>
+        <p className="text-gray-600">{t('subtitle')}</p>
       </div>
 
-      {/* Search & Filters */}
+      {/* Search & Filters (Manage customer) + Export */}
       <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1 relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <Input
-              placeholder="Search by order number, customer, or email..."
+              placeholder={t('searchPlaceholder')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-10"
             />
           </div>
           <Select value={statusFilter} onValueChange={setStatusFilter}>
-            <SelectTrigger className="w-48">
+            <SelectTrigger className="w-full sm:w-48">
               <Filter className="w-4 h-4 mr-2" />
-              <SelectValue placeholder="Filter by status" />
+              <SelectValue placeholder={t('filterStatus')} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Status</SelectItem>
-              <SelectItem value="pending">Pending</SelectItem>
-              <SelectItem value="processing">Processing</SelectItem>
-              <SelectItem value="shipped">Shipped</SelectItem>
-              <SelectItem value="delivered">Delivered</SelectItem>
-              <SelectItem value="cancelled">Cancelled</SelectItem>
+              <SelectItem value="all">{t('allStatus')}</SelectItem>
+              <SelectItem value="pending">{t('pending')}</SelectItem>
+              <SelectItem value="processing">{t('processing')}</SelectItem>
+              <SelectItem value="shipped">{t('shipped')}</SelectItem>
+              <SelectItem value="delivered">{t('delivered')}</SelectItem>
+              <SelectItem value="cancelled">{t('cancelled')}</SelectItem>
             </SelectContent>
           </Select>
+        </div>
+        {/* Export Orders — below filters, full width, larger and accessible on mobile */}
+        <div className="mt-4 pt-4 border-t flex flex-col sm:flex-row gap-3">
+          <Button variant="outline" size="default" onClick={handleExportCsv} className="flex-1 min-h-11 gap-2">
+            <Download className="w-4 h-4 shrink-0" />
+            {t('exportCsv')}
+          </Button>
+          <Button variant="outline" size="default" onClick={handleExportExcel} className="flex-1 min-h-11 gap-2">
+            <FileSpreadsheet className="w-4 h-4 shrink-0" />
+            {t('exportExcel')}
+          </Button>
         </div>
       </div>
 
@@ -127,14 +114,14 @@ export default function AdminOrders() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Order Number</TableHead>
-              <TableHead>Customer</TableHead>
-              <TableHead>Contact</TableHead>
-              <TableHead>Items</TableHead>
-              <TableHead>Total</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Date</TableHead>
-              <TableHead className="text-right">Actions</TableHead>
+              <TableHead>{t('tableOrderNumber')}</TableHead>
+              <TableHead>{t('tableCustomer')}</TableHead>
+              <TableHead>{t('tableContact')}</TableHead>
+              <TableHead>{t('tableItems')}</TableHead>
+              <TableHead>{t('tableTotal')}</TableHead>
+              <TableHead>{t('tableStatus')}</TableHead>
+              <TableHead>{t('tableDate')}</TableHead>
+              <TableHead className="text-right">{t('tableActions')}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -156,7 +143,7 @@ export default function AdminOrders() {
                     </div>
                   </TableCell>
                   <TableCell>
-                    <span className="text-sm text-gray-600">{order.items.length} items</span>
+                    <span className="text-sm text-gray-600">{t('itemsCount', { count: order.items.length })}</span>
                   </TableCell>
                   <TableCell className="font-medium">
                     AED {order.total.toLocaleString()}
@@ -169,16 +156,16 @@ export default function AdminOrders() {
                       <SelectTrigger className="w-32">
                         <SelectValue>
                           <Badge className={statusColors[order.status] ?? 'bg-gray-100 text-gray-800'}>
-                            {order.status}
+                            {t(order.status)}
                           </Badge>
                         </SelectValue>
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="pending">Pending</SelectItem>
-                        <SelectItem value="processing">Processing</SelectItem>
-                        <SelectItem value="shipped">Shipped</SelectItem>
-                        <SelectItem value="delivered">Delivered</SelectItem>
-                        <SelectItem value="cancelled">Cancelled</SelectItem>
+                        <SelectItem value="pending">{t('pending')}</SelectItem>
+                        <SelectItem value="processing">{t('processing')}</SelectItem>
+                        <SelectItem value="shipped">{t('shipped')}</SelectItem>
+                        <SelectItem value="delivered">{t('delivered')}</SelectItem>
+                        <SelectItem value="cancelled">{t('cancelled')}</SelectItem>
                       </SelectContent>
                     </Select>
                   </TableCell>
@@ -198,7 +185,7 @@ export default function AdminOrders() {
 
         {filteredOrders.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-600">No orders found</p>
+            <p className="text-gray-600">{t('noOrders')}</p>
           </div>
         )}
       </div>
@@ -207,23 +194,23 @@ export default function AdminOrders() {
       <div className="mt-6 bg-white rounded-xl shadow-sm p-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div>
-            <p className="text-sm text-gray-600 mb-1">Total Orders</p>
+            <p className="text-sm text-gray-600 mb-1">{t('summaryTotalOrders')}</p>
             <p className="text-2xl font-bold text-gray-900">{filteredOrders.length}</p>
           </div>
           <div>
-            <p className="text-sm text-gray-600 mb-1">Total Revenue</p>
+            <p className="text-sm text-gray-600 mb-1">{t('summaryTotalRevenue')}</p>
             <p className="text-2xl font-bold text-gray-900">
               AED {filteredOrders.reduce((sum, order) => sum + order.total, 0)}
             </p>
           </div>
           <div>
-            <p className="text-sm text-gray-600 mb-1">Pending</p>
+            <p className="text-sm text-gray-600 mb-1">{t('summaryPending')}</p>
             <p className="text-2xl font-bold text-yellow-600">
               {filteredOrders.filter(o => o.status === 'pending').length}
             </p>
           </div>
           <div>
-            <p className="text-sm text-gray-600 mb-1">Delivered</p>
+            <p className="text-sm text-gray-600 mb-1">{t('summaryDelivered')}</p>
             <p className="text-2xl font-bold text-green-600">
               {filteredOrders.filter(o => o.status === 'delivered').length}
             </p>

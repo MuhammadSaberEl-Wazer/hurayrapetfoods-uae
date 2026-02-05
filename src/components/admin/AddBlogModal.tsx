@@ -26,28 +26,21 @@ const AddBlogModal = ({ open, onOpenChange }: AddBlogModalProps) => {
   
   const [formData, setFormData] = useState({
     title: '',
-    titleAr: '',
     slug: '',
     excerpt: '',
-    excerptAr: '',
     content: '',
-    contentAr: '',
     category: 'nutrition',
     image: '',
     publishDate: new Date().toISOString().split('T')[0],
     readTime: 5,
     featured: false,
     authorName: '',
-    authorNameAr: '',
     authorRole: '',
-    authorRoleAr: '',
     authorAvatar: '',
   });
 
   const [tags, setTags] = useState<string[]>([]);
-  const [tagsAr, setTagsAr] = useState<string[]>([]);
   const [newTag, setNewTag] = useState('');
-  const [newTagAr, setNewTagAr] = useState('');
 
   const handleInputChange = (field: string, value: string | number | boolean) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -73,17 +66,6 @@ const AddBlogModal = ({ open, onOpenChange }: AddBlogModalProps) => {
     setTags(tags.filter((_, i) => i !== index));
   };
 
-  const addTagAr = () => {
-    if (newTagAr.trim() && !tagsAr.includes(newTagAr.trim())) {
-      setTagsAr([...tagsAr, newTagAr.trim()]);
-      setNewTagAr('');
-    }
-  };
-
-  const removeTagAr = (index: number) => {
-    setTagsAr(tagsAr.filter((_, i) => i !== index));
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -96,25 +78,19 @@ const AddBlogModal = ({ open, onOpenChange }: AddBlogModalProps) => {
     // Reset form
     setFormData({
       title: '',
-      titleAr: '',
       slug: '',
       excerpt: '',
-      excerptAr: '',
       content: '',
-      contentAr: '',
       category: 'nutrition',
       image: '',
       publishDate: new Date().toISOString().split('T')[0],
       readTime: 5,
       featured: false,
       authorName: '',
-      authorNameAr: '',
       authorRole: '',
-      authorRoleAr: '',
       authorAvatar: '',
     });
     setTags([]);
-    setTagsAr([]);
     
     onOpenChange(false);
   };
@@ -133,7 +109,7 @@ const AddBlogModal = ({ open, onOpenChange }: AddBlogModalProps) => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="title">Title (English) *</Label>
+                <Label htmlFor="title">Title *</Label>
                 <Input
                   id="title"
                   value={formData.title}
@@ -143,18 +119,6 @@ const AddBlogModal = ({ open, onOpenChange }: AddBlogModalProps) => {
                 />
               </div>
               
-              <div>
-                <Label htmlFor="titleAr" className="font-cairo">Title (Arabic) *</Label>
-                <Input
-                  id="titleAr"
-                  value={formData.titleAr}
-                  onChange={(e) => handleInputChange('titleAr', e.target.value)}
-                  placeholder="مثال: دليل أفضل طعام للقطط"
-                  className="font-cairo"
-                  dir="rtl"
-                  required
-                />
-              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -182,7 +146,7 @@ const AddBlogModal = ({ open, onOpenChange }: AddBlogModalProps) => {
                   <SelectContent>
                     {blogCategories.map((category) => (
                       <SelectItem key={category.id} value={category.id}>
-                        {category.name} | {category.nameAr}
+                        {category.name}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -207,7 +171,7 @@ const AddBlogModal = ({ open, onOpenChange }: AddBlogModalProps) => {
             <h3 className="text-lg font-semibold border-b pb-2">Excerpts</h3>
             
             <div>
-              <Label htmlFor="excerpt">Excerpt (English) *</Label>
+              <Label htmlFor="excerpt">Excerpt *</Label>
               <Textarea
                 id="excerpt"
                 value={formData.excerpt}
@@ -218,19 +182,6 @@ const AddBlogModal = ({ open, onOpenChange }: AddBlogModalProps) => {
               />
             </div>
 
-            <div>
-              <Label htmlFor="excerptAr" className="font-cairo">Excerpt (Arabic) *</Label>
-              <Textarea
-                id="excerptAr"
-                value={formData.excerptAr}
-                onChange={(e) => handleInputChange('excerptAr', e.target.value)}
-                placeholder="ملخص مختصر للمقال (2-3 جمل)"
-                className="font-cairo"
-                dir="rtl"
-                rows={3}
-                required
-              />
-            </div>
           </div>
 
           {/* Content */}
@@ -238,7 +189,7 @@ const AddBlogModal = ({ open, onOpenChange }: AddBlogModalProps) => {
             <h3 className="text-lg font-semibold border-b pb-2">Full Content</h3>
             
             <div>
-              <Label htmlFor="content">Content (English) *</Label>
+              <Label htmlFor="content">Content *</Label>
               <Textarea
                 id="content"
                 value={formData.content}
@@ -252,19 +203,6 @@ const AddBlogModal = ({ open, onOpenChange }: AddBlogModalProps) => {
               </p>
             </div>
 
-            <div>
-              <Label htmlFor="contentAr" className="font-cairo">Content (Arabic) *</Label>
-              <Textarea
-                id="contentAr"
-                value={formData.contentAr}
-                onChange={(e) => handleInputChange('contentAr', e.target.value)}
-                placeholder="محتوى المقال الكامل باللغة العربية. يدعم تنسيق markdown."
-                className="font-cairo"
-                dir="rtl"
-                rows={10}
-                required
-              />
-            </div>
           </div>
 
           {/* Tags */}
@@ -272,7 +210,7 @@ const AddBlogModal = ({ open, onOpenChange }: AddBlogModalProps) => {
             <h3 className="text-lg font-semibold border-b pb-2">Tags</h3>
             
             <div>
-              <Label>Tags (English)</Label>
+              <Label>Tags</Label>
               <div className="flex gap-2 mt-2">
                 <Input
                   value={newTag}
@@ -303,39 +241,6 @@ const AddBlogModal = ({ open, onOpenChange }: AddBlogModalProps) => {
               </div>
             </div>
 
-            <div>
-              <Label className="font-cairo">Tags (Arabic)</Label>
-              <div className="flex gap-2 mt-2">
-                <Input
-                  value={newTagAr}
-                  onChange={(e) => setNewTagAr(e.target.value)}
-                  placeholder="أضف وسم"
-                  className="font-cairo"
-                  dir="rtl"
-                  onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addTagAr())}
-                />
-                <Button type="button" onClick={addTagAr} variant="outline">
-                  <Plus className="w-4 h-4" />
-                </Button>
-              </div>
-              <div className="flex flex-wrap gap-2 mt-3" dir="rtl">
-                {tagsAr.map((tag, index) => (
-                  <div
-                    key={index}
-                    className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm flex items-center gap-2 font-cairo"
-                  >
-                    {tag}
-                    <button
-                      type="button"
-                      onClick={() => removeTagAr(index)}
-                      className="hover:text-red-600"
-                    >
-                      <X className="w-3 h-3" />
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Author */}
@@ -344,7 +249,7 @@ const AddBlogModal = ({ open, onOpenChange }: AddBlogModalProps) => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="authorName">Author Name (English) *</Label>
+                <Label htmlFor="authorName">Author Name *</Label>
                 <Input
                   id="authorName"
                   value={formData.authorName}
@@ -353,42 +258,13 @@ const AddBlogModal = ({ open, onOpenChange }: AddBlogModalProps) => {
                   required
                 />
               </div>
-              
               <div>
-                <Label htmlFor="authorNameAr" className="font-cairo">Author Name (Arabic) *</Label>
-                <Input
-                  id="authorNameAr"
-                  value={formData.authorNameAr}
-                  onChange={(e) => handleInputChange('authorNameAr', e.target.value)}
-                  placeholder="د. أحمد المنصوري"
-                  className="font-cairo"
-                  dir="rtl"
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <Label htmlFor="authorRole">Author Role (English) *</Label>
+                <Label htmlFor="authorRole">Author Role *</Label>
                 <Input
                   id="authorRole"
                   value={formData.authorRole}
                   onChange={(e) => handleInputChange('authorRole', e.target.value)}
                   placeholder="Veterinary Nutritionist"
-                  required
-                />
-              </div>
-              
-              <div>
-                <Label htmlFor="authorRoleAr" className="font-cairo">Author Role (Arabic) *</Label>
-                <Input
-                  id="authorRoleAr"
-                  value={formData.authorRoleAr}
-                  onChange={(e) => handleInputChange('authorRoleAr', e.target.value)}
-                  placeholder="أخصائي تغذية بيطرية"
-                  className="font-cairo"
-                  dir="rtl"
                   required
                 />
               </div>

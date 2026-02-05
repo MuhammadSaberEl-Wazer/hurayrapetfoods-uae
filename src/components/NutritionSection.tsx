@@ -1,38 +1,26 @@
 import { Beef, Sparkles, Droplets } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import catEating from "@/assets/cat-eating.png";
 
 const nutritionFacts = [
-  {
-    icon: Beef,
-    title: "55% Protein",
-    description: "High-quality animal protein for strong muscles and healthy development",
-    color: "bg-coral-light text-coral",
-  },
-  {
-    icon: Sparkles,
-    title: "Vitamins A, D, E",
-    description: "Essential vitamins for a shiny coat, bright eyes, and strong immune system",
-    color: "bg-teal-light text-primary",
-  },
-  {
-    icon: Droplets,
-    title: "Omega 3 & 6",
-    description: "Healthy fats for brain development and a lustrous, healthy coat",
-    color: "bg-secondary text-foreground",
-  },
-];
+  { icon: Beef, titleKey: "proteinTitle", descKey: "proteinDesc", color: "bg-coral-light text-coral" },
+  { icon: Sparkles, titleKey: "vitaminsTitle", descKey: "vitaminsDesc", color: "bg-teal-light text-primary" },
+  { icon: Droplets, titleKey: "omegaTitle", descKey: "omegaDesc", color: "bg-secondary text-foreground" },
+] as const;
 
 const NutritionSection = () => {
+  const { t } = useTranslation("home");
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground mb-4">
-            The Right Nutrition for a <span className="text-primary">Better Life</span>
+            {t("nutrition.sectionTitle")} <span className="text-primary">{t("nutrition.sectionTitleHighlight")}</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Each recipe is carefully formulated to provide complete and balanced nutrition for cats of all life stages
+            {t("nutrition.sectionSubtitle")}
           </p>
         </div>
 
@@ -41,10 +29,9 @@ const NutritionSection = () => {
           <div className="relative">
             <img
               src={catEating}
-              alt="Cat enjoying nutritious meal"
+              alt={t("nutrition.altCat")}
               className="w-full max-w-lg mx-auto rounded-3xl shadow-elevated"
             />
-            {/* Decorative elements */}
             <div className="absolute -z-10 -bottom-8 -left-8 w-full h-full bg-teal-light rounded-3xl"></div>
           </div>
 
@@ -60,10 +47,10 @@ const NutritionSection = () => {
                 </div>
                 <div>
                   <h3 className="font-sans text-xl font-bold text-foreground mb-2">
-                    {fact.title}
+                    {t(`nutrition.${fact.titleKey}`)}
                   </h3>
                   <p className="text-muted-foreground">
-                    {fact.description}
+                    {t(`nutrition.${fact.descKey}`)}
                   </p>
                 </div>
               </div>

@@ -33,10 +33,8 @@ export default function AddProductModal({ open, onOpenChange }: AddProductModalP
   
   const [formData, setFormData] = useState({
     name: '',
-    nameAr: '',
     type: 'chicken',
     description: '',
-    descriptionAr: '',
     price: 25,
     compareAtPrice: 30,
     featured: false,
@@ -94,10 +92,8 @@ export default function AddProductModal({ open, onOpenChange }: AddProductModalP
     // Reset form
     setFormData({
       name: '',
-      nameAr: '',
       type: '',
       description: '',
-      descriptionAr: '',
       price: 25,
       compareAtPrice: 30,
       featured: false,
@@ -120,28 +116,15 @@ export default function AddProductModal({ open, onOpenChange }: AddProductModalP
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-gray-900">Basic Information</h3>
             
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <Label htmlFor="name">Product Name (English) *</Label>
-                <Input
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Premium Halal Cat Food"
-                  required
-                />
-              </div>
-              <div>
-                <Label htmlFor="nameAr" className="font-cairo">Product Name (Arabic)</Label>
-                <Input
-                  id="nameAr"
-                  value={formData.nameAr}
-                  onChange={(e) => setFormData({ ...formData, nameAr: e.target.value })}
-                  placeholder="طعام قطط حلال فاخر"
-                  className="font-cairo"
-                  dir="rtl"
-                />
-              </div>
+            <div>
+              <Label htmlFor="name">Product Name *</Label>
+              <Input
+                id="name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                placeholder="Premium Halal Cat Food"
+                required
+              />
             </div>
 
             <div>
@@ -159,25 +142,12 @@ export default function AddProductModal({ open, onOpenChange }: AddProductModalP
             </div>
 
             <div>
-              <Label htmlFor="description">Description (English)</Label>
+              <Label htmlFor="description">Description</Label>
               <Textarea
                 id="description"
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 placeholder="Detailed product description..."
-                rows={3}
-              />
-            </div>
-
-            <div>
-              <Label htmlFor="descriptionAr" className="font-cairo">Description (Arabic)</Label>
-              <Textarea
-                id="descriptionAr"
-                value={formData.descriptionAr}
-                onChange={(e) => setFormData({ ...formData, descriptionAr: e.target.value })}
-                placeholder="وصف تفصيلي للمنتج..."
-                className="font-cairo"
-                dir="rtl"
                 rows={3}
               />
             </div>

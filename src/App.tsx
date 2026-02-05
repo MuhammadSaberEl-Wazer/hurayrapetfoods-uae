@@ -13,6 +13,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import About from "./pages/About";
+import WhyHalal from "./pages/WhyHalal";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
@@ -31,6 +32,7 @@ import AdminLogin from "./pages/admin/Login";
 import AdminBlog from "./pages/admin/Blog";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Dev from "./pages/Dev";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +52,7 @@ const App = () => (
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/about" element={<About />} />
+            <Route path="/why-halal" element={<WhyHalal />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
@@ -77,6 +80,7 @@ const App = () => (
             <Route path="customers" element={<AdminCustomers />} />
             <Route path="blog" element={<AdminBlog />} />
             <Route path="settings" element={<AdminSettings />} />
+            <Route path="dev" element={<Dev />} />
           </Route>
 
           {/* 404 */}

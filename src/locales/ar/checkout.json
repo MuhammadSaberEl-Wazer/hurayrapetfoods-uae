@@ -1,0 +1,7 @@
+{
+  "title": "إتمام الطلب",
+  "shippingAddress": "عنوان التوصيل",
+  "paymentMethod": "طريقة الدفع",
+  "orderSummary": "ملخص الطلب",
+  "placeOrder": "تأكيد الطلب"
+}

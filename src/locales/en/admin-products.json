@@ -1,0 +1,18 @@
+{
+  "title": "Products",
+  "subtitle": "Manage your product catalog",
+  "addProduct": "Add Product",
+  "searchPlaceholder": "Search products by name or type...",
+  "tableProduct": "Product",
+  "tableType": "Type",
+  "tablePrice": "Price",
+  "tableSizes": "Sizes",
+  "tableStock": "Stock",
+  "tableFeatured": "Featured",
+  "tableActions": "Actions",
+  "inStock": "In Stock",
+  "outOfStock": "Out of Stock",
+  "featured": "Featured",
+  "sizesCount": "{{count}} sizes",
+  "noProducts": "No products found"
+}

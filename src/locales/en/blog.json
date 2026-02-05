@@ -1,0 +1,61 @@
+{
+  "title": "Blog",
+  "subtitle": "Tips, news, and cat care",
+  "hero": {
+    "title": "Cat Care Blog",
+    "subtitle": "Expert advice, tips, and insights for your feline friend"
+  },
+  "searchPlaceholder": "Search articles...",
+  "allCategories": "All Categories",
+  "categories": {
+    "nutrition": "Nutrition",
+    "health": "Health",
+    "care": "Care",
+    "tips": "Tips",
+    "news": "News"
+  },
+  "featured": "Featured",
+  "featuredArticles": "Featured Articles",
+  "latestArticles": "Latest Articles",
+  "latest": "Latest",
+  "readMore": "Read more",
+  "minRead": "{{count}} min read",
+  "minReadShort": "{{count}} min",
+  "backToBlog": "Back to Blog",
+  "relatedPosts": "Related articles",
+  "noResults": {
+    "title": "No articles found",
+    "hint": "Try adjusting your search or filters"
+  },
+  "cta": {
+    "title": "Want to learn more about cat nutrition?",
+    "subtitle": "Explore our premium halal cat food products",
+    "button": "View Products"
+  },
+  "items": {
+    "1": {
+      "title": "The Importance of Halal Cat Food for Muslim Pet Owners",
+      "excerpt": "Discover why halal certification matters when choosing food for your beloved cat and how it aligns with Islamic values."
+    },
+    "2": {
+      "title": "5 Benefits of a Grain-Free Diet for Your Cat",
+      "excerpt": "Learn why grain-free cat food is becoming the preferred choice for pet owners who want the best for their feline friends."
+    },
+    "3": {
+      "title": "How to Transition Your Cat to New Food",
+      "excerpt": "A step-by-step guide to safely switching your cat's diet without upsetting their stomach."
+    },
+    "4": {
+      "title": "Understanding Your Cat's Body Language",
+      "excerpt": "Decode what your cat is trying to tell you through their body language and vocalizations."
+    },
+    "5": {
+      "title": "Winter Cat Care: Keeping Your Feline Warm in UAE",
+      "excerpt": "Even in the UAE, winter temperatures can affect your cat. Learn how to keep them comfortable during cooler months."
+    },
+    "6": {
+      "title": "Complete Checklist for New Cat Owners",
+      "excerpt": "Everything you need to know and have before bringing your new feline friend home."
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "title": "اتصل بنا",
+    "subtitle": "نود أن نسمع منك!"
+  },
+  "contactInfoTitle": "معلومات الاتصال",
+  "email": "البريد الإلكتروني",
+  "phone": "الهاتف",
+  "whatsapp": "واتساب",
+  "address": "العنوان",
+  "followUs": "تابعنا",
+  "formTitle": "أرسل لنا رسالة",
+  "form": {
+    "nameLabel": "الاسم الكامل *",
+    "namePlaceholder": "أحمد محمد",
+    "nameMin": "الاسم يجب أن يكون 3 أحرف على الأقل",
+    "emailLabel": "البريد الإلكتروني *",
+    "emailPlaceholder": "ahmed@example.com",
+    "emailInvalid": "عنوان بريد إلكتروني غير صالح",
+    "phoneLabel": "الهاتف *",
+    "phonePlaceholder": "+971 50 123 4567",
+    "phoneMin": "رقم الهاتف يجب أن يكون 9 أرقام على الأقل",
+    "subjectLabel": "الموضوع *",
+    "subjectPlaceholder": "اختر موضوعاً",
+    "subjectRequired": "يرجى اختيار موضوع",
+    "messageLabel": "الرسالة *",
+    "messagePlaceholder": "أخبرنا كيف يمكننا مساعدتك...",
+    "messageMin": "الرسالة يجب أن تكون 10 أحرف على الأقل",
+    "submit": "إرسال الرسالة",
+    "sending": "جاري الإرسال..."
+  },
+  "subjectOptions": {
+    "general": "استفسار عام",
+    "order": "دعم الطلبات",
+    "product": "سؤال عن منتج",
+    "feedback": "ملاحظات",
+    "other": "أخرى"
+  },
+  "toast": {
+    "success": "تم إرسال الرسالة بنجاح!",
+    "successDesc": "سنرد عليك خلال 24 ساعة."
+  }
+}

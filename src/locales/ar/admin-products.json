@@ -1,0 +1,18 @@
+{
+  "title": "المنتجات",
+  "subtitle": "إدارة كتالوج المنتجات",
+  "addProduct": "إضافة منتج",
+  "searchPlaceholder": "البحث بالاسم أو النوع...",
+  "tableProduct": "المنتج",
+  "tableType": "النوع",
+  "tablePrice": "السعر",
+  "tableSizes": "الأحجام",
+  "tableStock": "المخزون",
+  "tableFeatured": "مميز",
+  "tableActions": "إجراءات",
+  "inStock": "متوفر",
+  "outOfStock": "نفد",
+  "featured": "مميز",
+  "sizesCount": "{{count}} أحجام",
+  "noProducts": "لم يتم العثور على منتجات"
+}

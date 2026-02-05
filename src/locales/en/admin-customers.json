@@ -1,0 +1,19 @@
+{
+  "title": "Customers",
+  "subtitle": "Manage your customer database",
+  "searchPlaceholder": "Search by name, email, or phone...",
+  "totalCustomers": "Total Customers",
+  "totalOrders": "Total Orders",
+  "totalRevenue": "Total Revenue",
+  "avgOrderValue": "Avg Order Value",
+  "tableCustomer": "Customer",
+  "tableContact": "Contact",
+  "tableLocation": "Location",
+  "tableOrders": "Orders",
+  "tableTotalSpent": "Total Spent",
+  "tableJoinDate": "Join Date",
+  "tableLastOrder": "Last Order",
+  "tableActions": "Actions",
+  "ordersCount": "{{count}} orders",
+  "noCustomers": "No customers found"
+}

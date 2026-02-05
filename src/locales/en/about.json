@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "title": "About HurayraPetFood.ae",
+    "subtitle": "Providing premium halal cat food with love and care since 2020"
+  },
+  "story": {
+    "title": "Our Story",
+    "content": [
+      "HurayraPetFood.ae was founded with a simple yet powerful mission: to provide Muslim pet owners with high-quality, halal-certified cat food that meets both nutritional excellence and Islamic dietary requirements.",
+      "Named after Abu Hurayrah (رضي الله عنه), the beloved companion of Prophet Muhammad (peace be upon him) known for his deep love and care for cats, we honor this legacy by creating products that reflect our commitment to quality, compassion, and faith.",
+      "Starting in 2020, we recognized a gap in the market for premium halal pet food in the UAE and wider Middle East region. What began as a small operation has grown into a trusted brand serving thousands of Muslim families across the Emirates."
+    ]
+  },
+  "mission": {
+    "title": "Our Mission",
+    "description": "To provide the highest quality halal cat food that nourishes pets while respecting Islamic values and supporting Muslim pet owners across the UAE and beyond."
+  },
+  "vision": {
+    "title": "Our Vision",
+    "description": "To be the leading provider of halal pet food in the Middle East, setting the standard for quality, ethics, and customer satisfaction while promoting the Sunnah of kindness to animals."
+  },
+  "coreValuesTitle": "Our Core Values",
+  "whyChooseUsTitle": "Why Choose HurayraPetFood.ae?",
+  "certificationsTitle": "Certifications & Standards",
+  "cta": {
+    "title": "Join the HurayraPetFood.ae Family Today",
+    "subtitle": "Give your cat the nutrition they deserve with our premium halal products",
+    "button": "Shop Now"
+  },
+  "values": [
+    { "icon": "Shield", "title": "Islamic Values First", "description": "Everything we do is rooted in Islamic principles of halal, tayyib (good), and compassion to all creatures." },
+    { "icon": "Award", "title": "Quality Excellence", "description": "We never compromise on quality. Only premium, natural ingredients make it into our products." },
+    { "icon": "Heart", "title": "Compassion & Care", "description": "Following the Prophetic example, we treat all animals with kindness and ensure their wellbeing." },
+    { "icon": "Users", "title": "Customer Trust", "description": "Building lasting relationships with our customers through transparency, honesty, and excellent service." },
+    { "icon": "Leaf", "title": "Natural & Sustainable", "description": "We prioritize natural ingredients and sustainable practices to protect our planet." },
+    { "icon": "Zap", "title": "Innovation", "description": "Continuously improving our formulas and services to better serve our community." }
+  ],
+  "whyChooseUs": [
+    { "title": "100% Halal Certified", "description": "Authentic halal certification from recognized Islamic authorities" },
+    { "title": "Veterinarian Formulated", "description": "Created by expert veterinary nutritionists for optimal health" },
+    { "title": "Premium Ingredients", "description": "Only the finest, natural ingredients from trusted sources" },
+    { "title": "No Artificial Additives", "description": "Free from artificial colors, flavors, and preservatives" },
+    { "title": "Made for UAE Climate", "description": "Specially formulated considering the local environment" },
+    { "title": "Customer Satisfaction", "description": "30-day money-back guarantee and excellent support" },
+    { "title": "Fast UAE Delivery", "description": "Free shipping to all seven emirates in 1-3 days" },
+    { "title": "Trusted by Thousands", "description": "Over 10,000 satisfied cat parents across UAE" }
+  ],
+  "certifications": [
+    { "name": "Halal Certification", "authority": "Emirates Authority for Standardization and Metrology" },
+    { "name": "Quality Assurance", "authority": "ISO 9001:2015 Certified" },
+    { "name": "Veterinary Approved", "authority": "UAE Veterinary Association" }
+  ]
+}

@@ -58,6 +58,7 @@ export function exportSalesToCsv(stats: SalesStats, dateLabel: string, filename?
 export function exportSalesToExcel(stats: SalesStats, dateLabel: string, filename?: string): void {
   const wb = XLSX.utils.book_new()
 
+  // Summary sheet — same structure as CSV: title, period, blank, then metrics
   const summaryData = [
     ['Sales Report'],
     ['Period', dateLabel],
@@ -65,25 +66,39 @@ export function exportSalesToExcel(stats: SalesStats, dateLabel: string, filenam
     ['Metric', 'Value'],
     ['Total Sales (AED)', stats.totalSales],
     ['Total Orders', stats.totalOrders],
+    ['Products Sold', stats.byProduct.length],
+    ['Customers', stats.byCustomer.length],
   ]
   const wsSummary = XLSX.utils.aoa_to_sheet(summaryData)
   XLSX.utils.book_append_sheet(wb, wsSummary, 'Summary')
 
+  // Sales per Product — section title + period then table (matches CSV richness)
   const productData = [
+    ['Sales per Product'],
+    ['Period', dateLabel],
+    [],
     ['Product Name', 'Size', 'SKU', 'Quantity', 'Revenue (AED)'],
     ...stats.byProduct.map((p) => [p.productName, p.size, p.sku, p.quantity, p.revenue]),
   ]
   const wsProduct = XLSX.utils.aoa_to_sheet(productData)
   XLSX.utils.book_append_sheet(wb, wsProduct, 'Sales per Product')
 
+  // Sales per Customer — section title + period then table
   const customerData = [
+    ['Sales per Customer'],
+    ['Period', dateLabel],
+    [],
     ['Customer Name', 'Email', 'Order Count', 'Revenue (AED)'],
     ...stats.byCustomer.map((c) => [c.customerName, c.customerEmail, c.orderCount, c.revenue]),
   ]
   const wsCustomer = XLSX.utils.aoa_to_sheet(customerData)
   XLSX.utils.book_append_sheet(wb, wsCustomer, 'Sales per Customer')
 
+  // Sales by Period — section title + period then table
   const periodData = [
+    ['Sales by Period'],
+    ['Report Period', dateLabel],
+    [],
     ['Period', 'From', 'To', 'Order Count', 'Revenue (AED)'],
     ...stats.byPeriod.map((b) => [b.label, b.periodStart, b.periodEnd, b.orderCount, b.revenue]),
   ]

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { blogs, blogCategories } from '@/data/blogs';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -24,6 +25,7 @@ import AddBlogModal from '../../components/admin/AddBlogModal';
 import { useToast } from '@/hooks/use-toast';
 
 const AdminBlog = () => {
+  const { t } = useTranslation('admin-blog');
   const [searchTerm, setSearchTerm] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
@@ -31,11 +33,8 @@ const AdminBlog = () => {
 
   // Filter blogs
   const filteredBlogs = blogs.filter((blog) => {
-    const matchesSearch = blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      blog.titleAr.includes(searchTerm);
-    
+    const matchesSearch = blog.title.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = categoryFilter === 'all' || blog.category === categoryFilter;
-    
     return matchesSearch && matchesCategory;
   });
 
@@ -47,16 +46,15 @@ const AdminBlog = () => {
   const handleDelete = (id: string, title: string) => {
     // Dummy delete - show toast
     toast({
-      title: "Blog post deleted",
-      description: `"${title}" has been deleted successfully (dummy action)`,
+      title: t('toastDeleteTitle'),
+      description: t('toastDeleteDesc', { title }),
     });
   };
 
-  const handleEdit = (id: string) => {
-    // Dummy edit - show toast
+  const handleEdit = () => {
     toast({
-      title: "Edit feature",
-      description: "Edit functionality will be available after Supabase integration",
+      title: t('toastEditTitle'),
+      description: t('toastEditDesc'),
     });
   };
 
@@ -64,33 +62,27 @@ const AdminBlog = () => {
     <div className="p-8">
       {/* Header */}
       <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">Blog Posts</h1>
-            <p className="text-gray-600 mt-1">Manage your blog articles and content</p>
-          </div>
-          <Button onClick={() => setIsAddModalOpen(true)} className="gap-2">
-            <Plus className="w-4 h-4" />
-            Add New Post
-          </Button>
+        <div className="mb-4">
+          <h1 className="text-3xl font-bold text-gray-900">{t('title')}</h1>
+          <p className="text-gray-600 mt-1">{t('subtitle')}</p>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
           <div className="bg-white p-4 rounded-lg border shadow-sm">
-            <p className="text-sm text-gray-600">Total Posts</p>
+            <p className="text-sm text-gray-600">{t('totalPosts')}</p>
             <p className="text-2xl font-bold text-gray-900">{blogs.length}</p>
           </div>
           <div className="bg-white p-4 rounded-lg border shadow-sm">
-            <p className="text-sm text-gray-600">Featured</p>
+            <p className="text-sm text-gray-600">{t('featured')}</p>
             <p className="text-2xl font-bold text-primary">{blogs.filter(b => b.featured).length}</p>
           </div>
           <div className="bg-white p-4 rounded-lg border shadow-sm">
-            <p className="text-sm text-gray-600">Categories</p>
+            <p className="text-sm text-gray-600">{t('categories')}</p>
             <p className="text-2xl font-bold text-secondary">{blogCategories.length}</p>
           </div>
           <div className="bg-white p-4 rounded-lg border shadow-sm">
-            <p className="text-sm text-gray-600">This Month</p>
+            <p className="text-sm text-gray-600">{t('thisMonth')}</p>
             <p className="text-2xl font-bold text-accent">2</p>
           </div>
         </div>
@@ -103,7 +95,7 @@ const AdminBlog = () => {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <Input
               type="text"
-              placeholder="Search by title (EN or AR)..."
+              placeholder={t('searchPlaceholder')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-10"
@@ -112,13 +104,13 @@ const AdminBlog = () => {
 
           <Select value={categoryFilter} onValueChange={setCategoryFilter}>
             <SelectTrigger className="w-full md:w-[200px]">
-              <SelectValue placeholder="Filter by category" />
+              <SelectValue placeholder={t('filterCategory')} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Categories</SelectItem>
+              <SelectItem value="all">{t('allCategories')}</SelectItem>
               {blogCategories.map((category) => (
                 <SelectItem key={category.id} value={category.id}>
-                  {category.name} | {category.nameAr}
+                  {category.name}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -126,8 +118,20 @@ const AdminBlog = () => {
         </div>
 
         <p className="text-sm text-gray-500 mt-4">
-          Showing {filteredBlogs.length} of {blogs.length} posts
+          {t('showing', { count: filteredBlogs.length, total: blogs.length })}
         </p>
+
+        {/* Add New Post — full width, larger and accessible on mobile */}
+        <div className="mt-4 pt-4 border-t">
+          <Button
+            onClick={() => setIsAddModalOpen(true)}
+            className="w-full sm:w-auto min-h-11 gap-2 px-6"
+            size="default"
+          >
+            <Plus className="w-4 h-4 shrink-0" />
+            {t('addNewPost')}
+          </Button>
+        </div>
       </div>
 
       {/* Table */}
@@ -135,14 +139,14 @@ const AdminBlog = () => {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[80px]">Image</TableHead>
-              <TableHead>Title</TableHead>
-              <TableHead>Category</TableHead>
-              <TableHead>Author</TableHead>
-              <TableHead>Published</TableHead>
-              <TableHead className="text-center">Status</TableHead>
-              <TableHead className="text-center">Read Time</TableHead>
-              <TableHead className="text-right">Actions</TableHead>
+              <TableHead className="w-[80px]">{t('tableImage')}</TableHead>
+              <TableHead>{t('tableTitle')}</TableHead>
+              <TableHead>{t('tableCategory')}</TableHead>
+              <TableHead>{t('tableAuthor')}</TableHead>
+              <TableHead>{t('tablePublished')}</TableHead>
+              <TableHead className="text-center">{t('tableStatus')}</TableHead>
+              <TableHead className="text-center">{t('tableReadTime')}</TableHead>
+              <TableHead className="text-right">{t('tableActions')}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -159,11 +163,8 @@ const AdminBlog = () => {
                   </TableCell>
                   <TableCell>
                     <div>
-                      <p className="font-semibold text-gray-900 mb-1 line-clamp-1">
+                      <p className="font-semibold text-gray-900 line-clamp-1">
                         {blog.title}
-                      </p>
-                      <p className="text-sm text-gray-600 font-cairo line-clamp-1" dir="rtl">
-                        {blog.titleAr}
                       </p>
                     </div>
                   </TableCell>
@@ -197,13 +198,13 @@ const AdminBlog = () => {
                   </TableCell>
                   <TableCell className="text-center">
                     {blog.featured ? (
-                      <Badge className="bg-accent text-white">Featured</Badge>
+                      <Badge className="bg-accent text-white">{t('featured')}</Badge>
                     ) : (
-                      <Badge variant="secondary">Published</Badge>
+                      <Badge variant="secondary">{t('published')}</Badge>
                     )}
                   </TableCell>
                   <TableCell className="text-center">
-                    <span className="text-sm text-gray-600">{blog.readTime} min</span>
+                    <span className="text-sm text-gray-600">{t('readTimeMin', { count: blog.readTime })}</span>
                   </TableCell>
                   <TableCell className="text-right">
                     <div className="flex items-center justify-end gap-2">
@@ -215,7 +216,7 @@ const AdminBlog = () => {
                       <Button
                         size="sm"
                         variant="ghost"
-                        onClick={() => handleEdit(blog.id)}
+                        onClick={() => handleEdit()}
                       >
                         <Edit className="w-4 h-4" />
                       </Button>
@@ -238,8 +239,8 @@ const AdminBlog = () => {
         {filteredBlogs.length === 0 && (
           <div className="text-center py-12">
             <Search className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-            <p className="text-gray-500">No blog posts found</p>
-            <p className="text-sm text-gray-400 mt-1">Try adjusting your search or filters</p>
+            <p className="text-gray-500">{t('noPosts')}</p>
+            <p className="text-sm text-gray-400 mt-1">{t('noPostsHint')}</p>
           </div>
         )}
       </div>

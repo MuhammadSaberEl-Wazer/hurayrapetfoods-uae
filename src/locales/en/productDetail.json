@@ -1,0 +1,157 @@
+{
+  "notFound": {
+    "title": "Product Not Found",
+    "message": "The product you're looking for doesn't exist.",
+    "back": "Back to Products"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "products": "Products"
+  },
+  "backToProducts": "Back to Products",
+  "currency": "AED",
+  "fromSize": "From {{size}}",
+  "sizesAvailable": "{{count}} sizes available",
+  "sizesAvailable_one": "Only 900 g size available",
+  "sizesAvailable_other": "{{count}} sizes available",
+  "typeChicken": "Chicken Formula",
+  "typeTuna": "Tuna Formula",
+  "typeCombo": "Combo Formula",
+  "readMore": "Read More",
+  "showLess": "Show Less",
+  "save": "SAVE",
+  "outOfStock": "Out of Stock",
+  "selectSize": "Select Size",
+  "availability": "Availability:",
+  "inStock": "In stock",
+  "addToCart": "Add to cart",
+  "toast": {
+    "selectSize": "Please select a size",
+    "selectSizeDesc": "Choose a size before adding to cart",
+    "added": "Added to cart!",
+    "addedDesc": "{{name}} - {{size}} x {{quantity}} (AED {{total}})"
+  },
+  "trust": {
+    "halal": "100% Halal",
+    "delivery": "Free Delivery",
+    "guarantee": "30-Day Guarantee"
+  },
+  "tabs": {
+    "benefits": "Benefits",
+    "ingredients": "Ingredients",
+    "feeding": "Feeding Guidelines",
+    "nutrition": "Nutritional Info"
+  },
+  "ingredientsIntro": "Our products are made with carefully selected, high-quality ingredients:",
+  "ingredientsDisclaimer": "* All ingredients are halal-certified and free from artificial preservatives, colors, and flavors.",
+  "feeding": {
+    "bodyWeight": "Body Weight (kg)",
+    "kitten": "Kitten 4–12 months (g/day)",
+    "adult": "Adult 1+ yrs (g/day)",
+    "note": "For ages 4+ months. Feeding amounts may vary based on your cat's age, weight and activity level. Transition over 7–10 days for a smooth switch.",
+    "recommendedTitle": "Recommended Daily Feeding",
+    "bullet1": "Serve around 70–118 g per 1–2 kg body weight per day",
+    "bullet2": "Divide into two balanced meals",
+    "bullet3": "Adjust portions based on activity level"
+  },
+  "nutritionLabels": {
+    "protein": "Crude Protein (min)",
+    "fat": "Crude Fat (min)",
+    "fiber": "Crude Fiber (max)",
+    "moisture": "Moisture (max)",
+    "calories": "Caloric Content"
+  },
+  "additionalAdvice": {
+    "title": "Additional Advice",
+    "waterTitle": "Always provide fresh drinking water",
+    "waterDesc": "Keep clean water available at all times for your cat.",
+    "gradualTitle": "Introduce new food gradually",
+    "gradualDesc": "Transition over 7 days to avoid digestive discomfort.",
+    "packTitle": "Pack sizes",
+    "packDesc": "Multiple sizes available; choose the one that fits your feeding routine (about two weeks per pack for regular feeding)."
+  },
+  "aria": {
+    "decreaseQty": "Decrease quantity",
+    "increaseQty": "Increase quantity"
+  },
+  "items": {
+    "chicken-premium": {
+      "name": "Premium Halal Chicken Cat Food",
+      "description": "Our premium halal chicken formula is specially crafted for cats who deserve the best. Made with 100% halal-certified chicken meat as the primary ingredient, this complete and balanced meal provides all the essential nutrients your feline friend needs. Rich in high-quality protein, omega-3 fatty acids, and essential vitamins, it supports healthy muscle development, a shiny coat, and overall vitality. Free from artificial preservatives, colors, and flavors.",
+      "features": [
+        "100% Halal Certified Chicken",
+        "High Protein Content (35%)",
+        "Grain-Free Formula",
+        "No Artificial Preservatives",
+        "Rich in Omega-3 & Omega-6",
+        "Essential Vitamins & Minerals",
+        "Supports Healthy Digestion",
+        "Promotes Shiny Coat"
+      ],
+      "ingredients": [
+        "Chicken Meat (Halal Certified)",
+        "Chicken Liver",
+        "Fish Oil (Omega-3 source)",
+        "Sweet Potato",
+        "Peas",
+        "Vitamins (A, D3, E, B-complex)",
+        "Minerals (Calcium, Phosphorus, Zinc, Iron)",
+        "Taurine",
+        "Natural Fiber",
+        "Rosemary Extract (natural preservative)"
+      ]
+    },
+    "tuna-premium": {
+      "name": "Premium Halal Tuna Cat Food",
+      "description": "Indulge your cat with our premium halal tuna formula, made with sustainably sourced, halal-certified tuna. This delicious recipe is packed with high-quality protein and essential fatty acids that cats naturally crave. Enhanced with omega-3 from fish oil, it promotes heart health, brain function, and a lustrous coat. Perfect for cats who prefer seafood flavors, this complete meal provides balanced nutrition without any artificial additives.",
+      "features": [
+        "100% Halal Certified Tuna",
+        "High Protein Content (36%)",
+        "Grain-Free Formula",
+        "No Artificial Preservatives",
+        "Extra Rich in Omega-3",
+        "Essential Vitamins & Minerals",
+        "Supports Heart & Brain Health",
+        "Irresistible Seafood Flavor"
+      ],
+      "ingredients": [
+        "Tuna (Halal Certified)",
+        "Fish Meal",
+        "Fish Oil (Omega-3 source)",
+        "Sweet Potato",
+        "Peas",
+        "Vitamins (A, D3, E, B-complex)",
+        "Minerals (Calcium, Phosphorus, Zinc, Iron)",
+        "Taurine",
+        "Natural Fiber",
+        "Rosemary Extract (natural preservative)"
+      ]
+    },
+    "combo-chicken-tuna": {
+      "name": "Premium Halal Chicken & Tuna Combo",
+      "description": "The best of both worlds — our combo brings together premium halal chicken and tuna in one complete formula. Perfect for cats who love variety, this balanced blend offers high-quality protein from two premium sources, essential omega fatty acids, and full nutrition in every serving. 100% halal certified, no artificial additives.",
+      "features": [
+        "Chicken & Tuna — Two Premium Proteins",
+        "100% Halal Certified",
+        "High Protein (35%)",
+        "Grain-Free Formula",
+        "No Artificial Preservatives",
+        "Omega-3 & Omega-6",
+        "Complete & Balanced Nutrition",
+        "Ideal for Variety-Loving Cats"
+      ],
+      "ingredients": [
+        "Chicken Meat (Halal Certified)",
+        "Tuna (Halal Certified)",
+        "Fish Oil (Omega-3 source)",
+        "Sweet Potato",
+        "Peas",
+        "Vitamins (A, D3, E, B-complex)",
+        "Minerals (Calcium, Phosphorus, Zinc, Iron)",
+        "Taurine",
+        "Natural Fiber",
+        "Rosemary Extract (natural preservative)"
+      ]
+    }
+  }
+}

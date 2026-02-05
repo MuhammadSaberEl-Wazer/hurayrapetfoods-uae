@@ -1,39 +1,41 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { blogs, blogCategories } from '@/data/blogs';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock, User, ArrowLeft, Share2, Facebook, Twitter, Mail, Tag } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, Share2, Facebook, Twitter, Mail, Tag } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const BlogPost = () => {
   const { slug } = useParams();
   const { toast } = useToast();
+  const { t: tPost } = useTranslation('blogPost');
+  const { t: tBlog, i18n } = useTranslation('blog');
 
-  // Find the blog post
+  const locale = i18n.language === 'ar' ? 'ar-AE' : 'en-GB';
+
   const blog = blogs.find(b => b.slug === slug);
 
   if (!blog) {
     return <Navigate to="/blog" replace />;
   }
 
-  // Find related posts (same category, excluding current)
   const relatedPosts = blogs
     .filter(b => b.category === blog.category && b.id !== blog.id)
     .slice(0, 3);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    return date.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
   };
 
-  const formatDateAr = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('ar-AE', { day: 'numeric', month: 'long', year: 'numeric' });
-  };
+  const getCategoryName = (categoryId: string) => tBlog(`categories.${categoryId}`);
+  const getBlogTitle = (b: (typeof blogs)[0]) => tBlog(`items.${b.id}.title`, { defaultValue: b.title });
+  const getBlogExcerpt = (b: (typeof blogs)[0]) => tBlog(`items.${b.id}.excerpt`, { defaultValue: b.excerpt });
 
   const handleShare = (platform: string) => {
     const url = window.location.href;
-    const title = blog.title;
+    const title = getBlogTitle(blog);
     
     let shareUrl = '';
     
@@ -50,8 +52,8 @@ const BlogPost = () => {
       case 'copy':
         navigator.clipboard.writeText(url);
         toast({
-          title: "Link copied!",
-          description: "Article link copied to clipboard",
+          title: tPost('linkCopied'),
+          description: tPost('linkCopiedDesc'),
         });
         return;
     }
@@ -70,8 +72,8 @@ const BlogPost = () => {
         <div className="container mx-auto px-4 py-4">
           <Link to="/blog">
             <Button variant="ghost" className="gap-2">
-              <ArrowLeft className="w-4 h-4" />
-              Back to Blog
+              <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
+              {tPost('backToBlog')}
             </Button>
           </Link>
         </div>
@@ -81,7 +83,7 @@ const BlogPost = () => {
       <div className="relative h-[400px] md:h-[500px] overflow-hidden bg-gray-900">
         <img
           src={blog.image}
-          alt={blog.title}
+          alt={getBlogTitle(blog)}
           className="w-full h-full object-cover opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -91,20 +93,16 @@ const BlogPost = () => {
           <div className="container mx-auto max-w-4xl">
             <div className="flex gap-2 mb-4">
               {blog.featured && (
-                <Badge className="bg-accent text-white">Featured</Badge>
+                <Badge className="bg-accent text-white">{tPost('featured')}</Badge>
               )}
               <Badge className="bg-primary text-white">
-                {category?.name} | {category?.nameAr}
+                {category ? getCategoryName(category.id) : ''}
               </Badge>
             </div>
             
-            <h1 className="text-3xl md:text-5xl font-bold mb-3">
-              {blog.title}
+            <h1 className="text-3xl md:text-5xl font-bold mb-6">
+              {getBlogTitle(blog)}
             </h1>
-            <p className="text-xl md:text-2xl font-cairo mb-6" dir="rtl">
-              {blog.titleAr}
-            </p>
-            
             <div className="flex flex-wrap items-center gap-6 text-sm">
               <div className="flex items-center gap-3">
                 <img
@@ -125,7 +123,7 @@ const BlogPost = () => {
               
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
-                <span>{blog.readTime} min read</span>
+                <span>{tPost('minRead', { count: blog.readTime })}</span>
               </div>
             </div>
           </div>
@@ -138,7 +136,7 @@ const BlogPost = () => {
           <div className="max-w-4xl mx-auto">
             {/* Share Buttons */}
             <div className="flex items-center gap-3 mb-8 pb-8 border-b">
-              <span className="text-sm font-semibold text-gray-600">Share:</span>
+              <span className="text-sm font-semibold text-gray-600">{tPost('shareLabel')}</span>
               <Button
                 size="sm"
                 variant="outline"
@@ -146,7 +144,7 @@ const BlogPost = () => {
                 className="gap-2"
               >
                 <Facebook className="w-4 h-4" />
-                Facebook
+                {tPost('facebook')}
               </Button>
               <Button
                 size="sm"
@@ -155,7 +153,7 @@ const BlogPost = () => {
                 className="gap-2"
               >
                 <Twitter className="w-4 h-4" />
-                Twitter
+                {tPost('twitter')}
               </Button>
               <Button
                 size="sm"
@@ -164,7 +162,7 @@ const BlogPost = () => {
                 className="gap-2"
               >
                 <Mail className="w-4 h-4" />
-                Email
+                {tPost('email')}
               </Button>
               <Button
                 size="sm"
@@ -173,55 +171,31 @@ const BlogPost = () => {
                 className="gap-2"
               >
                 <Share2 className="w-4 h-4" />
-                Copy Link
+                {tPost('copyLink')}
               </Button>
             </div>
 
-            {/* English Content */}
+            {/* Content */}
             <div className="prose prose-lg max-w-none mb-12">
               <div className="text-xl text-gray-600 mb-8 leading-relaxed">
-                {blog.excerpt}
+                {getBlogExcerpt(blog)}
               </div>
               
               <div 
                 className="text-gray-800 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: blog.content.replace(/\n/g, '<br />') }}
-              />
-            </div>
-
-            {/* Divider */}
-            <div className="border-t-2 border-primary/20 my-12"></div>
-
-            {/* Arabic Content */}
-            <div className="prose prose-lg max-w-none font-cairo" dir="rtl">
-              <div className="text-xl text-gray-600 mb-8 leading-relaxed">
-                {blog.excerptAr}
-              </div>
-              
-              <div 
-                className="text-gray-800 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: blog.contentAr.replace(/\n/g, '<br />') }}
+                dangerouslySetInnerHTML={{
+                  __html: (tPost(`items.${blog.id}.content`, { defaultValue: blog.content }) as string).replace(/\n/g, '<br />'),
+                }}
               />
             </div>
 
             {/* Tags */}
             <div className="mt-12 pt-8 border-t">
-              <div className="flex items-start gap-3 mb-4">
+              <div className="flex items-start gap-3">
                 <Tag className="w-5 h-5 text-gray-400 mt-1" />
                 <div className="flex flex-wrap gap-2">
                   {blog.tags.map((tag, index) => (
                     <Badge key={index} variant="secondary">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3" dir="rtl">
-                <Tag className="w-5 h-5 text-gray-400 mt-1" />
-                <div className="flex flex-wrap gap-2">
-                  {blog.tagsAr.map((tag, index) => (
-                    <Badge key={index} variant="secondary" className="font-cairo">
                       {tag}
                     </Badge>
                   ))}
@@ -244,12 +218,6 @@ const BlogPost = () => {
                   <p className="text-sm text-gray-600 mb-2">
                     {blog.author.role}
                   </p>
-                  <p className="text-lg font-cairo text-gray-700 mb-1" dir="rtl">
-                    {blog.author.nameAr}
-                  </p>
-                  <p className="text-sm font-cairo text-gray-600" dir="rtl">
-                    {blog.author.roleAr}
-                  </p>
                 </div>
               </div>
             </div>
@@ -262,9 +230,8 @@ const BlogPost = () => {
         <section className="py-12 bg-white border-t">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="flex items-center justify-between mb-8">
-                <h2 className="text-3xl font-bold text-gray-900">Related Articles</h2>
-                <h2 className="text-3xl font-bold text-gray-900 font-cairo" dir="rtl">مقالات ذات صلة</h2>
+              <div className="mb-8">
+                <h2 className="text-3xl font-bold text-gray-900">{tPost('relatedArticles')}</h2>
               </div>
               
               <div className="grid md:grid-cols-3 gap-8">
@@ -277,22 +244,18 @@ const BlogPost = () => {
                     <div className="relative h-48 overflow-hidden">
                       <img
                         src={relatedBlog.image}
-                        alt={relatedBlog.title}
+                        alt={getBlogTitle(relatedBlog)}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <Badge className="absolute top-3 left-3 bg-primary/90 text-white text-xs">
-                        {category?.nameAr}
+                      <Badge className="absolute top-3 left-3 rtl:left-auto rtl:right-3 bg-primary/90 text-white text-xs">
+                        {getCategoryName(relatedBlog.category)}
                       </Badge>
                     </div>
                     
                     <div className="p-5">
                       <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                        {relatedBlog.title}
+                        {getBlogTitle(relatedBlog)}
                       </h3>
-                      <p className="text-sm font-cairo text-gray-700 mb-3 line-clamp-1" dir="rtl">
-                        {relatedBlog.titleAr}
-                      </p>
-                      
                       <div className="flex items-center justify-between text-xs text-gray-500 pt-3 border-t">
                         <div className="flex items-center gap-1">
                           <Calendar className="w-3 h-3" />
@@ -300,7 +263,7 @@ const BlogPost = () => {
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock className="w-3 h-3" />
-                          <span>{relatedBlog.readTime} min</span>
+                          <span>{tPost('minReadShort', { count: relatedBlog.readTime })}</span>
                         </div>
                       </div>
                     </div>
@@ -316,17 +279,14 @@ const BlogPost = () => {
       <section className="py-16 bg-gradient-to-r from-primary to-secondary text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to give your cat the best nutrition?
+            {tPost('cta.title')}
           </h2>
-          <p className="text-xl mb-2 font-cairo" dir="rtl">
-            هل أنت مستعد لمنح قطتك أفضل تغذية؟
-          </p>
           <p className="text-lg mb-8 opacity-90">
-            Explore our premium halal cat food products
+            {tPost('cta.subtitle')}
           </p>
           <Link to="/products">
             <Button size="lg" variant="secondary" className="font-semibold">
-              Shop Now | تسوق الآن
+              {tPost('cta.button')}
             </Button>
           </Link>
         </div>

@@ -1,10 +1,13 @@
 import { Star, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import catEating from "@/assets/cat-eating.png";
 import productBag from "@/assets/product-bag.png";
 
 const HeroSection = () => {
+  const { t } = useTranslation("home");
+
   return (
     <section className="hero-gradient min-h-screen pt-20 relative overflow-hidden">
       {/* Decorative Elements */}
@@ -24,21 +27,20 @@ const HeroSection = () => {
                 ))}
               </div>
               <span className="text-primary-foreground/90 text-sm font-medium">
-                Trusted by 10,000+ cat parents
+                {t("hero.trustedBy")}
               </span>
             </div>
 
             <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              For the Lives that
+              {t("hero.titleLine1")}
               <br />
               <span className="text-white">
-                Make Ours Whole
+                {t("hero.titleLine2")}
               </span>
             </h1>
 
             <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-lg">
-              Premium, nutritious cat food made with real ingredients your feline friend will love. 
-              Because they deserve the very best.
+              {t("hero.subtitle")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -47,8 +49,8 @@ const HeroSection = () => {
                   size="lg" 
                   className="bg-accent hover:bg-accent/90 text-white shadow-lg text-lg px-8 py-6 rounded-full font-bold"
                 >
-                  Shop Now
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  {t("hero.shopNow")}
+                  <ArrowRight className="w-5 h-5 ml-2 rtl:mr-2 rtl:ml-0" />
                 </Button>
               </Link>
               <Link to="/about">
@@ -57,21 +59,19 @@ const HeroSection = () => {
                   variant="outline" 
                   className="border-2 border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 rounded-full font-bold bg-transparent"
                 >
-                  Learn More
+                  {t("hero.learnMore")}
                 </Button>
               </Link>
             </div>
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-4 mt-10">
-              {["100% Natural", "Vet Approved"].map((badge) => (
-                <div
-                  key={badge}
-                  className="px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full text-sm font-medium"
-                >
-                  ✓ {badge}
-                </div>
-              ))}
+              <div className="px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full text-sm font-medium">
+                ✓ {t("hero.badge1")}
+              </div>
+              <div className="px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full text-sm font-medium">
+                ✓ {t("hero.badge2")}
+              </div>
             </div>
           </div>
 
@@ -81,14 +81,14 @@ const HeroSection = () => {
               {/* Main Cat Image */}
               <img
                 src={catEating}
-                alt="Happy cat eating premium food"
+                alt={t("hero.altCat")}
                 className="w-full max-w-lg mx-auto animate-float"
               />
               
               {/* Product Bag Overlay */}
               <img
                 src={productBag}
-                alt="HurayraPetFood.ae product bag"
+                alt={t("hero.altProduct")}
                 className="absolute -right-8 md:right-0 bottom-0 w-40 md:w-56 animate-float-delayed drop-shadow-2xl"
               />
 

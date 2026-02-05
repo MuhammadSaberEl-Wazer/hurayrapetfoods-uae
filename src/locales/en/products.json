@@ -1,0 +1,50 @@
+{
+  "title": "Our Products",
+  "subtitle": "Premium halal cat food for every feline",
+  "hero": {
+    "title": "Our Premium Products",
+    "subtitle": "100% Halal Cat Food Made with Love",
+    "intro": "Choose from our chicken, tuna, or combo formulas — all designed for complete and balanced nutrition for your beloved cat."
+  },
+  "filter": "Filter:",
+  "filters": {
+    "all": "All",
+    "allProductsCount": "All Products ({{count}})",
+    "chicken": "Chicken",
+    "tuna": "Tuna",
+    "combo": "Combo"
+  },
+  "sort": "Sort by:",
+  "sortBy": {
+    "featured": "Featured",
+    "name": "Name (A-Z)",
+    "priceLow": "Price (Low to High)",
+    "priceHigh": "Price (High to Low)"
+  },
+  "showing": "Showing {{count}} products",
+  "showing_one": "Showing {{count}} product",
+  "showing_other": "Showing {{count}} products",
+  "noProducts": "No products found matching your filters.",
+  "info": {
+    "halalTitle": "100% Halal Certified",
+    "halalDesc": "All our products are certified halal by recognized Islamic authorities",
+    "deliveryTitle": "Free Delivery",
+    "deliveryDesc": "Free shipping across all UAE emirates in 1-3 business days",
+    "qualityTitle": "Quality Guarantee",
+    "qualityDesc": "30-day money-back guarantee if your cat doesn't love it"
+  },
+  "addToCart": "Add to Cart",
+  "viewDetails": "View Details",
+  "view": "View",
+  "currency": "AED",
+  "from": "From",
+  "sizesAvailable": "{{count}} sizes available",
+  "sizesAvailable_one": "Only 900 g size available",
+  "sizesAvailable_other": "{{count}} sizes available",
+  "outOfStock": "Out of Stock",
+  "featured": "Featured",
+  "toast": {
+    "added": "Added to cart!",
+    "addedDesc": "{{name}} ({{size}}) has been added to your cart."
+  }
+}

@@ -1,118 +1,78 @@
 {
   "hero": {
     "title": "Contact Us",
-    "titleAr": "اتصل بنا",
-    "subtitle": "We'd love to hear from you!",
-    "subtitleAr": "نحب أن نسمع منك!"
+    "subtitle": "We'd love to hear from you!"
   },
   "contactInfo": {
     "email": {
       "label": "Email",
-      "labelAr": "البريد الإلكتروني",
       "value": "info@hurayrapetfoods.ae",
       "icon": "Mail"
     },
     "phone": {
       "label": "Phone",
-      "labelAr": "الهاتف",
       "value": "+971 XX XXX XXXX",
       "icon": "Phone"
     },
     "whatsapp": {
       "label": "WhatsApp",
-      "labelAr": "واتساب",
       "value": "+971 XX XXX XXXX",
       "link": "https://wa.me/971XXXXXXXX",
       "icon": "MessageCircle"
     },
     "address": {
       "label": "Address",
-      "labelAr": "العنوان",
       "value": "Dubai, United Arab Emirates",
-      "valueAr": "دبي، الإمارات العربية المتحدة",
       "icon": "MapPin"
     }
   },
   "socialMedia": {
     "title": "Follow Us",
-    "titleAr": "تابعنا",
     "platforms": [
-      {
-        "name": "Facebook",
-        "url": "https://facebook.com/hurayrapetfoods",
-        "icon": "Facebook"
-      },
-      {
-        "name": "Instagram",
-        "url": "https://instagram.com/hurayrapetfoods",
-        "icon": "Instagram"
-      },
-      {
-        "name": "Twitter",
-        "url": "https://twitter.com/hurayrapetfoods",
-        "icon": "Twitter"
-      },
-      {
-        "name": "TikTok",
-        "url": "https://tiktok.com/@hurayrapetfoods",
-        "icon": "Music"
-      }
+      { "name": "Facebook", "url": "https://facebook.com/hurayrapetfoods", "icon": "Facebook" },
+      { "name": "Instagram", "url": "https://instagram.com/hurayrapetfoods", "icon": "Instagram" },
+      { "name": "Twitter", "url": "https://twitter.com/hurayrapetfoods", "icon": "Twitter" },
+      { "name": "TikTok", "url": "https://tiktok.com/@hurayrapetfoods", "icon": "Music" }
     ]
   },
   "form": {
     "title": "Send us a Message",
-    "titleAr": "أرسل لنا رسالة",
     "fields": {
       "name": {
         "label": "Your Name",
-        "labelAr": "اسمك",
         "placeholder": "Enter your name",
-        "placeholderAr": "أدخل اسمك",
         "required": true
       },
       "email": {
         "label": "Your Email",
-        "labelAr": "بريدك الإلكتروني",
         "placeholder": "Enter your email",
-        "placeholderAr": "أدخل بريدك الإلكتروني",
         "required": true
       },
       "phone": {
         "label": "Phone Number",
-        "labelAr": "رقم الهاتف",
         "placeholder": "Enter your phone number",
-        "placeholderAr": "أدخل رقم هاتفك",
         "required": false
       },
       "subject": {
         "label": "Subject",
-        "labelAr": "الموضوع",
         "placeholder": "What is this about?",
-        "placeholderAr": "ما هو موضوع رسالتك؟",
         "required": true
       },
       "message": {
         "label": "Your Message",
-        "labelAr": "رسالتك",
         "placeholder": "Tell us what's on your mind...",
-        "placeholderAr": "أخبرنا بما في ذهنك...",
         "required": true
       }
     },
     "submitButton": {
-      "text": "Send Message",
-      "textAr": "إرسال الرسالة"
+      "text": "Send Message"
     },
     "successMessage": "Thank you! We will get back to you soon.",
-    "successMessageAr": "شكرًا لك! سنعود إليك قريبًا.",
-    "errorMessage": "Something went wrong. Please try again.",
-    "errorMessageAr": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+    "errorMessage": "Something went wrong. Please try again."
   },
   "faqLink": {
     "text": "Or check our",
-    "textAr": "أو تحقق من",
     "linkText": "FAQ page",
-    "linkTextAr": "صفحة الأسئلة الشائعة",
     "url": "/#faq"
   }
 }

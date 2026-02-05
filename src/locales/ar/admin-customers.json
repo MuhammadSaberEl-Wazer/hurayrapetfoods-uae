@@ -1,0 +1,19 @@
+{
+  "title": "العملاء",
+  "subtitle": "إدارة قاعدة بيانات العملاء",
+  "searchPlaceholder": "البحث بالاسم أو البريد أو الهاتف...",
+  "totalCustomers": "إجمالي العملاء",
+  "totalOrders": "إجمالي الطلبات",
+  "totalRevenue": "إجمالي الإيرادات",
+  "avgOrderValue": "متوسط قيمة الطلب",
+  "tableCustomer": "العميل",
+  "tableContact": "التواصل",
+  "tableLocation": "الموقع",
+  "tableOrders": "الطلبات",
+  "tableTotalSpent": "إجمالي المشتريات",
+  "tableJoinDate": "تاريخ الانضمام",
+  "tableLastOrder": "آخر طلب",
+  "tableActions": "إجراءات",
+  "ordersCount": "{{count}} طلبات",
+  "noCustomers": "لم يتم العثور على عملاء"
+}

@@ -9,9 +9,9 @@
   :root {
     /* Hurayra Brand Colors */
     --color-primary: #008080;
-    --color-secondary: #D46681;
+    --color-secondary: #0F766E;
     --color-accent: #C8A029;
-    --color-pink: #D46681;
+    --color-pink: #0F766E;
     --color-teal-light: #60BABF;
     --color-teal-dark: #035F5D;
     --color-white: #FFFFFF;
@@ -33,7 +33,7 @@
     --primary: 180 100% 25%;  /* #008080 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 345 58% 63%;  /* #D46681 */
+    --secondary: 174 77% 24%;  /* #0F766E - dark teal */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96%;
@@ -127,12 +127,32 @@
     font-family: 'Montserrat', sans-serif;
   }
 
+  /* Arabic: use Cairo font when language is Arabic */
+  [lang="ar"] body {
+    font-family: 'Cairo', sans-serif;
+  }
+
   /* Unified headings: bold, larger, cleaner (like mother site) */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.2;
+  }
+
+  [lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3, [lang="ar"] h4, [lang="ar"] h5, [lang="ar"] h6 {
+    font-family: 'Cairo', sans-serif;
+  }
+
+  [lang="ar"] .font-sans,
+  [lang="ar"] .font-montserrat {
+    font-family: 'Cairo', sans-serif;
+  }
+
+  /* Product card hover overlay and any Causten text use Cairo in Arabic */
+  [lang="ar"] .font-causten,
+  [lang="ar"] .product-card-overlay-label {
+    font-family: 'Cairo', sans-serif;
   }
 
   h1 { @apply text-3xl md:text-4xl lg:text-5xl; }

@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "blog": "Blog",
+    "about": "About",
+    "whyHalal": "Why Halal",
+    "contact": "Contact",
+    "shopNow": "Shop Now",
+    "login": "Login",
+    "signup": "Sign Up",
+    "account": "Account",
+    "logout": "Logout",
+    "admin": "Admin"
+  },
+  "footer": {
+    "logoText": "HurayraPetFood.ae",
+    "tagline": "Premium Halal Cat Food",
+    "description": "Providing premium halal cat food with love and care. Following the Sunnah of kindness to animals.",
+    "quickLinks": "Quick Links",
+    "products": "Products",
+    "customerService": "Customer Service",
+    "legal": "Legal",
+    "allProducts": "All Products",
+    "chickenFormula": "Chicken Formula",
+    "tunaFormula": "Tuna Formula",
+    "comboFormula": "Combo Formula",
+    "shippingDelivery": "Shipping & Delivery",
+    "returnPolicy": "Return Policy",
+    "shippingPolicy": "Shipping Policy",
+    "returnsRefunds": "Returns & Refunds",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions",
+    "faq": "FAQ",
+    "aboutUs": "About Us",
+    "contactInfo": "Contact Information",
+    "legalNotice": "This website is operated under the licenses of M/s Eurogulf Animal & Birds Food Trading LLC.",
+    "address": "Dubai Investment Park 2 - Khorasan Warehouses No 2, Dubai, United Arab Emirates",
+    "mail": "Mail",
+    "phone": "Phone",
+    "newsletterTitle": "Subscribe to Our Newsletter",
+    "newsletterDescription": "Get updates on new products, special offers, and cat care tips!",
+    "newsletterPlaceholder": "Enter your email",
+    "newsletterButton": "Subscribe",
+    "newsletterSuccess": "Thank you for subscribing!",
+    "weAccept": "We Accept",
+    "cashOnDelivery": "Cash on Delivery",
+    "comingSoon": "Coming soon",
+    "copyright": "All rights reserved."
+  },
+  "buttons": {
+    "back": "Back",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "close": "Close",
+    "continue": "Continue",
+    "loading": "Loading..."
+  },
+  "validation": {
+    "required": "This field is required",
+    "emailInvalid": "Please enter a valid email",
+    "minLength": "Must be at least {{min}} characters",
+    "maxLength": "Must be at most {{max}} characters"
+  },
+  "aria": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "cartCount": "{{count}} items in cart"
+  }
+}

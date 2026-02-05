@@ -1,0 +1,115 @@
+{
+  "hero": {
+    "title": "Why Halal Pet Food?",
+    "subtitle": "We create food that is not only high in nutrition but also Halal, adhering to Islamic practices."
+  },
+  "whatIsHalal": {
+    "title": "What is Halal?",
+    "body": "Islam emphasises purity, ethics, and treating animals with kindness. Halal is an Arabic term that means \"permissible\", and in the context of food, it means ingredients and preparation methods that adhere to the clear and strict guidelines set by Islamic dietary laws."
+  },
+  "whyItMatters": {
+    "title": "Why It Matters for Muslims?",
+    "intro": "For Muslims, it is a principle that shapes how we earn, purchase, and consume. This applies not only to what we eat, but also to the transactions we take part in. Islamic teachings make it clear that buying, selling, or benefiting from non-halal products is discouraged, even if we are not consuming them ourselves.",
+    "subtitle": "Choosing Halal pet food reflects two key values:",
+    "values": [
+      "Clean and permissible ingredients entering your home",
+      "An ethical purchase that aligns with Islamic rulings on trade and purity"
+    ],
+    "closing": "Your pet's bowl becomes part of your household. When the food you bring in is Halal, you honour both your responsibility as a caretaker and your commitment to what is permissible."
+  },
+  "meatDerivatives": {
+    "title": "Meat Derivatives and Why They Matter",
+    "body": "Many pet foods contain meat derivatives, a broad term that can include by-products from various animal sources, such as meat, blood, bones, and other parts.",
+    "perspective": "From an Islamic perspective, meat derivatives must be halal, and their permissibility depends on:",
+    "points": [
+      "The source of meat and animal",
+      "How ingredients are processed and handled",
+      "If it were Zabiha Halal and safely processed"
+    ],
+    "closing": "Halal principles apply beyond human food and guide faith-based choices, including pet food."
+  },
+  "islamSays": {
+    "title": "What Islam Says About Consuming Halal",
+    "intro": "A believer is obligated to consume only what Allah has declared permissible.",
+    "quotes": [
+      { "text": "O mankind, eat from whatever is on earth that is lawful (halal) and good (tayyib), and do not follow the footsteps of Shaytan. Indeed, he is to you a clear enemy.", "ref": "Quran 2:168" },
+      { "text": "O you who believe! Eat from the good things We have provided for you.", "ref": "Qur'an 2:172" },
+      { "text": "A body nourished with haram is most deserving of the Fire.", "ref": "Sunan al-Tirmidhi, 614" },
+      { "text": "His food is haram, his drink is haram, his clothing is haram… So how can his dua be answered?", "ref": "Sahih Muslim, 1015" }
+    ],
+    "closing": "This helps ensure a Muslim's choices stay consistent, including what they buy for their pets."
+  },
+  "porkHaram": {
+    "title": "Why Buying/Selling Pork Is Also Haram",
+    "body": "In Islam, guidance on pork extends beyond consumption. While the Qur'an forbids its consumption, Islamic law also discourages supporting it through buying, selling, or profiting from it.",
+    "quote": "If Allah forbids its consumption, He forbids its trade.",
+    "ref": "Surah Al-Baqarah – 2:275",
+    "closing": "This helps ensure a Muslim's choices stay consistent, including what they buy for their pets."
+  },
+  "quranicApproach": {
+    "title": "A Qur'anic Approach to Responsible Purchasing",
+    "body": "The Qur'an encourages believers to act responsibly in all matters, including how they spend their money. Avoiding products that contain forbidden ingredients reflects a commitment to not supporting for your pets what Islam discourages.",
+    "quote": "Do not assist one another in sin and transgression.",
+    "ref": "Surah Al-Ma'idah 5:2",
+    "closing": "It guides Muslim pet owners to make mindful purchasing choices, even when selecting food for their pets."
+  },
+  "prophetTeaching": {
+    "title": "What the Prophet ﷺ Taught About Permissible Trade",
+    "body": "The Prophet ﷺ provided clear guidance on trade, prohibiting involvement in the sale of haram items, including pork.",
+    "quote": "Allah and His Messenger have forbidden the sale of alcohol, dead meat, swine, and idols.",
+    "ref": "Sahih al-Bukhari & Sahih Muslim",
+    "closing": "His teachings clarify that Islamic responsibility applies not only to consumption, but also to buying, selling, and financial involvement."
+  },
+  "choosingHalal": {
+    "title": "Choosing Halal For Your Pet",
+    "body": "Caring for a pet is part of caring for the home. Choosing Hurayra halal-compliant pet food allows Muslim households to look after their animals with confidence, knowing their choices reflect both religious values and personal integrity.",
+    "points": [
+      "Supports responsible, faith-aligned pet care",
+      "Avoids doubtful ingredients in pet food",
+      "Brings clarity and peace of mind"
+    ]
+  },
+  "scholars": {
+    "title": "Hear it from the Scholars",
+    "subtitle": "Don't just take our word for it; see what respected scholars have to say about it.",
+    "videoPlaceholder": true
+  },
+  "moreThanTradition": {
+    "title": "More than Just a Tradition",
+    "paragraphs": [
+      "Choosing Halal is not only about following Islamic principles. It is also about choosing food that is pure, traceable, and prepared with clarity at every stage. Halal standards demand transparency in sourcing, handling, and production, which naturally leads to cleaner and more trustworthy nutrition.",
+      "Whether you follow Halal for spiritual reasons or simply want cleaner nutrition for your pet, the result is the same: real ingredients you can trust, and a bowl that reflects genuine care."
+    ]
+  },
+  "faq": [
+    {
+      "question": "What are the benefits of feeding my pet Halal pet food?",
+      "answer": "Hurayra Halal pet food offers ethically sourced, human-grade ingredients and balanced nutrition free from artificial additives. You're choosing a product that prioritises your pet's well-being and aligns with ethical values."
+    },
+    {
+      "question": "Is Halal pet food suitable for all breeds and life stages?",
+      "answer": "Yes! Our expertly formulated Halal pet food provides complete and balanced nutrition for pets of all breeds, sizes, and life stages. Our formulas are designed to support vibrant health and happiness."
+    },
+    {
+      "question": "How does Hurayra Pet Food ensure the ethical sourcing of its ingredients?",
+      "answer": "At Hurayra, ethical sourcing is paramount. We partner with suppliers adhering to strict animal welfare standards, ensuring our meats are from animals raised and processed humanely and in accordance with Halal guidelines. This commitment guarantees the purity and integrity of our ingredients."
+    },
+    {
+      "question": "Is Hurayra Halal pet food truly free from artificial ingredients and contaminants?",
+      "answer": "Absolutely, our Halal pet food is made with natural, human-grade ingredients and is completely free from artificial colours, flavours, and preservatives. Our stringent hygiene standards and regular facility inspections prevent cross-contamination, ensuring ultimate purity."
+    },
+    {
+      "question": "Where can I buy Hurayra Halal pet food?",
+      "answer": "Hurayra Pet Food makes it easy to provide your pet with the best! You can conveniently purchase our Halal pet food directly from our website, and we offer reliable delivery right to your doorstep. You can also opt for bi-weekly or monthly subscriptions to never run out of food for your little companion."
+    }
+  ],
+  "cta": {
+    "title": "Nourish Them",
+    "titleHighlight": "the Right Way",
+    "subtitle": "Halal, wholesome, and made with care",
+    "buttons": [
+      { "text": "Buy Now", "url": "/products" },
+      { "text": "Subscribe & Save 25%", "url": "/products" }
+    ]
+  }
+}

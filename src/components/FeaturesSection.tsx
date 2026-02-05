@@ -1,66 +1,36 @@
 import { Heart, Leaf, Shield, Truck, CheckCircle, Award } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const features = [
-  {
-    icon: Heart,
-    title: "Made with Love",
-    description: "Every recipe crafted with care for your feline's happiness",
-  },
-  {
-    icon: Leaf,
-    title: "100% Natural",
-    description: "No artificial preservatives, colors, or flavors",
-  },
-  {
-    icon: Shield,
-    title: "Vet Approved",
-    description: "Formulated with veterinary nutritionists",
-  },
-  {
-    icon: Award,
-    title: "Premium Quality",
-    description: "Only the finest ingredients sourced globally",
-  },
-  {
-    icon: Truck,
-    title: "Fast Delivery",
-    description: "Quick and reliable shipping across UAE",
-  },
-  {
-    icon: CheckCircle,
-    title: "Satisfaction Guaranteed",
-    description: "30-day money-back guarantee",
-  },
-];
+const featureKeys = [
+  { icon: Heart, titleKey: "features.madeWithLove", descKey: "features.madeWithLoveDesc" },
+  { icon: Leaf, titleKey: "features.natural", descKey: "features.naturalDesc" },
+  { icon: Shield, titleKey: "features.vetApproved", descKey: "features.vetApprovedDesc" },
+  { icon: Award, titleKey: "features.quality", descKey: "features.qualityDesc" },
+  { icon: Truck, titleKey: "features.delivery", descKey: "features.deliveryDesc" },
+  { icon: CheckCircle, titleKey: "features.satisfaction", descKey: "features.satisfactionDesc" },
+] as const;
 
-const badges = [
-  "Premium Adult Formula",
-  "Kitten Growth",
-  "Chicken Flavor",
-  "Salmon & Tuna",
-  "Hairball Control",
-  "Indoor Cat Formula",
-  "High Protein",
-  "Grain Free Options",
-];
+const badgeKeys = ["badge1", "badge2", "badge3", "badge4", "badge5", "badge6", "badge7", "badge8"] as const;
 
 const FeaturesSection = () => {
+  const { t } = useTranslation("home");
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground mb-4">
-            The Good Stuff We Offer
+            {t("features.sectionTitle")}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            HurayraPetFood.ae is made with the highest quality halal ingredients to keep your cat healthy and happy
+            {t("features.sectionSubtitle")}
           </p>
         </div>
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {features.map((feature, index) => (
+          {featureKeys.map((feature, index) => (
             <div
               key={index}
               className="bg-card rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 border border-border/50"
@@ -69,10 +39,10 @@ const FeaturesSection = () => {
                 <feature.icon className="w-7 h-7 text-primary" />
               </div>
               <h3 className="font-sans text-xl font-bold text-foreground mb-2">
-                {feature.title}
+                {t(feature.titleKey)}
               </h3>
               <p className="text-muted-foreground">
-                {feature.description}
+                {t(feature.descKey)}
               </p>
             </div>
           ))}
@@ -80,12 +50,12 @@ const FeaturesSection = () => {
 
         {/* Product Badges */}
         <div className="flex flex-wrap justify-center gap-3">
-          {badges.map((badge, index) => (
+          {badgeKeys.map((key) => (
             <span
-              key={index}
-              className="px-5 py-2.5 bg-secondary rounded-full text-sm font-semibold text-foreground border border-border hover:bg-primary hover:text-primary-foreground transition-colors duration-200 cursor-pointer"
+              key={key}
+              className="px-5 py-2.5 bg-secondary rounded-full text-sm font-semibold text-secondary-foreground border border-secondary/50 hover:bg-primary hover:text-primary-foreground transition-colors duration-200 cursor-pointer"
             >
-              {badge}
+              {t(`features.${key}`)}
             </span>
           ))}
         </div>

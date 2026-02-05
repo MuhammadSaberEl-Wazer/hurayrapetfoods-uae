@@ -6,11 +6,11 @@
 export const colors = {
   // Primary Colors
   primary: '#008080',        // Teal - Main brand color
-  secondary: '#D46681',      // Pink - Secondary brand color
+  secondary: '#0F766E',      // Dark teal - Secondary brand color
   accent: '#C8A029',         // Gold - Accent color
   
   // Supporting Colors
-  pink: '#D46681',           // Pink accent
+  pink: '#0F766E',           // Alias for secondary (dark teal)
   tealLight: '#60BABF',      // Light Teal
   tealDark: '#035F5D',       // Dark Teal
   
